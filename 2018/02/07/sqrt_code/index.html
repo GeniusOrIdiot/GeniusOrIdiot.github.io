@@ -11,7 +11,7 @@
       8          *  *         *
       8          *    *       *
       8          *      *     *
-      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+      8          *        *   ***********    -Theme By Kieran(http://go.kieran.top)
 -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <!--<![endif]-->
@@ -189,9 +189,34 @@
 <li>最初我在考虑这个问题时，并没有采取更加合理的“二分法”—当然，我本人也说不出为什么，可能是希望想到更优的算法，也可能只是喜欢异想天开……</li>
 <li>首先我想到的是，0-9的平方结果不会超过100，然后我观察到一个规律：0-9的平方是两位数，10-99的平方是4位数，100-999的平方是6位数……</li>
 <li>这也就意味着，整数位的位数会直接决定方根整数位的位数，这之间也许存在着可以运算求解的空间。于是我开始了演算。</li>
-<li>大致描述一下迭代的过程：<blockquote>
-<p>给定一个数12345，求方根；<br>这是一个5位数，方根应该是一个3位数，所以假设最高位为x(取值0-9)，后两位构成y(取值0-99)；<br><span> 1⃣️ (100x + y)²=12345 –&gt; 10000x² + 200xy + y² = 12345</span><br>一眼就可以看出来，x = 1；<br>然后就可以得到：<br><span>10000 + 200y + y² = 12345 –&gt; 200y + y² = 2345 </span><br>这个时候式子反而复杂了—😳<br>不要这么快就放弃，继续探索，求第二位。<br>这里意识到：现在变成了求y的首位数字了；<br>那么继续假设y的首位数字是x₁(0-9)，最后一位则为y₁；<br>于是有：<br><span> 2⃣️ 200 <em> (10x₁ + y₁) + (10x₁ + y₁)² = 2345 </em></span><br>这个式子展开似乎不是很理智，当然可以摸索阶段可以试试，得到：<br><span> 100x₁² + (2000 + 20y₁)x + 200y₁ + y₁² = 2345</span><br>不过到这里，我有了更好的方案，位数关联可以做到更细一点，考虑到乘法是有进位的，也就是说，在1⃣️式中x²是不会大于12345对应的5-6位上的数–‘1’的;<br>亦即：<br><span> 3⃣️ x² &lt;= 1 </span><br>所以x只能为1(首位不为0)；<br>对于2⃣️式，是否也有这样的考虑？<br>这个时候如果继续去执着于y₁这个个位数显然是舍本逐末了，我们可以将12345缩小100倍，变成123.45，不考虑多余的0.45的话，2⃣️式会简化很多：<br><span> 4⃣️ (<font color="blue">10</font> + x₁)² = 123 –&gt; 100 + 20x₁ + x₁² = 123 –&gt; 20x₁ + x₁² = 23 </span><br>当然，这里其实应该用≤更合适，取其极限值就可以了；<br>这样的式子，x₁在0-9范围内是很好遍历去计算结果的，得到x₁ = 1；<br>要想继续迭代，首先要回过头来看3⃣️和4⃣️两个式子，找到它们统一的表达方式；<br>4⃣️式中多一个20x₁，这个20怎么来的呢？回头搜索一下可以发现，是前一位x在加和平方时得到的(看蓝色)，那3⃣️式为什么没有这一项？我们想到首位x前面没有数了，也就是说，是0，所以3⃣️式严格来说要写成：<br><span>0  x + x² ≤ 1</span><br>那么迭代式是不是就是：20x𝓃 * x𝓃+₁ + x𝓃+₁² = num ？<br>很遗憾，并不是，仔细去摸索会发现，蓝色那个数值是会在迭代过程中累计的，并不是只依赖上一位数值，原因呢我大致写几个式子看一下：<br>第一位：(0 + x)² ≤ 1 —&gt; x = 1;<br>第二位：(10 + x₁)² ≤ 123 —&gt; x₁ = 1;<br>第三位：(110 + x₂)² ≤ 12345 —&gt; x₂ = …<br>这样一看就很清晰了吧！<br>但是要注意：这种清晰的逻辑在计算机处理过程中很容易溢出！所以我并没有直接这么做。</p>
-</blockquote>
+<li>大致描述一下迭代的过程：<ul>
+<li>给定一个数12345，求方根；</li>
+<li>这是一个5位数，方根应该是一个3位数，所以假设最高位为x(取值0-9)，后两位构成y(取值0-99)；<br><code>(100x + y)² = 12345 --&gt; 10000x² + 200xy + y² = 12345   1⃣️</code></li>
+<li>一眼就可以看出来，x = 1；</li>
+<li>然后就可以得到：<br><code>10000 + 200y + y² = 12345 --&gt; 200y + y² = 2345</code></li>
+<li>这个时候式子反而复杂了—😳</li>
+<li>不要这么快就放弃，继续探索，求第二位。</li>
+<li>这里意识到：现在变成了求y的首位数字了；</li>
+<li>那么继续假设y的首位数字是x₁(0-9)，最后一位则为y₁；</li>
+<li>于是有：<br><code>200 * (10x₁ + y₁) + (10x₁ + y₁)² = 2345  2⃣️</code></li>
+<li>这个式子展开似乎不是很理智，当然可以摸索阶段可以试试，得到：<br><code>100x₁² + (2000 + 20y₁)x + 200y₁ + y₁² = 2345</code></li>
+<li>不过到这里，我有了更好的方案，位数关联可以做到更细一点，考虑到乘法是有进位的，也就是说，在1⃣️式中x²是不会大于12345对应的5-6位上的数–‘1’的;</li>
+<li>亦即：<br><code>x² ≤ 1  3⃣️</code></li>
+<li>所以x只能为1(首位不为0)；</li>
+<li>对于2⃣️式，是否也有这样的考虑？</li>
+<li>这个时候如果继续去执着于y₁这个个位数显然是舍本逐末了，我们可以将12345缩小100倍，变成123.45，不考虑多余的0.45的话，2⃣️式会简化很多：<br><code>(10 + x₁)² = 123 --&gt; 100 + 20x₁ + x₁² = 123 --&gt; 20x₁ + x₁² = 23   4⃣️</code></li>
+<li>当然，这里其实应该用≤更合适，取其极限值就可以了；</li>
+<li>这样的式子，x₁在0-9范围内是很好遍历去计算结果的，得到x₁ = 1；</li>
+<li>要想继续迭代，首先要回过头来看3⃣️和4⃣️两个式子，找到它们统一的表达方式；</li>
+<li>4⃣️式中多一个20x₁，这个20怎么来的呢？回头搜索一下可以发现，是前一位x在加和平方时得到的，那3⃣️式为什么没有这一项？我们想到首位x前面没有数了，也就是说，是0，所以3⃣️式严格来说要写成：<br><code>0 * x + x² ≤ 1</code></li>
+<li>那么迭代式是不是就是：20x𝓃 * x𝓃+₁ + x𝓃+₁² = num ？</li>
+<li>很遗憾，并不是，仔细去摸索会发现，蓝色那个数值是会在迭代过程中累计的，并不是只依赖上一位数值，原因呢我大致写几个式子看一下：</li>
+<li>第一位：(0 + x)² ≤ 1 —&gt; x = 1;</li>
+<li>第二位：(10 + x₁)² ≤ 123 —&gt; x₁ = 1;</li>
+<li>第三位：(110 + x₂)² ≤ 12345 —&gt; x₂ = …</li>
+<li>这样一看就很清晰了吧！</li>
+<li>但是要注意：这种清晰的逻辑在计算机处理过程中很容易溢出！所以我并没有直接这么做。</li>
+</ul>
 </li>
 </ul>
 <h4 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h4><p><a href="http://note.youdao.com/noteshare?id=bd5bb6b518cedd9e1ee17f9cc6d546a5" target="_blank" rel="noopener">位数迭代求平方根</a></p>
@@ -216,27 +241,30 @@
 <li>我先举个简单的例子来描述一下这样的场景：</li>
 <li>在你面前，有一个球体，比如说这样的：<br><img src="https://github.com/GeniusOrIdiot/blog-resources/blob/master/2018-02-07/%E7%90%83%E4%BD%93.jpg?raw=true" alt="image"></li>
 <li>相信大家对于这种类似的球体，尤其是大型的，会有一种感觉，就是球底部接近地面的地方，总是会照不到阳光。</li>
-<li>如果有观察的比较细致的同学，可能会发现更奇妙的事情，随着阳光的推移，照射到球体产生的阴影会变大、变小，就是大概这样一个过程：<blockquote>
-<p><a href="https://ggbm.at/tjjdABQR" target="_blank" rel="noopener">圆的切线轨迹</a></p>
-</blockquote>
+<li>如果有观察的比较细致的同学，可能会发现更奇妙的事情，随着阳光的推移，照射到球体产生的阴影会变大、变小，就是大概这样一个过程：<ul>
+<li><a href="https://ggbm.at/tjjdABQR" target="_blank" rel="noopener">圆的切线轨迹</a></li>
+</ul>
 </li>
 <li>仔细一看，这道光线其实是在逼近底部那个我们想照到的位置的。</li>
-<li>其实很多曲线的切线都有这样很直观的感觉，要求二次方根，去探索二次函数的曲线是个比较有建树性的思考方向。</li>
-<li>那么，我们就来看一下下面这幅图：<br><img src="https://github.com/GeniusOrIdiot/blog-resources/blob/master/2018-02-07/1517471564063.jpg?raw=true" alt="image"><blockquote>
-<p><a href="https://ggbm.at/dQgBFdW7" target="_blank" rel="noopener">二次函数切线轨迹</a></p>
-</blockquote>
+<li>贴着球面的那道光线，我们称之为“切线”。其实很多曲线的切线都有这样很直观的感觉，要求二次方根，去探索二次函数的曲线是个比较靠谱的思考方向。</li>
+<li>那么，我们就来看一下下面这幅图：<br><img src="https://github.com/GeniusOrIdiot/blog-resources/blob/master/2018-02-07/1517471564063.jpg?raw=true" alt="image"><ul>
+<li><a href="https://ggbm.at/dQgBFdW7" target="_blank" rel="noopener">二次函数切线轨迹</a></li>
+</ul>
 </li>
 <li>二次方根是可以逼近的。</li>
 <li>思路有了，然后就需要有一些知识储备来完成我们的想法了。首先，就是切线，这个东西呢，和导数有关，导数呢，又和微积分有关，牵扯太多，我们暂不管这些～我们只需要以太阳光照射一个弧面产生阴影的例子来理解就好了。<br><img src="https://github.com/GeniusOrIdiot/blog-resources/blob/master/2018-02-07/1517971450481.jpg?raw=true" alt="image"></li>
 <li>现在我们有了求切线的工具，可以得到下图B点的位置了，这样，B点显然要比A点离根值点近了，然后我们再以B点为准，找到二次函数曲线上对应的C点，再做一次刚才的步骤，得到D点，D点又更加接近了。</li>
 </ul>
 <h4 id="代码实现：-2"><a href="#代码实现：-2" class="headerlink" title="代码实现："></a>代码实现：</h4><p>网上有现成的公式，不过，有兴趣的同学可以自己推导一遍。<br><a href="http://note.youdao.com/noteshare?id=a2e3f2eceac86521163f146c9f88c9e8" target="_blank" rel="noopener">牛顿迭代求平方根</a></p>
-<p><br><br><br><br><br></p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2018/02/08/hello-world/" style="float: left;">
+        ← Hello World
+    </a>
     
     
     <a class="pull-right" href="/2018/02/03/ArrayList和LinkedList/">
@@ -260,7 +288,7 @@
     <div class="container">
             <div class="copy">
                 <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By LiuYajun. All Rights Reserved.
+                    &copy; 2017<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By LiuYajun. All Rights Reserved.
                 </p>
                 <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
             </div>
