@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>求平方根代码实现 | 俊のWEBSITE</title>
+  <title>环形队列 | 俊のWEBSITE</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -167,101 +167,55 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2018-02-07T07:22:47.597Z" itemprop="datePublished">
-          2018-02-07
+      <time datetime="2018-02-10T01:01:09.000Z" itemprop="datePublished">
+          2018-02-10
       </time>
     
 </span>
-                <h1>求平方根代码实现</h1>
+                <h1>环形队列</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<hr>
-<h1 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h1><ul>
-<li><p>数学和计算机科学总是能够在“拐角遇到爱”，计算机以其强大到离谱的高计算能力帮助人类在数学创新上不断突破，而数学上的成就也总能在理论上提供计算机发展的不竭动力。</p>
-</li>
-<li><p>人们在计算四则运算的时候就能体会到，随着计算法则的升级，人力所能做到的运算，越来越有限，于是在开平方这个问题上，人们一直没有找到特别好的办法，来处理不能完全开方的数—因为开出的数为无理数。但有一点值得庆幸的是，人们可以想到各种方法来逼近无理数方根的值。</p>
-</li>
-</ul>
-<hr>
-<h1 id="逼近方根解"><a href="#逼近方根解" class="headerlink" title="逼近方根解"></a>逼近方根解</h1><h3 id="令人心碎的数位递减迭代"><a href="#令人心碎的数位递减迭代" class="headerlink" title="令人心碎的数位递减迭代"></a>令人心碎的数位递减迭代</h3><ul>
-<li>最初我在考虑这个问题时，并没有采取更加合理的“二分法”—当然，我本人也说不出为什么，可能是希望想到更优的算法，也可能只是喜欢异想天开……</li>
-<li>首先我想到的是，0-9的平方结果不会超过100，然后我观察到一个规律：0-9的平方是两位数，10-99的平方是4位数，100-999的平方是6位数……</li>
-<li>这也就意味着，整数位的位数会直接决定方根整数位的位数，这之间也许存在着可以运算求解的空间。于是我开始了演算。</li>
-<li>大致描述一下迭代的过程：<ul>
-<li>给定一个数12345，求方根；</li>
-<li>这是一个5位数，方根应该是一个3位数，所以假设最高位为x(取值0-9)，后两位构成y(取值0-99)；<br><code>(100x + y)² = 12345 --&gt; 10000x² + 200xy + y² = 12345   1⃣️</code></li>
-<li>一眼就可以看出来，x = 1；</li>
-<li>然后就可以得到：<br><code>10000 + 200y + y² = 12345 --&gt; 200y + y² = 2345</code></li>
-<li>这个时候式子反而复杂了—😳</li>
-<li>不要这么快就放弃，继续探索，求第二位。</li>
-<li>这里意识到：现在变成了求y的首位数字了；</li>
-<li>那么继续假设y的首位数字是x₁(0-9)，最后一位则为y₁；</li>
-<li>于是有：<br><code>200 * (10x₁ + y₁) + (10x₁ + y₁)² = 2345  2⃣️</code></li>
-<li>这个式子展开似乎不是很理智，当然可以摸索阶段可以试试，得到：<br><code>100x₁² + (2000 + 20y₁)x + 200y₁ + y₁² = 2345</code></li>
-<li>不过到这里，我有了更好的方案，位数关联可以做到更细一点，考虑到乘法是有进位的，也就是说，在1⃣️式中x²是不会大于12345对应的5-6位上的数–‘1’的;</li>
-<li>亦即：<br><code>x² ≤ 1  3⃣️</code></li>
-<li>所以x只能为1(首位不为0)；</li>
-<li>对于2⃣️式，是否也有这样的考虑？</li>
-<li>这个时候如果继续去执着于y₁这个个位数显然是舍本逐末了，我们可以将12345缩小100倍，变成123.45，不考虑多余的0.45的话，2⃣️式会简化很多：<br><code>(10 + x₁)² = 123 --&gt; 100 + 20x₁ + x₁² = 123 --&gt; 20x₁ + x₁² = 23   4⃣️</code></li>
-<li>当然，这里其实应该用≤更合适，取其极限值就可以了；</li>
-<li>这样的式子，x₁在0-9范围内是很好遍历去计算结果的，得到x₁ = 1；</li>
-<li>要想继续迭代，首先要回过头来看3⃣️和4⃣️两个式子，找到它们统一的表达方式；</li>
-<li>4⃣️式中多一个20x₁，这个20怎么来的呢？回头搜索一下可以发现，是前一位x在加和平方时得到的，那3⃣️式为什么没有这一项？我们想到首位x前面没有数了，也就是说，是0，所以3⃣️式严格来说要写成：<br><code>0 * x + x² ≤ 1</code></li>
-<li>那么迭代式是不是就是：20x𝓃 * x𝓃+₁ + x𝓃+₁² = num ？</li>
-<li>很遗憾，并不是，仔细去摸索会发现，蓝色那个数值是会在迭代过程中累计的，并不是只依赖上一位数值，原因呢我大致写几个式子看一下：</li>
-<li>第一位：(0 + x)² ≤ 1 —&gt; x = 1;</li>
-<li>第二位：(10 + x₁)² ≤ 123 —&gt; x₁ = 1;</li>
-<li>第三位：(110 + x₂)² ≤ 12345 —&gt; x₂ = …</li>
-<li>这样一看就很清晰了吧！</li>
-<li>但是要注意：这种清晰的逻辑在计算机处理过程中很容易溢出！所以我并没有直接这么做。</li>
+      		<h3 id="生活中的队列"><a href="#生活中的队列" class="headerlink" title="生活中的队列"></a>生活中的队列</h3><p>队列，计算机中的一种数据结构，是一种<code>先进先出(FIFO)</code>的存储结构。类似于生活中排队的场景，先排上的人，先执行。但是本质上还是会有两种区别。</p>
+<ul>
+<li>比如说，排队打饭和排队点人这两种场景。<ul>
+<li>排队打饭的时候，执行者(打饭阿姨)不动，队列一个一个向前进。</li>
+<li>排队点人的时候，队列不动，执行者(小组长)一个一个向后数数。</li>
 </ul>
 </li>
 </ul>
-<h4 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h4><p><a href="http://note.youdao.com/noteshare?id=bd5bb6b518cedd9e1ee17f9cc6d546a5" target="_blank" rel="noopener">位数迭代求平方根</a></p>
-<hr>
-<h3 id="二分法—原来可以这么简单！"><a href="#二分法—原来可以这么简单！" class="headerlink" title="二分法—原来可以这么简单！"></a>二分法—原来可以这么简单！</h3><ul>
-<li>二分法，是逼近求根问题中经常用到的一种数学方法。</li>
-<li>很多人听说过“二分法”，像我们所熟知的“猜数字”。猜数字的时候，有一个技巧，可以帮助我们相对快速地得到准确答案。</li>
-<li>比如现在猜一个0-100的数：<blockquote>
-<p>第一步，猜50；<br>大了，就说明这个数在0-50之间；<br>第二步，猜25；<br>小了，就说明这个数在25-50之间；<br>依次类推，一直猜中间的数，可以有“目的性”地快速找到正确结果</p>
-</blockquote>
-</li>
-<li>二分法就是这个原理。</li>
-<li>但是这里会有一些问题：<blockquote>
-<p>大于1的数，方根比原数小<br>小于1的数(&gt;0)，方根比原数大</p>
-</blockquote>
-</li>
-<li>所以代码上需要加以判断区分。</li>
+<p>这两种处理方式都没什么效率。</p>
+<ul>
+<li>第一种<code>数据移动频繁</code>，对排队的人和对计算机来说，都是一种负担。</li>
+<li>第二种<code>空间占位闲置</code>，小组长数完前面的人，他们就可以去玩了，但是如果场地不够大，排队的人又很多，前面的位置就闲置了。</li>
 </ul>
-<h4 id="代码实现：-1"><a href="#代码实现：-1" class="headerlink" title="代码实现："></a>代码实现：</h4><p><a href="http://note.youdao.com/noteshare?id=fbdbb3747432df9e14376104c88620a2" target="_blank" rel="noopener">二分法求平方根</a></p>
-<hr>
-<h3 id="进阶—牛顿迭代法"><a href="#进阶—牛顿迭代法" class="headerlink" title="进阶—牛顿迭代法"></a>进阶—牛顿迭代法</h3><ul>
-<li>我先举个简单的例子来描述一下这样的场景：</li>
-<li>在你面前，有一个球体，比如说这样的：<br><img src="https://github.com/GeniusOrIdiot/blog-resources/blob/master/2018-02-07/%E7%90%83%E4%BD%93.jpg?raw=true" alt="image"></li>
-<li>相信大家对于这种类似的球体，尤其是大型的，会有一种感觉，就是球底部接近地面的地方，总是会照不到阳光。</li>
-<li>如果有观察的比较细致的同学，可能会发现更奇妙的事情，随着阳光的推移，照射到球体产生的阴影会变大、变小，就是大概这样一个过程：<ul>
-<li><a href="https://ggbm.at/tjjdABQR" target="_blank" rel="noopener">圆的切线轨迹</a></li>
+<p>像我排队的时候真的懒得动……我希望排队的时候像坐电梯一样自己动。最好是有一个环形的电梯，打完一个转到下一个，然后新来的就找到队伍的末尾，站到电梯上来，同时，这个电梯不需要很多站位，只需要打饭速度和人来的速度差不多，不至于电梯占满了就行，这就解决了空间不够的问题。</p>
+<h3 id="环形队列的设计"><a href="#环形队列的设计" class="headerlink" title="环形队列的设计"></a>环形队列的设计</h3><p>计算机也是这样，需要考虑<code>效率</code>和<code>空间</code>的问题。</p>
+<ul>
+<li>一个队列相当于一个存储数据的容器，同时它还必须方便插入和取出数据，而队列一般就是一个数组结构，每个位置都有<code>index</code>作为下标。<ul>
+<li>插入数据就找到上一次插入的<code>index(tail)</code>，在下一位将数据放进去；</li>
+<li>读取数据就找到上一次读到的<code>index(head)</code>，将下一个数据读取出来(并删除，这是队列的出队)。</li>
 </ul>
 </li>
-<li>仔细一看，这道光线其实是在逼近底部那个我们想照到的位置的。</li>
-<li>贴着球面的那道光线，我们称之为“切线”。其实很多曲线的切线都有这样很直观的感觉，要求二次方根，去探索二次函数的曲线是个比较靠谱的思考方向。</li>
-<li>那么，我们就来看一下下面这幅图：<br><img src="https://github.com/GeniusOrIdiot/blog-resources/blob/master/2018-02-07/1517471564063.jpg?raw=true" alt="image"><ul>
-<li><a href="https://ggbm.at/dQgBFdW7" target="_blank" rel="noopener">二次函数切线轨迹</a></li>
+<li>按照上面那样的设计，想要让队列在插入的时候，<code>tail</code>位置是空的，充分利用数组前面空出来的空间，就需要让<code>tail</code>在到达<code>index</code>序号最大值的时候能转回来，从<code>0</code>重新开始取值。同样的<code>head</code>也必须能够转回来，这样的设计，更像是一个“圆环”。</li>
+</ul>
+<p><img src="https://github.com/GeniusOrIdiot/blog-resources/blob/master/2018-02-09/1518163037403.jpg?raw=true" alt="image"></p>
+<ul>
+<li>利用“模”的概念可以实现这样的设计，让<code>head</code>和<code>tail</code>分别对队列容量取模。<ul>
+<li>假设队列容量为10</li>
+<li><code>tail</code>取到9的时候就到队列末尾了</li>
+<li>这个时候再入队，就下标越界了<code>tail=10</code></li>
+<li>我们让<code>tail</code>对<code>10</code>取模，<code>tail</code>就回到了<code>0</code>的位置</li>
+<li>当然必不可少的：入队检查队列未满，出队检查队列非空</li>
 </ul>
 </li>
-<li>二次方根是可以逼近的。</li>
-<li>只要能根据A处的切线，求出B点的坐标，我们就可以顺着这个思路走下去了。</li>
-<li>思路有了，然后就需要有一些知识储备来完成我们的想法了。首先，就是切线，这个东西呢，和导数有关，导数呢，又和微积分有关，牵扯太多，我们暂不管这些～我们只需要以太阳光照射一个弧面产生阴影的例子来理解就好了。<br><img src="https://github.com/GeniusOrIdiot/blog-resources/blob/master/2018-02-07/1517971450481.jpg?raw=true" alt="image"></li>
-<li>现在假设我们有了求切线的工具，可以得到下图B点的位置了，这样，B点显然要比A点离根值点近了，然后我们再以B点为准，找到二次函数曲线上对应的C点，再做一次刚才的步骤，得到D点，D点又更加接近了。</li>
 </ul>
-<h4 id="代码实现：-2"><a href="#代码实现：-2" class="headerlink" title="代码实现："></a>代码实现：</h4><p>网上有现成的公式，不过，有兴趣的同学可以自己推导一遍。<br><a href="http://note.youdao.com/noteshare?id=a2e3f2eceac86521163f146c9f88c9e8" target="_blank" rel="noopener">牛顿迭代求平方根</a></p>
+<p>这样就可以实现一个<code>环形队列</code>了。</p>
 <hr>
 <p>本文可以参考：</p>
 <ul>
-<li><a href="http://www.matongxue.com/madocs/205.html#/madoc" target="_blank" rel="noopener">如何通俗易懂地讲解牛顿迭代法</a></li>
-<li><a href="http://blog.csdn.net/wangxiaojun911/article/details/18203333" target="_blank" rel="noopener">牛顿迭代法(Newton’s Method)</a></li>
-<li><a href="https://mp.weixin.qq.com/s/MpD2LxlzxoQW3QMv43wLcQ" target="_blank" rel="noopener">如何理解导数的概念</a></li>
+<li><a href="http://blog.csdn.net/sherilindas/article/details/51927406" target="_blank" rel="noopener">环形队列</a></li>
+<li><a href="http://blog.csdn.net/dengpei187/article/details/51880491" target="_blank" rel="noopener">队列(Queue)</a></li>
 </ul>
 
             <div class="clearfix"></div>
@@ -269,13 +223,13 @@
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2018/02/08/hello-world/" style="float: left;">
-        ← Hello World
+    <a class="pull-left" href="/2018/02/11/《CODE》笔记/" style="float: left;">
+        ← 《CODE》笔记整理
     </a>
     
     
-    <a class="pull-right" href="/2018/02/03/ArrayList和LinkedList/">
-        ArrayList和LinkedList →
+    <a class="pull-right" href="/2018/02/08/hello-world/">
+        Hello World →
     </a>
     
 </nav>
