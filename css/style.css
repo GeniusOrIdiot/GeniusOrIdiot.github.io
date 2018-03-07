@@ -3381,6 +3381,14 @@ td:nth-child(1){
 	white-space: nowrap;
 }
 
+.tags a {
+	font-size: 15px;
+}
+
+.tags a:hover {
+	font-size: 18px;
+}
+
 /* Import the font file with the icons in it */
 @font-face { font-family: 'icons'; src:  url('../fonts/icons.woff') format('woff'); font-weight: normal; font-style: normal; }
 /* Apply these base styles to all icons */

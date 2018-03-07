@@ -75,17 +75,6 @@
             <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
             <!-- Dropdown Menu -->
 			 
-            <li>
-                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
-                <ul class="sb-submenu">
-                    
-                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
-                    
-                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
-                    
-                </ul>
-            </li>
-            
             
             
             <li>
@@ -162,7 +151,8 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <section id="intro">
+      
+<section id="intro">
     <div class="container">
         <div class="row col-md-offset-2">
             <div class="col-md-8">
@@ -176,7 +166,7 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<hr>
+      		<p>数学上对于五次方程没有根式解的结论已经得到证明。高次方程的求解一直是数学上的难题，而这个问题在航天、工程、医学等领域都有着极其重要的应用，当然这必然要用到计算机强大的运算能力。所以，我们不如就来试一试，求解简单的二次方根解的代码实现。<br><a id="more"></a></p>
 <h1 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h1><ul>
 <li><p>数学和计算机科学总是能够在“拐角遇到爱”，计算机以其强大到离谱的高计算能力帮助人类在数学创新上不断突破，而数学上的成就也总能在理论上提供计算机发展的不竭动力。</p>
 </li>
@@ -184,7 +174,7 @@
 </li>
 </ul>
 <hr>
-<h1 id="逼近方根解"><a href="#逼近方根解" class="headerlink" title="逼近方根解"></a>逼近方根解</h1><h3 id="令人心碎的数位递减迭代"><a href="#令人心碎的数位递减迭代" class="headerlink" title="令人心碎的数位递减迭代"></a>令人心碎的数位递减迭代</h3><ul>
+<h1 id="逼近方根解"><a href="#逼近方根解" class="headerlink" title="逼近方根解"></a>逼近方根解</h1><h3 id="数位递减迭代"><a href="#数位递减迭代" class="headerlink" title="数位递减迭代"></a>数位递减迭代</h3><ul>
 <li>最初我在考虑这个问题时，并没有采取更加合理的“二分法”—当然，我本人也说不出为什么，可能是希望想到更优的算法，也可能只是喜欢异想天开……</li>
 <li>首先我想到的是，0-9的平方结果不会超过100，然后我观察到一个规律：0-9的平方是两位数，10-99的平方是4位数，100-999的平方是6位数……</li>
 <li>这也就意味着，整数位的位数会直接决定方根整数位的位数，这之间也许存在着可以运算求解的空间。于是我开始了演算。</li>
@@ -255,9 +245,8 @@
 <li>思路有了，然后就需要有一些知识储备来完成我们的想法了。首先，就是切线，这个东西呢，和导数有关，导数呢，又和微积分有关，牵扯太多，我们暂不管这些～我们只需要以太阳光照射一个弧面产生阴影的例子来理解就好了。<br><img src="https://github.com/GeniusOrIdiot/blog-resources/blob/master/2018-02-07/1517971450481.jpg?raw=true" alt="image"></li>
 <li>现在假设我们有了求切线的工具，可以得到下图B点的位置了，这样，B点显然要比A点离根值点近了，然后我们再以B点为准，找到二次函数曲线上对应的C点，再做一次刚才的步骤，得到D点，D点又更加接近了。</li>
 </ul>
-<h4 id="代码实现：-2"><a href="#代码实现：-2" class="headerlink" title="代码实现："></a>代码实现：</h4><p>网上有现成的公式，不过，有兴趣的同学可以自己推导一遍。<br><a href="http://note.youdao.com/noteshare?id=a2e3f2eceac86521163f146c9f88c9e8" target="_blank" rel="noopener">牛顿迭代求平方根</a></p>
-<hr>
-<p>本文可以参考：</p>
+<h4 id="代码实现：-2"><a href="#代码实现：-2" class="headerlink" title="代码实现："></a>代码实现：</h4><p>网上有现成的公式，不过，有兴趣的同学可以自己推导一遍。</p>
+<h2 id="牛顿迭代求平方根"><a href="#牛顿迭代求平方根" class="headerlink" title="牛顿迭代求平方根"></a><a href="http://note.youdao.com/noteshare?id=a2e3f2eceac86521163f146c9f88c9e8" target="_blank" rel="noopener">牛顿迭代求平方根</a></h2><p>本文可以参考：</p>
 <ul>
 <li><a href="http://www.matongxue.com/madocs/205.html#/madoc" target="_blank" rel="noopener">如何通俗易懂地讲解牛顿迭代法</a></li>
 <li><a href="http://blog.csdn.net/wangxiaojun911/article/details/18203333" target="_blank" rel="noopener">牛顿迭代法(Newton’s Method)</a></li>
@@ -269,8 +258,8 @@
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2018/02/08/hello-world/" style="float: left;">
-        ← Hello World
+    <a class="pull-left" href="/2018/02/10/Circle-queue/" style="float: left;">
+        ← 环形队列
     </a>
     
     

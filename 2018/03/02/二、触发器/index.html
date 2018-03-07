@@ -75,17 +75,6 @@
             <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
             <!-- Dropdown Menu -->
 			 
-            <li>
-                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
-                <ul class="sb-submenu">
-                    
-                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
-                    
-                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
-                    
-                </ul>
-            </li>
-            
             
             
             <li>
@@ -162,7 +151,8 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <section id="intro">
+      
+<section id="intro">
     <div class="container">
         <div class="row col-md-offset-2">
             <div class="col-md-8">
@@ -173,7 +163,7 @@
     
     
     | 
-    <a href='/tags/《CODE》笔记整理/'>《CODE》笔记整理</a>
+    <a class="tags" href='/tags/《CODE》笔记整理/'>《CODE》笔记整理</a>
     
     
 </span>
@@ -181,7 +171,7 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>触发器<code>Flip-Flop</code>需要两组或非门电路：<br><br><img src="https://github.com/GeniusOrIdiot/blog-resources/blob/master/2018-02-26/%E8%A7%A6%E5%8F%91%E5%99%A8.png?raw=true" alt="触发器"></p>
+      		<p>触发器是使用时钟脉冲<code>CLK</code>触发存储动作的单元电路。<br><a id="more"></a><br>触发器<code>Flip-Flop</code>需要两组或非门电路：<br><br><img src="https://github.com/GeniusOrIdiot/blog-resources/blob/master/2018-02-26/%E8%A7%A6%E5%8F%91%E5%99%A8.png?raw=true" alt="触发器"></p>
 <ul>
 <li>特点：一组或非门的输入是另一组的输出。</li>
 <li>这种机制可以理解为<code>反馈</code>，两个或非门互相影响，构成互相之间状态受另一方制约的机制。</li>
@@ -193,6 +183,7 @@
 </ul>
 </li>
 </ul>
+<hr>
 <h2 id="1位锁存器"><a href="#1位锁存器" class="headerlink" title="1位锁存器"></a><code>1</code>位锁存器</h2><ul>
 <li><p>R-S触发器的设计：</p>
 <ul>
@@ -220,6 +211,7 @@
 </ul>
 </li>
 </ul>
+<hr>
 <h2 id="连续加法器"><a href="#连续加法器" class="headerlink" title="连续加法器"></a>连续加法器</h2><p>下图的设计原理：将加法器的结果输出给<code>8位锁存器</code>，然后再输出到<code>B</code>输入端作为加数与下一个输入的<code>A</code>加和，从而实现连续加和，用户只需要不断输入<code>A</code>的值即可。<br><img src="https://github.com/GeniusOrIdiot/blog-resources/blob/master/2018-02-26/%E8%BF%9E%E7%BB%AD%E5%8A%A0%E6%B3%95%E5%99%A8.png?raw=true" alt="连续加法器"></p>
 <ul>
 <li>首先，需要一个8位的锁存器——8个<code>D型触发器</code>相连，<code>Clk</code>串行（同一输入端）。</li>
@@ -240,13 +232,9 @@
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2018/03/02/一、门与逻辑运算/" style="float: left;">
-        ← 一、门与逻辑电路
-    </a>
     
-    
-    <a class="pull-right" href="/2018/02/10/Circle-queue/">
-        环形队列 →
+    <a class="pull-right" href="/2018/03/01/一、门与逻辑运算/">
+        一、门与逻辑电路 →
     </a>
     
 </nav>
