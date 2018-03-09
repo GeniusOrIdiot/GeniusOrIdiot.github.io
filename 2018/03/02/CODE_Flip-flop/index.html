@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Hello World | 俊のWEBSITE</title>
+  <title>二、触发器 | 俊のWEBSITE</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -67,7 +67,7 @@
 
     <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
         <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
-            <img src="/img/close.png" alt="Close"/>
+            <!-- <img src="/img/close.png" alt="Close"/> -->
         </div>
         <!-- Lists in Slidebars -->
         <ul class="sb-menu">
@@ -76,6 +76,15 @@
             <!-- Dropdown Menu -->
 			 
             
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Java/" class="animsition-link">Java<small>(2)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
             
             <li>
                 <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
@@ -157,35 +166,97 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2018-01-31T16:00:00.000Z" itemprop="datePublished">
-          2018-02-01
+      <time datetime="2018-03-02T01:09:21.288Z" itemprop="datePublished">
+          2018-03-02
       </time>
     
+    
+    | 
+    <a class="tags" href='/tags/《CODE》笔记整理/'>《CODE》笔记整理</a>
+    
+    
 </span>
-                <h1>Hello World</h1>
+                <h1>二、触发器</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>Get started with Hexo to publish your first post.<br><a id="more"></a></p>
-<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+      		<br>触发器<code>Flip-Flop</code>需要两组或非门电路：<br></p>
+<p><img src="/images/2018-02-26/触发器.png" alt="触发器"></p>
+<ul>
+<li>特点：一组或非门的输入是另一组的输出。</li>
+<li>这种机制可以理解为<code>反馈</code>，两个或非门互相影响，构成互相之间状态受另一方制约的机制。</li>
+<li>作用：<ul>
+<li>当闭合上面的开关时，灯泡点亮且即使再次断开上面的开关，灯泡也不会灭。</li>
+<li>这时再去闭合和断开下面的开关，灯泡就会熄灭且维持。</li>
+<li>你会发现，上面的开关只能点亮灯泡，而下面的开关只能熄灭灯泡。</li>
+<li>好像是灯泡会<code>记忆</code>改变它状态的开关一样。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="1位锁存器"><a href="#1位锁存器" class="headerlink" title="1位锁存器"></a><code>1</code>位锁存器</h2><ul>
+<li><p>R-S触发器的设计：</p>
+<ul>
+<li><code>R</code>用来复位<code>Reset</code>，<code>S</code>用来置位<code>Set</code>，<code>Q</code>和<code>Q-</code>记录输出状态。<br></li>
+</ul>
+<p><img src="/images/2018-02-26/R-S触发器.png" alt="R-S触发器"></p>
+<ul>
+<li>为了确保<code>Q</code>和<code>Q-</code>互异，我们不允许<code>R</code>和<code>S</code>同时为<code>1</code>。<br></li>
+</ul>
+<p><img src="/images/2018-02-26/R-S真值表.png" alt="R-S真值表"></p>
+</li>
+</ul>
+<ul>
+<li><p>保持位的设计：</p>
+<ul>
+<li>设置一个<code>保持位</code>，保持位控制数据端的输入：保持位为<code>0</code>，<code>复位</code>和<code>置位</code>输入无效，保持位为<code>1</code>，<code>复位</code>和<code>置位</code>输入将输出到<code>Q</code>和<code>Q-</code>。</li>
+<li>这就像我们键盘上的<code>Lock</code>，<code>NumLock</code>点亮时可以输入数字，关闭时，数字键盘失效。<br></li>
+</ul>
+<p><img src="/images/2018-02-26/保持位.png" alt="保持位"></p>
+</li>
+<li><p>电平触发的<code>D</code>型触发器：</p>
+<ul>
+<li>将<code>复位</code>和<code>置位</code>统一作为输入端，保持位作为控制端，设计使用电平<code>保持位</code>触发的数据<code>Data</code>输入控制器。这样的电路可以保存<code>1</code>位的二进制数据，所以又叫做<code>1位存储器</code>。<br></li>
+</ul>
+<p><img src="/images/2018-02-26/D型触发器.png" alt="D型触发器"></p>
+</li>
+<li><p><code>1</code>位存储器：<br><br><img src="/images/2018-02-26/1位锁存器.png" alt="1位锁存器"></p>
+<ul>
+<li>当<code>Clk=0</code>时，数据被保持，即“锁存”。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="连续加法器"><a href="#连续加法器" class="headerlink" title="连续加法器"></a>连续加法器</h2><p>下图的设计原理：将加法器的结果输出给<code>8位锁存器</code>，然后再输出到<code>B</code>输入端作为加数与下一个输入的<code>A</code>加和，从而实现连续加和，用户只需要不断输入<code>A</code>的值即可。<br></p>
+<p><img src="/images/2018-02-26/连续加法器.png" alt="连续加法器"></p>
+<ul>
+<li>首先，需要一个8位的锁存器——8个<code>D型触发器</code>相连，<code>Clk</code>串行（同一输入端）。</li>
+<li><p>边沿触发器——两个<code>R-S触发器</code>：</p>
+<ul>
+<li><p>要求：只有当<code>Clk</code>输入从<code>0</code>跳到<code>1</code>的瞬间，数据端输入才有效<br></p>
+<p><img src="/images/2018-02-26/边沿触发器.png" alt="边沿触发器"></p>
+</li>
+<li><p>实现原理：时钟位为<code>0</code>时，第二个<code>R-S触发器</code>处于保持位，第一个<code>R-S触发器</code>保存数据端输入到输出端(同时也是第二个<code>R-S触发器</code>的输入端)，时钟位变为<code>1</code>的瞬间，第一个<code>R-S触发器</code>被保持，其输出端数据输入到第二个<code>R-S触发器</code>输出结果。</p>
+</li>
+<li><code>注意</code>：从<code>1</code>变为<code>0</code>的瞬间无效，因为两个<code>R-S触发器</code>的输入输出是有次序的。</li>
+</ul>
+</li>
+<li><p><code>清零</code>的设计：</p>
+<p><img src="/images/2018-02-26/清零.png" alt="清零"></p>
+<ul>
+<li>当<code>清零</code>位为<code>0</code>时，或门输出不受影响；当<code>清零</code>位为<code>1</code>时，或门输出为<code>1</code>，或非门输出为<code>0</code>，即强制使Q端输出<code>0</code>。</li>
+</ul>
+</li>
+</ul>
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2018/02/03/ArrayList和LinkedList/" style="float: left;">
-        ← ArrayList和LinkedList
-    </a>
     
+    <a class="pull-right" href="/2018/03/01/CODE_gates/">
+        一、门与逻辑电路 →
+    </a>
     
 </nav>
 
