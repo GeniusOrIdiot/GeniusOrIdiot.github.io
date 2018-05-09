@@ -43,6 +43,12 @@
     <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
     <script src="/js/jquery-1.11.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
 
     <!-- Load these in the <head> for quicker IE8+ load times -->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -162,6 +168,7 @@
 
       
 <section id="intro">
+    <div id="screen"></div>
     <div class="container">
         <div class="row col-md-offset-2">
             <div class="col-md-8">
@@ -263,14 +270,18 @@
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
-        <nav class="pagination" role="pagination">
+        <div class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2018/05/08/Linear-Algebra_1/" style="float: left;">
+        ← 线性代数笔记-行列式
+    </a>
     
     
     <a class="pull-right" href="/2018/03/01/CODE_gates/">
         《CODE》读书笔记之一：门与逻辑电路 →
     </a>
     
-</nav>
+</div>
 
         <div class="duoshuo">
 
@@ -280,6 +291,14 @@
 </section>
 
 
+
+<!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['\$','\$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" src="/js/Math.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
 <!-- ============================ Footer =========================== -->
 
@@ -333,23 +352,6 @@
 <script src="/js/scripts.js"></script><!-- Theme scripts -->
 
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$('#intro').find('img').each(function(){
-  var alt = this.alt;
-
-  if (alt){
-    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
-  }
-
-  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
-});
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
-
 <!-- Initiate flexslider plugin -->
 <script type="text/javascript">
     $(document).ready(function($) {
@@ -374,6 +376,7 @@ $('#intro').find('img').each(function(){
       });
     });
 </script>
+<script src="/js/screen.js"></script><!-- Screen animation scripts -->
 
 </body>
 </html>

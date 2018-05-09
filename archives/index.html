@@ -43,6 +43,12 @@
     <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
     <script src="/js/jquery-1.11.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
 
     <!-- Load these in the <head> for quicker IE8+ load times -->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -160,10 +166,7 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      
-
-
-<section id="services">
+      <section id="services">
     <div class="container">
         <div class="row">
             <!-- <div class="collection-title" style="opacity: 1;display: block;transform: translateX(0px);">
@@ -173,6 +176,7 @@
             </div> -->
 
             <div class="col-md-8">
+                <h2>ARCHIVES</h2>
                 <div class="row boxes">
                     
                     
@@ -184,6 +188,24 @@
                                 2018年<span class="sb-caret"></span>
                             </a>
                             <ul class="sub-archives">
+                        
+                            <li>
+                            <span class="post-meta">05-09|</span>
+                            <a href="/2018/05/09/math/"></a>
+                            </li>
+                            
+                        
+                    
+                        
+                        
+                            <li>
+                            <span class="post-meta">05-08|</span>
+                            <a href="/2018/05/08/Linear-Algebra_1/">线性代数笔记-行列式</a>
+                            </li>
+                            
+                        
+                    
+                        
                         
                             <li>
                             <span class="post-meta">03-02|</span>
@@ -254,8 +276,7 @@
             </div>    
         </div>
     </div>
-</section> 
-
+</section>
 <section id="statement">
     <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
         <div class="row">
@@ -316,23 +337,6 @@
 <script src="/js/scripts.js"></script><!-- Theme scripts -->
 
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$('#intro').find('img').each(function(){
-  var alt = this.alt;
-
-  if (alt){
-    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
-  }
-
-  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
-});
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
-
 <!-- Initiate flexslider plugin -->
 <script type="text/javascript">
     $(document).ready(function($) {
@@ -357,6 +361,7 @@ $('#intro').find('img').each(function(){
       });
     });
 </script>
+<script src="/js/screen.js"></script><!-- Screen animation scripts -->
 
 </body>
 </html>

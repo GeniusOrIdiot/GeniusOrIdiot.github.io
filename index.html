@@ -43,6 +43,12 @@
     <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
     <script src="/js/jquery-1.11.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
 
     <!-- Load these in the <head> for quicker IE8+ load times -->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -186,6 +192,82 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3 class="text-underline"><a href="/2018/05/09/math/"></a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-05-09T01:28:58.408Z" itemprop="datePublished">
+          2018-05-09
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p class="index-excerpt">
+                      
+                        
+
+
+MathJax TeX Test Page
+
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+
+
+
+
+
+When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are  $(-1)^ta_{1p_1}a_{2p_2}…a_{np_n}$都可
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/05/09/math/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3 class="text-underline"><a href="/2018/05/08/Linear-Algebra_1/">线性代数笔记-行列式</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-05-08T12:34:04.000Z" itemprop="datePublished">
+          2018-05-08
+      </time>
+    
+    
+    | 
+    <a class="tags" href='/tags/高等数学/'>高等数学</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p class="index-excerpt">
+                      
+                        <p>从今天开始把大学错过的高数补起来！<br>Flag已经树起来，还在等什么呢？！<br>
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/05/08/Linear-Algebra_1/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -446,23 +528,6 @@
 <script src="/js/scripts.js"></script><!-- Theme scripts -->
 
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$('#intro').find('img').each(function(){
-  var alt = this.alt;
-
-  if (alt){
-    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
-  }
-
-  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
-});
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
-
 <!-- Initiate flexslider plugin -->
 <script type="text/javascript">
     $(document).ready(function($) {
@@ -487,6 +552,7 @@ $('#intro').find('img').each(function(){
       });
     });
 </script>
+<script src="/js/screen.js"></script><!-- Screen animation scripts -->
 
 </body>
 </html>
