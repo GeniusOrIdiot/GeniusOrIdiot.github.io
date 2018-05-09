@@ -50,6 +50,10 @@
       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
+    <script src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
+    <script>AV.init({ appId: "g04PEg8k1bxRk5oswxE8WOBE-gzGzoHsz", appKey: "6uBidtbQ9O8fOYnN3EAnDTYd"});</script>
+
+
     <!-- Load these in the <head> for quicker IE8+ load times -->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -168,7 +172,6 @@
 
       
 <section id="intro">
-    <div id="screen"></div>
     <div class="container">
         <div class="row col-md-offset-2">
             <div class="col-md-8">
@@ -184,12 +187,13 @@
     
 </span>
                 <h1>线性代数笔记-行列式</h1>
+                阅读数:
+                    <span id="/2018/05/08/Linear-Algebra_1/" class="leancloud_visitors" data-flag-title="线性代数笔记-行列式"></span>次
+                
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
       		</p>
-<ul>
-<li><p>行列式</p>
 <ul>
 <li><p>对角线法则</p>
 </li>
@@ -235,7 +239,7 @@
 <ul>
 <li><p><strong>定理1：</strong>一个排列中任意两个元素对换，排列改变奇偶性</p>
 <blockquote>
-<p>$m$与$a_n（m&lt;n）$交换，$a_m$经过$n-m$次相邻对换到$a_n$的右边，$a_n$经过$n-m-1$次相邻对换到原来$a_m$的位置，每次相邻对换排列的逆序数$±1$，则一共操作$2n-2m-1$次，奇偶性改变</p>
+<p>$a_m$与$a_n（m&lt;n）$交换，$a_m$经过$n-m$次相邻对换到$a_n$的右边，$a_n$经过$n-m-1$次相邻对换(相邻两个元素交换位置)到原来$a_m$的位置，每次相邻对换排列的逆序数$±1$，则一共操作$2n-2m-1$次，奇偶性改变</p>
 </blockquote>
 </li>
 <li><p><strong>定理2</strong>：$n$阶行列式还可以定义为：</p>
@@ -251,18 +255,25 @@
 </li>
 <li><p>行列式的性质</p>
 <ul>
-<li>行列式转置后<strong>值不变</strong></li>
-<li>行列式互换两行/列其<strong>值变号</strong></li>
-<li>有两行/列完全相同(<strong>或对应成比例</strong>)的行列式<strong>值等于零</strong></li>
-<li>对行列式的一行/列数乘$k$行列式的<strong>值也数乘$k$</strong></li>
-<li>行列式的某一行/列可以拆分，行列式整体伴随拆分，<strong>值为拆分后的行列式之和</strong></li>
-<li>将行列式某一行/列数乘$k$再加到另一行/列，行列式<strong>值不变</strong></li>
+<li><strong>性质1：</strong>行列式转置后<strong>值不变</strong></li>
+<li><strong>性质2：</strong>行列式互换两行/列其<strong>值变号</strong></li>
+<li><strong>性质3：</strong>有两行/列完全相同(<strong>或对应成比例</strong>)的行列式<strong>值等于零</strong></li>
+<li><strong>性质4：</strong>对行列式的一行/列数乘$k$行列式的<strong>值也数乘$k$</strong></li>
+<li><strong>性质5：</strong>行列式的某一行/列可以拆分，行列式整体伴随拆分，<strong>值为拆分后的行列式之和</strong></li>
+<li><strong>性质6：</strong>将行列式某一行/列数乘$k$再加到另一行/列，行列式<strong>值不变</strong></li>
 <li>$r_i$：行列式的第$i$行</li>
 <li>$c_i$：行列式的第$i$列</li>
 <li>$r_i←→r_j$：交换两行</li>
 <li>$c_i←→c_j$：交换两列</li>
+<li>$r_i*k$：第$i$行数乘$k$</li>
+<li>$r_i+kr_j​$：第$i​$行加第$j​$行数乘$k​$，常用于消元，将元素化为$0​$</li>
+<li>$P_{12}$~例8：很骚~</li>
+<li>$P_{14}$~例10：更骚~</li>
 </ul>
 </li>
+<li><p>行列式按行/列展开</p>
+<ul>
+<li></li>
 </ul>
 </li>
 </ul>
@@ -285,15 +296,6 @@
     </div>
 </section>
 
-
-
-<!-- mathjax config similar to math.stackexchange -->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['\$','\$'], ['\\(','\\)']]}
-});
-</script>
-<script type="text/javascript" src="/js/Math.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
 <!-- ============================ Footer =========================== -->
 
@@ -368,6 +370,48 @@ MathJax.Hub.Config({
         nextText: "",
         directionNav: true
       });
+    });
+</script>
+
+
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+    var APP_ID = 'g04PEg8k1bxRk5oswxE8WOBE-gzGzoHsz';
+    var APP_KEY = '6uBidtbQ9O8fOYnN3EAnDTYd';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count 
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+   // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
     });
 </script>
 
