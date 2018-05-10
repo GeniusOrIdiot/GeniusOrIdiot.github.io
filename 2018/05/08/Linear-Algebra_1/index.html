@@ -193,7 +193,8 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<ul>
+      		</p>
+<ul>
 <li><p>对角线法则</p>
 </li>
 <li><p>全排列：$n$个不同元素的全排列有$n!$个</p>
@@ -272,9 +273,22 @@
 </li>
 <li><p>行列式按行/列展开</p>
 <ul>
-<li>在$n$阶行列式中，将$a_{ij}$所在的第$i$行和第$j$列划去后，留下的$n-1$阶行列式$a_{ij}$元素的<strong><em>余子式</em></strong>，记作：$M_{ij}$</li>
-<li>$A_{ij} = (-1)^{i+j}M_{ij}$：$A_{ij}$叫做$a_{ij}$的<strong><em>代数余子式</em></strong></li>
-<li><strong>引理：</strong>若$n$阶行列式第$i$行除了$a_{ij}$外都是<strong><em>零</em></strong>，那么这个行列式等于$a_{ij}$与它的<strong><em>代数余子式</em></strong>的乘积：$$D=a_{ij}A_{ij}$$</li>
+<li><p>在$n$阶行列式中，将$a_{ij}$所在的第$i$行和第$j$列划去后，留下的$n-1$阶行列式$a_{ij}$元素的<strong><em>余子式</em></strong>，记作：$M_{ij}$</p>
+</li>
+<li><p>$a_{ij}$的<strong><em>代数余子式</em></strong>：$A_{ij}$</p>
+<p>$$A_{ij} = (-1)^{i+j}M_{ij}$$</p>
+</li>
+<li><p><strong>引理：</strong>若$n$阶行列式第$i$行除了$a_{ij}$外都是<strong><em>零</em></strong>，那么这个行列式等于$a_{ij}$与它的<strong><em>代数余子式</em></strong>的乘积：$$D=a_{ij}A_{ij}$$</p>
+<ul>
+<li><p>实际上，将第$i$行交换到第$1$行，然后将第$j$列交换到第$1$列，就会出现类似于$P_{14}$~例10的情形，自然可以得到：$$D=a_{ij}M_{ij}$$</p>
+<p>又因为交换了$i+j-2$次，所以需要乘以$(-1)^{i+j-2}$，忽略$-2$，即：$$D=a_{ij}(-1)^{i+j-2}M_{ij}=a_{ij}A_{ij}$$</p>
+</li>
+</ul>
+</li>
+<li><p><strong>定理3：</strong>行列式等于它的任一行/列的各元素与其对应代数余子式乘积之和，即：$$D=a_{i1}A_{i1}+a_{i2}A_{i2}+…+a_{in}A_{in}$$</p>
+</li>
+<li><p>范德蒙德($Vandermonde$)行列式：<br>$$<br>\begin{vmatrix}<br>1 &amp; 1 &amp; … &amp; 1 \\<br>x_1 &amp; x_2 &amp; … &amp; x_n \\<br>x_1^2 &amp; x_2^2 &amp; … &amp; x_n ^2\\<br>… \\<br>x_1^{n-1} &amp; x_2^{n-1} &amp; … &amp; x_n ^{n-1}\\<br>\end{vmatrix}=\prod_{n\ge i\gt j \ge 1}(x_i-x_j)<br>$$<br>用数学归纳法证明，详见：$P_{18}$</p>
+</li>
 <li></li>
 </ul>
 </li>
