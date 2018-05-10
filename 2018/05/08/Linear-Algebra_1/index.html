@@ -193,8 +193,7 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		</p>
-<ul>
+      		<ul>
 <li><p>对角线法则</p>
 </li>
 <li><p>全排列：$n$个不同元素的全排列有$n!$个</p>
@@ -266,13 +265,16 @@
 <li>$r_i←→r_j$：交换两行</li>
 <li>$c_i←→c_j$：交换两列</li>
 <li>$r_i*k$：第$i$行数乘$k$</li>
-<li>$r_i+kr_j​$：第$i​$行加第$j​$行数乘$k​$，常用于消元，将元素化为$0​$</li>
+<li>$r_i+kr_j$：第$i$行加第$j$行数乘$k$，常用于消元，将元素化为$0$</li>
 <li>$P_{12}$~例8：很骚~</li>
 <li>$P_{14}$~例10：更骚~</li>
 </ul>
 </li>
 <li><p>行列式按行/列展开</p>
 <ul>
+<li>在$n$阶行列式中，将$a_{ij}$所在的第$i$行和第$j$列划去后，留下的$n-1$阶行列式$a_{ij}$元素的<strong><em>余子式</em></strong>，记作：$M_{ij}$</li>
+<li>$A_{ij} = (-1)^{i+j}M_{ij}$：$A_{ij}$叫做$a_{ij}$的<strong><em>代数余子式</em></strong></li>
+<li><strong>引理：</strong>若$n$阶行列式第$i$行除了$a_{ij}$外都是<strong><em>零</em></strong>，那么这个行列式等于$a_{ij}$与它的<strong><em>代数余子式</em></strong>的乘积：$$D=a_{ij}A_{ij}$$</li>
 <li></li>
 </ul>
 </li>

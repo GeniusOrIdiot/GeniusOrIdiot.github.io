@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>俊のWEBSITE</title>
+  <title>Tag: Math | 俊のWEBSITE</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -47,8 +47,12 @@
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
     <script type="text/javascript" async
-      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
+
+    <script src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
+    <script>AV.init({ appId: "g04PEg8k1bxRk5oswxE8WOBE-gzGzoHsz", appKey: "6uBidtbQ9O8fOYnN3EAnDTYd"});</script>
+
 
     <!-- Load these in the <head> for quicker IE8+ load times -->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -65,7 +69,7 @@
 </head>
 
 <!--
-<body class="post-template">
+<body class="home-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -166,65 +170,51 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      
-<section id="intro">
-    <div id="screen"></div>
+      <section id="services">
     <div class="container">
-        <div class="row col-md-offset-2">
+        <div class="row">
+            <!-- <div class="collection-title" style="opacity: 1;display: block;transform: translateX(0px);">
+                <h1 class="archives-year" style="opacity: 1;display: block;transform: translateX(0px);">
+                    
+                </h1>
+            </div> -->
+
             <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2018-05-09T01:28:58.408Z" itemprop="datePublished">
-          2018-05-09
-      </time>
-    
-</span>
-                <h1></h1>
-            </div>
+                <h2>ARCHIVES</h2>
+                <div class="row boxes">
+                    
+                    
+                        
+                        
+                            
+                                </ul>
+                                </div>
+                            
+                            <div class="archive">
+                            <a class="archives-year">
+                                2018年<span class="sb-caret"></span>
+                            </a>
+                            <ul class="sub-archives">
+                        
+                            <li>
+                            <span class="post-meta">02-07|</span>
+                            <a href="/2018/02/07/sqrt_code/">求平方根代码实现</a>
+                            </li>
+                            
+                        
+                    
+                </div>
+            </div>    
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<!DOCTYPE html>
-<html>
-<head>
-<title>MathJax TeX Test Page</title>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-</script>
-<script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-</head>
-<body>
-When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are  $(-1)^ta_{1p_1}a_{2p_2}…a_{np_n}$都可以对换成$s$唯一确定的$(-1)^sa_{p_11}a_{p_22}…a_{p_nn}$
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
-</body>
-</html>
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <div class="pagination" role="pagination">
-    
-    
-    <a class="pull-right" href="/2018/05/08/Linear-Algebra_1/">
-        线性代数笔记-行列式 →
-    </a>
-    
-</div>
-
-        <div class="duoshuo">
-
-
-</div>
     </div>
 </section>
-
-
-
-<!-- mathjax config similar to math.stackexchange -->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['\$','\$'], ['\\(','\\)']]}
-});
-</script>
-<script type="text/javascript" src="/js/Math.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>三尺微命，一介书生</p>
+        </div>
+    </div>
+</section>
       
 <!-- ============================ Footer =========================== -->
 
@@ -282,7 +272,6 @@ MathJax.Hub.Config({
 <script type="text/javascript">
     $(document).ready(function($) {
       (function(){
-        console.log('font');
         var getCss = function(path) {
           var head = document.getElementsByTagName('head')[0];
           link = document.createElement('link');
@@ -302,7 +291,48 @@ MathJax.Hub.Config({
       });
     });
 </script>
-<script src="/js/screen.js"></script><!-- Screen animation scripts -->
+
+
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+    var APP_ID = 'g04PEg8k1bxRk5oswxE8WOBE-gzGzoHsz';
+    var APP_KEY = '6uBidtbQ9O8fOYnN3EAnDTYd';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count 
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+   // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+</script>
 
 </body>
 </html>

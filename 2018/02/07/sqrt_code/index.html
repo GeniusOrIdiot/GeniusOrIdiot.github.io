@@ -180,6 +180,13 @@
           2018-02-07
       </time>
     
+    
+    | 
+    <a class="tags" href='/tags/Math/'>Math</a>,
+    
+    <a class="tags" href='/tags/Java/'>Java</a>
+    
+    
 </span>
                 <h1>求平方根代码实现</h1>
                 阅读数:
@@ -232,7 +239,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h4><p><a href="http://note.youdao.com/noteshare?id=bd5bb6b518cedd9e1ee17f9cc6d546a5" target="_blank" rel="noopener">位数迭代求平方根</a></p>
+<h4 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h4><p><a href="http://note.youdao.com/noteshare?id=bd5bb6b518cedd9e1ee17f9cc6d546a5" target="_blank" rel="noopener"><strong>→位数迭代求平方根←</strong></a></p>
 <hr>
 <h3 id="二分法—原来可以这么简单！"><a href="#二分法—原来可以这么简单！" class="headerlink" title="二分法—原来可以这么简单！"></a>二分法—原来可以这么简单！</h3><ul>
 <li>二分法，是逼近求根问题中经常用到的一种数学方法。</li>
@@ -248,20 +255,20 @@
 </li>
 <li>所以代码上需要加以判断区分。</li>
 </ul>
-<h4 id="代码实现：-1"><a href="#代码实现：-1" class="headerlink" title="代码实现："></a>代码实现：</h4><p><a href="http://note.youdao.com/noteshare?id=fbdbb3747432df9e14376104c88620a2" target="_blank" rel="noopener">二分法求平方根</a></p>
+<h4 id="代码实现：-1"><a href="#代码实现：-1" class="headerlink" title="代码实现："></a>代码实现：</h4><p><a href="http://note.youdao.com/noteshare?id=fbdbb3747432df9e14376104c88620a2" target="_blank" rel="noopener"><strong>→二分法求平方根←</strong></a></p>
 <hr>
 <h3 id="进阶—牛顿迭代法"><a href="#进阶—牛顿迭代法" class="headerlink" title="进阶—牛顿迭代法"></a>进阶—牛顿迭代法</h3><ul>
 <li>我先举个简单的例子来描述一下这样的场景：</li>
 <li>在你面前，有一个球体，比如说这样的：<br><img src="/images/2018-02-07/球体.jpg" alt="球体"></li>
 <li>相信大家对于这种类似的球体，尤其是大型的，会有一种感觉，就是球底部接近地面的地方，总是会照不到阳光。</li>
 <li>如果有观察的比较细致的同学，可能会发现更奇妙的事情，随着阳光的推移，照射到球体产生的阴影会变大、变小，就是大概这样一个过程：<ul>
-<li><a href="https://ggbm.at/tjjdABQR" target="_blank" rel="noopener">圆的切线轨迹</a></li>
+<li><a href="https://ggbm.at/tjjdABQR" target="_blank" rel="noopener"><strong>→圆的切线轨迹←</strong></a></li>
 </ul>
 </li>
 <li>仔细一看，这道光线其实是在逼近底部那个我们想照到的位置的。</li>
 <li>贴着球面的那道光线，我们称之为“切线”。其实很多曲线的切线都有这样很直观的感觉，要求二次方根，去探索二次函数的曲线是个比较靠谱的思考方向。</li>
 <li>那么，我们就来看一下下面这幅图：<br><img src="/images/2018-02-07/1517471564063.jpg" alt="image"><ul>
-<li><a href="https://ggbm.at/dQgBFdW7" target="_blank" rel="noopener">二次函数切线轨迹</a></li>
+<li><a href="https://ggbm.at/dQgBFdW7" target="_blank" rel="noopener"><strong>→二次函数切线轨迹←</strong></a></li>
 </ul>
 </li>
 <li>二次方根是可以逼近的。</li>
@@ -269,8 +276,9 @@
 <li>思路有了，然后就需要有一些知识储备来完成我们的想法了。首先，就是切线，这个东西呢，和导数有关，导数呢，又和微积分有关，牵扯太多，我们暂不管这些～我们只需要以太阳光照射一个弧面产生阴影的例子来理解就好了。<br><img src="/images/2018-02-07/1517971450481.jpg" alt="image"></li>
 <li>现在假设我们有了求切线的工具，可以得到下图B点的位置了，这样，B点显然要比A点离根值点近了，然后我们再以B点为准，找到二次函数曲线上对应的C点，再做一次刚才的步骤，得到D点，D点又更加接近了。</li>
 </ul>
-<h4 id="代码实现：-2"><a href="#代码实现：-2" class="headerlink" title="代码实现："></a>代码实现：</h4><p>网上有现成的公式，不过，有兴趣的同学可以自己推导一遍。</p>
-<h2 id="牛顿迭代求平方根"><a href="#牛顿迭代求平方根" class="headerlink" title="牛顿迭代求平方根"></a><a href="http://note.youdao.com/noteshare?id=a2e3f2eceac86521163f146c9f88c9e8" target="_blank" rel="noopener">牛顿迭代求平方根</a></h2><p>本文可以参考：</p>
+<h4 id="代码实现：-2"><a href="#代码实现：-2" class="headerlink" title="代码实现："></a>代码实现：</h4><p>网上有现成的公式，不过，有兴趣的同学可以自己推导一遍。<br><a href="http://note.youdao.com/noteshare?id=a2e3f2eceac86521163f146c9f88c9e8" target="_blank" rel="noopener"><strong>→牛顿迭代求平方根←</strong></a></p>
+<hr>
+<p>本文可以参考：</p>
 <ul>
 <li><a href="http://www.matongxue.com/madocs/205.html#/madoc" target="_blank" rel="noopener">如何通俗易懂地讲解牛顿迭代法</a></li>
 <li><a href="http://blog.csdn.net/wangxiaojun911/article/details/18203333" target="_blank" rel="noopener">牛顿迭代法(Newton’s Method)</a></li>
