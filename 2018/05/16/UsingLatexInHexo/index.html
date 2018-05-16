@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>《CODE》读书笔记之一：门与逻辑电路 | 俊のWEBSITE</title>
+  <title>在Hexo使用Latex写公式 | 俊のWEBSITE</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -178,113 +178,45 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2018-02-28T16:00:00.000Z" itemprop="datePublished">
-          2018-03-01
+      <time datetime="2018-05-16T00:36:19.000Z" itemprop="datePublished">
+          2018-05-16
       </time>
     
     
     | 
-    <a class="tags" href='/tags/《CODE》笔记整理/'>《CODE》笔记整理</a>
+    <a class="tags" href='/tags/Hexo/'>Hexo</a>,
+    
+    <a class="tags" href='/tags/Latex/'>Latex</a>,
+    
+    <a class="tags" href='/tags/Mathjax/'>Mathjax</a>
     
     
 </span>
-                <h1>《CODE》读书笔记之一：门与逻辑电路</h1>
+                <h1>在Hexo使用Latex写公式</h1>
                 阅读数:
-                    <span id="/2018/03/01/CODE_gates/" class="leancloud_visitors" data-flag-title="《CODE》读书笔记之一：门与逻辑电路"></span>次
+                    <span id="/2018/05/16/UsingLatexInHexo/" class="leancloud_visitors" data-flag-title="在Hexo使用Latex写公式"></span>次
                 
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
       		</p>
-<p>有人认为<code>门</code>是以<code>Bill Gates</code>(gate，即大门)的名字来命名的，其实只是巧合。<code>门</code>可以理解为电路的门或电流的阀门。</p>
+<h3 id="在Hexo使用Latex写公式"><a href="#在Hexo使用Latex写公式" class="headerlink" title="在Hexo使用Latex写公式"></a>在Hexo使用Latex写公式</h3><p>最近在看《线性代数》，想用<code>Markdown</code>记一些笔记，要画不少公式，<code>Typera</code>完美兼容<code>Latex</code>， 一直用得很爽~~~直到我想把笔记移植到我的Hexo博客上时……</p>
 <hr>
-<h2 id="继电器"><a href="#继电器" class="headerlink" title="继电器"></a>继电器</h2><ul>
-<li><p>继电器像开关一样，但它优于开关之处在于，它可以被其它继电器触发。</p>
-<p>  <img src="/images/2018-02-11/继电器.png" alt="继电器"></p>
-</li>
-</ul>
-<hr>
-<h2 id="逻辑门-Logic-Gates"><a href="#逻辑门-Logic-Gates" class="headerlink" title="逻辑门(Logic Gates)"></a>逻辑门(Logic Gates)</h2><p>连接继电器是建立逻辑门的关键。</p>
-<ul>
-<li>反向器：<ul>
-<li>反向器并不能称之为<code>门</code>，一般使用两个以上的输入才能称之为门</li>
-<li>反向器的作用正如它的名字一样，当输入0时，输出为1；当输入1时，输出为0</li>
-<li>习惯上称为非门，符号是<code>^</code>，命名为<code>NOT</code></li>
-</ul>
-</li>
-<li>与门<ul>
-<li>与门的符号是<code>&amp;</code>，命名为<code>AND</code></li>
-</ul>
-</li>
-<li>或门<ul>
-<li>或门的符号是<code>|</code>，命名为<code>OR</code></li>
-</ul>
-</li>
-<li>与非门<ul>
-<li>符号：<code>^&amp;</code>，命名：<code>NAND</code></li>
-</ul>
-</li>
-<li>或非门<ul>
-<li>符号：<code>^|</code>，命名：<code>NOR</code></li>
-</ul>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>逻辑门</th>
-<th>电路</th>
-<th>图示</th>
-<th>真值表</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>非门</td>
-<td><img src="/images/2018-02-11/非门电路.png" alt="非门电路"></td>
-<td><img src="/images/2018-02-11/非元件.png" alt="非元件"></td>
-<td></td>
-</tr>
-<tr>
-<td>与门</td>
-<td><img src="/images/2018-02-11/与电路.png" alt="与电路"></td>
-<td><img src="/images/2018-02-11/与元件.png" alt="与元件"></td>
-<td><img src="/images/2018-02-11/与真值.png" alt="与真值"></td>
-</tr>
-<tr>
-<td>或门</td>
-<td><img src="/images/2018-02-11/或电路.png" alt="或电路"></td>
-<td><img src="/images/2018-02-11/或元件.png" alt="或元件"></td>
-<td><img src="/images/2018-02-11/或真值.png" alt="或真值"></td>
-</tr>
-<tr>
-<td>与非门</td>
-<td><img src="/images/2018-02-11/与非电路.png" alt="与非电路"></td>
-<td><img src="/images/2018-02-11/与非元件.png" alt="与非元件"></td>
-<td><img src="/images/2018-02-11/与非真值.png" alt="与非真值"></td>
-</tr>
-<tr>
-<td>或非门</td>
-<td><img src="/images/2018-02-11/或非电路.png" alt="或非电路"></td>
-<td><img src="/images/2018-02-11/或非元件.png" alt="或非元件"></td>
-<td><img src="/images/2018-02-11/或非真值.png" alt="或非真值"></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h2><p>逻辑门实现的依据是逻辑运算</p>
+<h4 id="1-Latex的安装"><a href="#1-Latex的安装" class="headerlink" title="1. Latex的安装"></a>1. Latex的安装</h4><p>第一步就挂了……<code>copy</code>过来发现全是代码，根本没有转化成公式，猜到会有引擎这么个玩意儿，就去查怎么安装，推荐比较多的是用<code>Mathjax</code>引用<code>js</code>文件就可以的，这里给个官方的说明文档：<a href="http://docs.mathjax.org/en/latest/index.html" target="_blank" rel="noopener">Mathjax</a></p>
+<p>我知道你不会傻傻去看英文文档的，那就简单点，直接给重点吧：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-mathjax-config"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">MathJax.Hub.Config(&#123;</span></span><br><span class="line"><span class="undefined">  tex2jax: &#123;inlineMath: [['$','$'], ['\\(','\\)']]&#125;</span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"path-to-mathjax/MathJax.js?config=TeX-AMS_CHTML"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>Config</code>里配置的是行内公式的格式，用<code>\(</code>和<code>\)</code>的话需要对<code>\</code>转义(<strong><em>转义的坑有很多，后面会提到</em></strong>)</p>
+<p>不过这里有个问题<code>path-to-mathjax</code>这个路径是你的<code>Mathkax.js</code>文件的位置，然而你并没有这个文件，所以我偷个懒，直接用了别人的~  把这里的<code>src</code>改成<code>https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML</code>。</p>
+<p>把这段代码拷到你的<code>theme</code>文件夹里公共的配置<code>js</code>的文件里，一般来说就是<code>casper</code>目录下的<code>post.ejs</code>或<code>head.ejs</code>文件里。</p>
+<h4 id="2-公式的书写"><a href="#2-公式的书写" class="headerlink" title="2. 公式的书写"></a>2. 公式的书写</h4>
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <div class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2018/03/02/CODE_Flip-flop/" style="float: left;">
-        ← 《CODE》读书笔记之二：触发器
-    </a>
     
-    
-    <a class="pull-right" href="/2018/02/10/Circle-queue/">
-        环形队列 →
+    <a class="pull-right" href="/2018/05/08/Linear-Algebra_1/">
+        线性代数笔记-行列式 →
     </a>
     
 </div>

@@ -43,6 +43,7 @@
     <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
     <script src="/js/jquery-1.11.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+    <!-- Mathjax with Latex -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
@@ -50,6 +51,7 @@
       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
+    <!-- 阅读统计 -->
     <script src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
     <script>AV.init({ appId: "g04PEg8k1bxRk5oswxE8WOBE-gzGzoHsz", appKey: "6uBidtbQ9O8fOYnN3EAnDTYd"});</script>
 
@@ -288,6 +290,13 @@
 <li><p><strong>定理3：</strong>行列式等于它的任一行/列的各元素与其对应代数余子式乘积之和，即：$$D=a_{i1}A_{i1}+a_{i2}A_{i2}+…+a_{in}A_{in}$$</p>
 </li>
 <li><p>范德蒙德($Vandermonde$)行列式：<br>$$<br>\begin{vmatrix}<br>1 &amp; 1 &amp; … &amp; 1 \\<br>x_1 &amp; x_2 &amp; … &amp; x_n \\<br>x_1^2 &amp; x_2^2 &amp; … &amp; x_n ^2\\<br>… \\<br>x_1^{n-1} &amp; x_2^{n-1} &amp; … &amp; x_n ^{n-1}\\<br>\end{vmatrix}=\prod_{n\ge i\gt j \ge 1}(x_i-x_j)<br>$$<br>用数学归纳法证明，详见：$P_{18}$</p>
+<p>基本思想：把第一列全部化为$0$，然后通过行列式展开消去</p>
+</li>
+<li><p><strong>推论：</strong>行列式某一行/列各元素与另一行/列对应位置元素的代数余子式乘积之和等于零，即：</p>
+<p>$$a_{i1}A_{j1}+a_{i2}A_{j2}+…+a_{in}A_{jn}=0（i\ne j）$$</p>
+<p>证明思路：<strong>偷梁换柱</strong></p>
+</li>
+<li><p><strong>定理3</strong>和<strong>推论</strong>可以表示为(行展开)：<br>$$<br>\sum_{k=1}^na_{ki}A_{kj}=Dδ_{ij}=<br>\left \{<br>\begin{aligned}<br>D, i=j \\<br>0, i \ne j<br>\end{aligned}<br>\right.<br>$$<br>换成列展开亦然</p>
 </li>
 <li></li>
 </ul>
@@ -297,6 +306,10 @@
             <hr class="nogutter">
         </div>
         <div class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2018/05/16/UsingLatexInHexo/" style="float: left;">
+        ← 在Hexo使用Latex写公式
+    </a>
     
     
     <a class="pull-right" href="/2018/03/02/CODE_Flip-flop/">
