@@ -491,6 +491,14 @@
     
 
     
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/1526912730793.jpg" alt="MDMORY wechat" style="width: 200px; max-width: 100%;"/>
+    <div>Subscribe to my blog by scanning my public wechat account</div>
+</div>
+
+      </div>
+    
 
     
 
@@ -1059,12 +1067,11 @@
       
           pbOptions.boxForm = "horizontal";
       
-          pbOptions.position = "topRight";
+          pbOptions.position = "middleRight";
       
-          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+          pbOptions.networks = "QQZone,Wechat,Facebook";
       
-      console.log()
-      new needShareDropdown(document.getElementById('needsharebutton-postbottom'), pbOptions);
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
     
     
   </script>
