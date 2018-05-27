@@ -112,25 +112,32 @@
 
 
 
-  <meta name="description" content="同济大学-《线性代数》第$5$版">
-<meta name="keywords" content="Linear Algebra">
+  <meta name="description" content="预测房价、预测股价、天气预报判断是否下雨……这里面究竟隐藏着哪些不为人知的秘密？ 接下来让我们初窥机器学习之监督学习Supervidesd Learning的奥秘！ (真是相当中二的开场白了……🤣)">
+<meta name="keywords" content="Machine Learning,Andrew Ng">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线性代数笔记-行列式">
-<meta property="og:url" content="http://geniusoridiot.github.io/2018/05/08/Linear-Algebra_1/index.html">
+<meta property="og:title" content="机器学习-SupervisedLearning">
+<meta property="og:url" content="http://geniusoridiot.github.io/2018/05/26/MachineLearning-SupervisedLearning/index.html">
 <meta property="og:site_name" content="俊のWEBSITE">
-<meta property="og:description" content="同济大学-《线性代数》第$5$版">
+<meta property="og:description" content="预测房价、预测股价、天气预报判断是否下雨……这里面究竟隐藏着哪些不为人知的秘密？ 接下来让我们初窥机器学习之监督学习Supervidesd Learning的奥秘！ (真是相当中二的开场白了……🤣)">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2018-05-24T09:46:57.456Z">
+<meta property="og:image" content="http://geniusoridiot.github.io/images/MachineLearning-Supervised/scores.jpg">
+<meta property="og:image" content="http://geniusoridiot.github.io/images/MachineLearning-Supervised/scores-2.jpg">
+<meta property="og:image" content="http://geniusoridiot.github.io/images/MachineLearning-Supervised/scores-3.jpg">
+<meta property="og:image" content="http://geniusoridiot.github.io/images/MachineLearning-Supervised/wish.jpg">
+<meta property="og:image" content="http://geniusoridiot.github.io/images/MachineLearning-Supervised/cancer.jpg">
+<meta property="og:image" content="http://geniusoridiot.github.io/images/MachineLearning-Supervised/cancer-2.jpg">
+<meta property="og:updated_time" content="2018-05-27T07:07:49.604Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线性代数笔记-行列式">
-<meta name="twitter:description" content="同济大学-《线性代数》第$5$版">
+<meta name="twitter:title" content="机器学习-SupervisedLearning">
+<meta name="twitter:description" content="预测房价、预测股价、天气预报判断是否下雨……这里面究竟隐藏着哪些不为人知的秘密？ 接下来让我们初窥机器学习之监督学习Supervidesd Learning的奥秘！ (真是相当中二的开场白了……🤣)">
+<meta name="twitter:image" content="http://geniusoridiot.github.io/images/MachineLearning-Supervised/scores.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://geniusoridiot.github.io/2018/05/08/Linear-Algebra_1/"/>
+  <link rel="canonical" href="http://geniusoridiot.github.io/2018/05/26/MachineLearning-SupervisedLearning/"/>
 
 
 
@@ -140,7 +147,7 @@
   };
 </script>
 
-  <title>线性代数笔记-行列式 | 俊のWEBSITE</title>
+  <title>机器学习-SupervisedLearning | 俊のWEBSITE</title>
   
 
 
@@ -324,7 +331,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://geniusoridiot.github.io/2018/05/08/Linear-Algebra_1/">
+    <link itemprop="mainEntityOfPage" href="http://geniusoridiot.github.io/2018/05/26/MachineLearning-SupervisedLearning/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MDMORY">
@@ -341,7 +348,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">线性代数笔记-行列式
+          <h1 class="post-title" itemprop="name headline">机器学习-SupervisedLearning
               
             
           </h1>
@@ -366,7 +373,7 @@
                 
               
 
-              <time title="創建時間：2018-05-08 20:34:04" itemprop="dateCreated datePublished" datetime="2018-05-08T20:34:04+08:00">2018-05-08</time>
+              <time title="創建時間：2018-05-26 09:36:19" itemprop="dateCreated datePublished" datetime="2018-05-26T09:36:19+08:00">2018-05-26</time>
             
 
             
@@ -383,7 +390,7 @@
                 
                   <span class="post-meta-item-text">更新於</span>
                 
-                <time title="修改時間：2018-05-24 17:46:57" itemprop="dateModified" datetime="2018-05-24T17:46:57+08:00">2018-05-24</time>
+                <time title="修改時間：2018-05-27 15:07:49" itemprop="dateModified" datetime="2018-05-27T15:07:49+08:00">2018-05-27</time>
               
             
           </span>
@@ -404,6 +411,13 @@
 
                 
                 
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Math/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a></span>
+
+                
+                
               
             </span>
           
@@ -415,8 +429,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/08/Linear-Algebra_1/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">評論數：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/08/Linear-Algebra_1/" itemprop="commentsCount"></span>
+                <a href="/2018/05/26/MachineLearning-SupervisedLearning/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">評論數：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/26/MachineLearning-SupervisedLearning/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -424,7 +438,7 @@
 
           
           
-             <span id="/2018/05/08/Linear-Algebra_1/" class="leancloud_visitors" data-flag-title="线性代数笔记-行列式">
+             <span id="/2018/05/26/MachineLearning-SupervisedLearning/" class="leancloud_visitors" data-flag-title="机器学习-SupervisedLearning">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -439,7 +453,7 @@
           
             <p class="post-letters-count">
              &nbsp; | &nbsp;
-            <span>字數：1,408 字</span>
+            <span>字數：2,525 字</span>
             </p>
           
 
@@ -462,119 +476,74 @@
       
 
       
-        <p>同济大学-《线性代数》第$5$版<br><a id="more"></a></p>
-<ul>
-<li><p>对角线法则</p>
-</li>
-<li><p>全排列：$n$个不同元素的全排列有$n!$个</p>
-</li>
-<li><p>逆序数：</p>
-<ul>
-<li>标准次序：全排列中的一个，相当于默认排序</li>
-<li>元素的逆序数：在该元素<strong>前面</strong>与其不合标准次序关系的元素个数(仅考虑前后关系，不考虑间隔元素个数)</li>
-<li>所有元素的逆序数之和即为该排列的逆序数</li>
-<li>逆序数为偶，排列为偶排列；逆序数为奇，排列为奇排列</li>
-<li><strong>注</strong>：当然也可以用该元素<strong>后</strong>与其不合标准次序的元素个数来计算排列的逆序数</li>
-<li>例：$12345$是这$5$个元素的标准次序(从小到大)<ul>
-<li>对于$31254$：$3$前面比$3$大的$0$个，$1$前面$1$个，$2$前面$1$个，$5$前面$0$个，$4$前面$1$个，该排列的逆序数为$0+1+1+0+1=3$，为奇排列</li>
-<li>从后面计数：$3$后比$3$小的$2$个，$1$后$0$个，$2$后$0$个，$5$后$1$个，$4$后$0$个，合计$ 2+0+0+1+0=3 $，为奇排列</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>$n$阶行列式：</p>
-<ul>
-<li><p>$D = a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{21}a_{32}-a_{11}a_{23}a_{32}-a_{12}a_{21}a_{33}-a_{13}a_{22}a_{31}$</p>
-</li>
-<li><p>若将每一项都看成$ a_{1p_1}a_{1p_2}a_{1p_3} $的形式，$ p_1p_2p_3 $看成默认次序为$ 123 $排列，会发现：正数项全是偶排列，负数项全是奇排列</p>
-</li>
-<li><p>每一项可以表示为：$ (-1)^ia_{1p_1}a_{1p_2}a_{1p_3} $</p>
-</li>
-<li><p>$n$阶行列式还可以定义为：</p>
+        <p>预测房价、预测股价、天气预报判断是否下雨……这里面究竟隐藏着哪些不为人知的秘密？</p>
+<p>接下来让我们初窥机器学习之监督学习<code>Supervidesd Learning</code>的奥秘！</p>
+<p><code>(真是相当中二的开场白了……🤣)</code></p>
+<a id="more"></a>
+<p>碰巧最近有个朋友家小孩中考填报志愿，他给了我一份孩子最近六次考试成绩的走势图，让我给点意见，如图：</p>
+<p><img src="/images/MachineLearning-Supervised/scores.jpg" alt="模拟成绩"></p>
+<p>这种数量的样本实在不足以说明什么问题，也实在无法给出具有建树性的意见，我查阅了最近3年当地中学的录取线，然后根据这张图的走势（整体还是上升的趋势）和平均值，给了一点建议。</p>
+<hr>
+<p>在这个大数据<code>Big Data</code>的时代，还在人工做分析预测的是不是有点落伍<code>out</code>了？身为21世纪有为程序员🤣，即使是面对这样的小预测<code>其实关乎一个孩子的升学😑</code>，还是很想搞出点动静来呢！</p>
+<h3 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题"></a>分析问题</h3><p>我们先分析一下，这个问题，目的有两个：预测分数、决定志愿</p>
+<h4 id="预测分数-名次"><a href="#预测分数-名次" class="headerlink" title="预测分数/名次"></a>预测分数/名次</h4><p>上述案例中的数据集<code>Data Set</code>可以说是很没有参考性了，能预测的东西很有限。对于给出的数据集，需要一个输入<code>input</code>和一个输出<code>output</code>，输入可以是影响到考试的因素，如试题难度、考试状态等，输出则比较直观，就是成绩/名次，尤为重要的一点，就是数据量要大，要很大，否则，偶然性因素<code>Accidental Factor</code>会极大干扰预测结果。</p>
+<p>像下面这样一个数据集(部分)，可以抽象出来的信息就比较多了：</p>
+<p><img src="/images/MachineLearning-Supervised/scores-2.jpg" alt="scores2"></p>
+<p>相对来说，这样的图就比较正常<code>logical</code>，成绩稳定的人，这样的线一般更趋近于水平线，而受难易度影响较大的则会显示出滑坡<code>decline</code>的趋势。</p>
+<p>相对来说，中考这样的大型考试，难度会比较中庸，姑且认为是在<code>6</code>附近，那么可以大致预测该考生的中考成绩会在如图<code>575</code>分上下。当然，这也仅仅是预测<code>predict</code>而已，万一人家一个不小心超常发挥了呢？🤣</p>
+<h4 id="决定志愿"><a href="#决定志愿" class="headerlink" title="决定志愿"></a>决定志愿</h4><p>仅仅是预测分数其实还不够，而且万一预测的分数看上去还那么低<code>low</code>，不把人给急哭了😓……</p>
+<p>决定性的成果还是能给出一个关乎志愿填报的建议<code>Advise</code>，能起到决策<code>Decision</code>性的作用的建议。</p>
+<p>以下是某学生模拟的xx中学历年的模拟试题成绩：</p>
+<p><img src="/images/MachineLearning-Supervised/scores-3.jpg" alt="scores3"></p>
+<p>据此绘制出难度参考下的志愿达成结果：</p>
+<p><img src="/images/MachineLearning-Supervised/wish.jpg" alt="wish"></p>
+<p>……很抱歉，貌似结果不大理想。</p>
+<p>也就是说，只有当中考难度系数比较低的时候，他才有机会入围，而难度系数较高时，几率就很渺茫了，如果是机器在预测<code>predict</code>，那么他将得到一个否定的结论。<code>当然，本着关怀考生的原则，还是委婉地让其考虑考进概率更高的中学吧~😓</code></p>
+<h3 id="回到机器学习"><a href="#回到机器学习" class="headerlink" title="回到机器学习"></a>回到机器学习</h3><p>问题似乎已经分析得很明了了，但这和机器学习又有什么关系呢？</p>
+<p>聪明的小伙伴也许已经能领会到，对上面的例子中的图表，进行拟合、分析、得出结论的，难道是人类自己吗？不！少量的数据量，或许可以自己人工<code>manual</code>处理，但是如果是一个孩子一学期的成绩考核汇总、或是整个学校的学生报考志愿系统的话，那个数据量绝不是人类可以胜任的！</p>
+<p>所以，机器学习<code>Machine Learning</code>是必不可少的。</p>
+<p>上述的两个问题，正是机器学习中监督学习<code>Supervised Learning</code>的两类问题：回归问题<code>Regression Problem</code>和分类问题<code>Classification Problem</code>。</p>
 <blockquote>
-<p>$D=\sum(-1)^ta_{1p_1}a_{2p_2}…a_{np_n}$</p>
-<p>$t$为列标排列$p_1p_2…p_n$的逆序数</p>
+<p> 监督学习：程序需要一定成本的数据集对数据进行分析、拟合，从而对相关的问题给出符合规律的结果或结论。(不要被名称吓到，其实就是机器从数据中总结规律，给出建议的学习方式)</p>
 </blockquote>
-</li>
-<li><p>对角行列式：除了主对角线上的元素，其它都是$0$</p>
-</li>
-<li><p>上(下)三角形行列式：主对角线以上(下)的元素都是$0$</p>
-</li>
-<li><p>对角行列式、三角形行列式的值都是主对角线元素的乘积</p>
-</li>
-</ul>
-</li>
-<li><p>对换与排列的奇偶性</p>
-<ul>
-<li><p><strong>定理1：</strong>一个排列中任意两个元素对换，排列改变奇偶性</p>
+<p>两种问题最根本的区别在于：学习算法最终得到的是一个连续可预测的结果值<code>回归问题</code>，还是一个划分类别的判定值<code>分类问题</code>。</p>
+<h4 id="回归问题"><a href="#回归问题" class="headerlink" title="回归问题"></a>回归问题</h4><p>正如上述<code>预测分数/名次</code>的问题，我们需要根据数据集<code>Data Set</code> 对以后每种难度的试题预测考生的分数，这样就需要对散点图进行拟合，形成一条符合规律的曲线<code>或是直线</code>，实际上是将数据集里的离散值进行回归，得到回归函数，从而对函数上任意位置的结果进行预测（<code>计算</code>）。</p>
+<p>其实早在高中阶段的数学课程中就有接触过这类问题——线性回归<code>Linear Regression</code>，回归问题里较为简单的一种。（(#`O′)！高中的东西谁还记得啊！🙄）</p>
+<p>那我们更早其实在初中就有接触过这类问题——一次函数<code>又称线性函数Linear Function</code>。（高中都记不得，还提初中？！😤————不对不对，一次函数好歹还记得一点……🤔）</p>
+<p>举个栗子吧~</p>
 <blockquote>
-<p>$a_m$与$a_n（m&lt;n）$交换，$a_m$经过$n-m$次相邻对换到$a_n$的右边，$a_n$经过$n-m-1$次相邻对换(相邻两个元素交换位置)到原来$a_m$的位置，每次相邻对换排列的逆序数$±1$，则一共操作$2n-2m-1$次，奇偶性改变</p>
+<p>小明去买汽水，第一次他只买了一瓶，给了老板3块钱，后来一次体育课，他帮同学带，一共要买5瓶，他不知道自己钱带的够不够，希望在座的各位大佬帮忙算一下……😏</p>
 </blockquote>
-</li>
-<li><p><strong>定理2</strong>：$n$阶行列式还可以定义为：</p>
+<p>别小看这个问题哦~这可是线性回归问题的鼻祖(<code>认真脸~</code>)！</p>
+<p>首先，你不要管它什么 <code>总价=单价*数量</code>，万一这个老板是个不良商家，第二瓶价格翻倍怎么办？又或者老板其实是个好人<code>Good Man</code>，第二瓶半价，第三瓶再半价！那又怎么办？</p>
+<p>所以说<code>总价=单价*数量</code>只是更符合规律<code>regular</code>，才被认为是正确的算法<code>Algorithm</code>。假设总价为<code>y</code>，数量为<code>x</code>，那么这个线性函数就是：$ y=3*x $</p>
+<p>然后，我们就基于这个算法使用了几千年~</p>
+<p>现在我们跳跃一点，看这个函数：</p>
+<p>$$ y=θ_1x_1+θ_2x_2+θ_3x_3+… $$</p>
+<p>和上面的 $ y=3*x $ 比起来也就多了一堆类似 $ 3 * x $ 之类的东西罢了嘛~</p>
+<p>你大可以理解为：</p>
 <blockquote>
-<p>$D=\sum(-1)^ta_{p_11}a_{p_22}…a_{p_nn}$</p>
+<p>小明现在是去超市买东西，买了很多很多东西：汽水 $ x_1 $ 瓶、雪糕 $ x_2 $ 根、薯片 $ x_3 $ 袋……</p>
 </blockquote>
-</li>
-<li><p>行列式中的每一项$(-1)^ta_{1p_1}a_{2p_2}…a_{np_n}$都可以对换成$s$唯一确定的$(-1)^sa_{p_11}a_{p_22}…a_{p_nn}$</p>
-</li>
-<li><p><strong>疑问：</strong>$s = t ?$</p>
-</li>
-</ul>
-</li>
-<li><p>行列式的性质</p>
-<ul>
-<li><strong>性质1：</strong>行列式转置后<strong>值不变</strong></li>
-<li><strong>性质2：</strong>行列式互换两行/列其<strong>值变号</strong></li>
-<li><strong>性质3：</strong>有两行/列完全相同(<strong>或对应成比例</strong>)的行列式<strong>值等于零</strong></li>
-<li><strong>性质4：</strong>对行列式的一行/列数乘$k$行列式的<strong>值也数乘$k$</strong></li>
-<li><strong>性质5：</strong>行列式的某一行/列可以拆分，行列式整体伴随拆分，<strong>值为拆分后的行列式之和</strong></li>
-<li><strong>性质6：</strong>将行列式某一行/列数乘$k$再加到另一行/列，行列式<strong>值不变</strong></li>
-<li>$r_i$：行列式的第$i$行</li>
-<li>$c_i$：行列式的第$i$列</li>
-<li>$r_i←→r_j$：交换两行</li>
-<li>$c_i←→c_j$：交换两列</li>
-<li>$r_i*k$：第$i$行数乘$k$</li>
-<li>$r_i+kr_j$：第$i$行加第$j$行数乘$k$，常用于消元，将元素化为$0$</li>
-<li>$P_{12}$~例8：很骚~</li>
-<li>$P_{14}$~例10：更骚~</li>
-</ul>
-</li>
-<li><p>行列式按行/列展开</p>
-<ul>
-<li><p>在$n$阶行列式中，将$a_{ij}$所在的第$i$行和第$j$列划去后，留下的$n-1$阶行列式$a_{ij}$元素的<strong><em>余子式</em></strong>，记作：$M_{ij}$</p>
-</li>
-<li><p>$a_{ij}$的<strong><em>代数余子式</em></strong>：$A_{ij}$</p>
-<p>$$A_{ij} = (-1)^{i+j}M_{ij}$$</p>
-</li>
-<li><p><strong>引理：</strong>若$n$阶行列式第$i$行除了$a_{ij}$外都是<strong><em>零</em></strong>，那么这个行列式等于$a_{ij}$与它的<strong><em>代数余子式</em></strong>的乘积：$$D=a_{ij}A_{ij}$$</p>
-<ul>
-<li><p>实际上，将第$i$行交换到第$1$行，然后将第$j$列交换到第$1$列，就会出现类似于$P_{14}$~例10的情形，自然可以得到：$$D=a_{ij}M_{ij}$$</p>
-<p>又因为交换了$i+j-2$次，所以需要乘以$(-1)^{i+j-2}$，忽略$-2$，即：$$D=a_{ij}(-1)^{i+j-2}M_{ij}=a_{ij}A_{ij}$$</p>
-</li>
-</ul>
-</li>
-<li><p><strong>定理3：</strong>行列式等于它的任一行/列的各元素与其对应代数余子式乘积之和，即：$$D=a_{i1}A_{i1}+a_{i2}A_{i2}+…+a_{in}A_{in}$$</p>
-</li>
-<li><p>范德蒙德($Vandermonde$)行列式：<br>$$<br>\begin{vmatrix}<br>1 &amp; 1 &amp; … &amp; 1 \\<br>x_1 &amp; x_2 &amp; … &amp; x_n \\<br>x_1^2 &amp; x_2^2 &amp; … &amp; x_n ^2\\<br>… \\<br>x_1^{n-1} &amp; x_2^{n-1} &amp; … &amp; x_n ^{n-1}\\<br>\end{vmatrix}=\prod_{n\ge i\gt j \ge 1}(x_i-x_j)<br>$$<br>用数学归纳法证明，详见：$P_{18}$</p>
-<p>基本思想：把第一列全部化为$0$，然后通过行列式展开消去</p>
-</li>
-<li><p><strong>推论：</strong>行列式某一行/列各元素与另一行/列对应位置元素的代数余子式乘积之和等于零，即：</p>
-<p>$$a_{i1}A_{j1}+a_{i2}A_{j2}+…+a_{in}A_{jn}=0（i\ne j）$$</p>
-<p>证明思路：<strong>偷梁换柱</strong></p>
-</li>
-<li><p><strong>定理3</strong>和<strong>推论</strong>可以表示为(行展开)：<br>$$<br>\sum_{k=1}^na_{ki}A_{kj}=Dδ_{ij}=<br>\left \{<br>\begin{aligned}<br>D, i=j \\<br>0, i \ne j<br>\end{aligned}<br>\right.<br>$$<br>换成列展开亦然</p>
-</li>
-</ul>
-</li>
-<li><p>克拉默法则</p>
-<ul>
-<li><p><strong>克拉默法则</strong>：</p>
-<p>  对$n$元线性方程组<br>  $$<br>  \left\{<br>  \begin{aligned}<br>  a_{11}x_1+a_{12}x_2+…+a_{1n}x_n=b_1,\\<br>  a_{21}x_1+a_{22}x_2+…+a_{2n}x_n=b_2,\\<br>  …\\<br>  a_{n1}x_1+a_{n2}x_2+…+a_{nn}x_n=b_n,\\<br>  \end{aligned}<br>  \right.<br>  $$<br>  所有系数按排列构成系数行列式<br>  $$<br>  D=<br>  \begin{vmatrix}<br>  a_{11} &amp; a_{12} &amp; … &amp; a_{1n} \\<br>  a_{21} &amp; a_{22} &amp; … &amp; a_{2n} \\<br>  …\\<br>  a_{n1} &amp; a_{n2} &amp; … &amp; a_{nn} \\<br>  \end{vmatrix}<br>  $$<br>  若$ D\ne 0 $，该方程组有唯一解：<br>  $$<br>  x_1=\frac {D_1}D, x_1=\frac {D_2}D, …, x_n=\frac {D_n}D<br>  $$</p>
-</li>
-</ul>
-</li>
-</ul>
+<p>受每样东西单价的影响，以及购买数量的约束，总价会不一样。</p>
+<p>只要小明往超市跑的次数足够多，给的样本数足够多，通过线性回归的算法，是可以计算每种商品的单价的——当然，是在你不直接去超市询问价格的前提下<code>虽然没人这么做~</code>🙃。</p>
+<p>这之后，只要小明说他要买哪些东西，各要多少，你就可以给他算出总价，避免他因为少带了钱而尴尬。</p>
+<p>实际上，线性回归只是回归问题的一种，我们需要掌握和理解的是这样一种算法的概念和想法<code>idea</code>，至于那些个 $ θ_1、θ_2、θ_3…$ 怎么算，管它呢！反正有工具帮我们算。</p>
+<h4 id="分类问题"><a href="#分类问题" class="headerlink" title="分类问题"></a>分类问题</h4><p><code>Pro.Ng</code>课上介绍了判断肿瘤是良性还是恶性的问题，我还想引出一个更有意思的话题——判断一个人是男，是女——还是<strike>伪娘</strike>？</p>
+<p>这里首先要搞清楚一个细节：这个分类，不是说必须要得出<code>是/否</code>的结论，只要得出的结论是一个类别区分的结果集就可以了~比如说：男、女、<strike>伪娘</strike>😏</p>
+<p><code>Pro.Ng</code>从年龄和肿瘤的大小两个维度将数据集<code>Data Set</code>进行了整理，最终得到一个聚类形式的散点图：</p>
+<p><img src="/images/MachineLearning-Supervised/cancer.jpg" alt="cancer"></p>
+<p>红色代表恶性<code>malignant</code>，蓝色代表良性<code>benign</code>，这个算法会根据这个图，画一条直线把数据集分开，如果现在有一个病人，年龄和肿瘤大小对应的点在直线下方，这个算法就会判断病人的肿瘤是良性的。</p>
+<p><img src="/images/MachineLearning-Supervised/cancer-2.jpg" alt="cancer-2"></p>
+<p>这是一个有两个特征<code>Features</code>的分类问题，但实际上判断肿瘤的性质需要的绝不仅仅只有两个维度，为了便于理解，<code>Pro.Ng</code>才这么讲解。</p>
+<p>对于性别，涉及到的特征也有很多，比如说：头发长短、是否有胡子、说话的音调、是否有体香等等，以此作出的聚类图会是一个多维的图(还不会用<code>Octave</code>画图真的对不住)。</p>
+<p>那<strike>伪娘</strike>算什么呢？看一下上面的图，良性肿瘤聚集区是不是有一个恶性的？这个肿瘤它喜欢模仿良性肿瘤的一些特征，从而达到鱼目混珠的目的。所以，你选择的维度越多，特征就越明显，最终的分类也会更加精确。</p>
+<h3 id="监督学习Supervised-Learning"><a href="#监督学习Supervised-Learning" class="headerlink" title="监督学习Supervised Learning"></a>监督学习<code>Supervised Learning</code></h3><p>什么样的事情需要监督呢？</p>
+<p>比如考试，最后你需要上交一份试题的解答；比如说工作，最终你要做完领导安排给你的事情……</p>
+<p>受监督的事情最终都要有一个特定<code>Specific</code>的结果。预测分数、判断志愿达成、预测肿瘤性质、预测性别……这些都需要给出一个明确的答案<code>answer</code>。</p>
+<p>相对的，就会有一些事情，不需要给出特别明确的结果的。比如网易云的智能推荐，它收集你听过的歌作为数据集，并没有对此给出一个特定的结论，它只是对你的品味进行了整理归纳，然后给你推荐类似的歌曲而已。</p>
+<p>这种学习算法我们称之为：非监督学习<code>Unsupervised Learning</code></p>
+<p>想了解更多关于”非监督学习”的内容吗？下一篇：<code>MachineLearning-UnsupervisedLearning</code>敬请期待！</p>
 
       
     </div>
@@ -595,7 +564,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linear-Algebra/" rel="tag"># Linear Algebra</a>
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Andrew-Ng/" rel="tag"># Andrew Ng</a>
           
         </div>
       
@@ -623,8 +594,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/02/CODE_Flip-flop/" rel="next" title="《CODE》读书笔记之二：触发器">
-                <i class="fa fa-chevron-left"></i> 《CODE》读书笔记之二：触发器
+              <a href="/2018/05/23/MachineLearning-Welcome/" rel="next" title="机器学习-Welcome">
+                <i class="fa fa-chevron-left"></i> 机器学习-Welcome
               </a>
             
           </div>
@@ -632,10 +603,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/16/UsingLatexInHexo/" rel="prev" title="在Hexo使用Latex写公式">
-                在Hexo使用Latex写公式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -691,8 +658,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -787,6 +763,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#分析问题"><span class="nav-number">1.</span> <span class="nav-text">分析问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#预测分数-名次"><span class="nav-number">1.1.</span> <span class="nav-text">预测分数/名次</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#决定志愿"><span class="nav-number">1.2.</span> <span class="nav-text">决定志愿</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回到机器学习"><span class="nav-number">2.</span> <span class="nav-text">回到机器学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#回归问题"><span class="nav-number">2.1.</span> <span class="nav-text">回归问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分类问题"><span class="nav-number">2.2.</span> <span class="nav-text">分类问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监督学习Supervised-Learning"><span class="nav-number">3.</span> <span class="nav-text">监督学习Supervised Learning</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
