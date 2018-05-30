@@ -112,23 +112,29 @@
 
 
 
-  <meta name="description" content="做一个大小写不分的人~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="俊のWEBSITE">
-<meta property="og:url" content="http://geniusoridiot.github.io/tags/Machine-Learning/index.html">
+  <meta name="description" content="线性回归，在做简单的数据分析时是最常用到的手段。 如果线性拟合不管用了？——那个时候再去考虑试试别的算法好了。">
+<meta name="keywords" content="Machine Learning,Andrew Ng">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习-线性回归算法">
+<meta property="og:url" content="http://geniusoridiot.github.io/2018/05/30/Machine-Learning-Linear-Regression-Algorithm/index.html">
 <meta property="og:site_name" content="俊のWEBSITE">
-<meta property="og:description" content="做一个大小写不分的人~">
+<meta property="og:description" content="线性回归，在做简单的数据分析时是最常用到的手段。 如果线性拟合不管用了？——那个时候再去考虑试试别的算法好了。">
 <meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="http://geniusoridiot.github.io/images/LinearRegression/dataset.jpg">
+<meta property="og:image" content="http://geniusoridiot.github.io/images/LinearRegression/descent.jpg">
+<meta property="og:image" content="http://geniusoridiot.github.io/images/LinearRegression/each-descent.jpg">
+<meta property="og:updated_time" content="2018-05-30T16:02:37.678Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="俊のWEBSITE">
-<meta name="twitter:description" content="做一个大小写不分的人~">
+<meta name="twitter:title" content="机器学习-线性回归算法">
+<meta name="twitter:description" content="线性回归，在做简单的数据分析时是最常用到的手段。 如果线性拟合不管用了？——那个时候再去考虑试试别的算法好了。">
+<meta name="twitter:image" content="http://geniusoridiot.github.io/images/LinearRegression/dataset.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://geniusoridiot.github.io/tags/Machine-Learning/"/>
+  <link rel="canonical" href="http://geniusoridiot.github.io/2018/05/30/Machine-Learning-Linear-Regression-Algorithm/"/>
 
 
 
@@ -138,7 +144,7 @@
   };
 </script>
 
-  <title>標籤: Machine Learning | 俊のWEBSITE</title>
+  <title>机器学习-线性回归算法 | 俊のWEBSITE</title>
   
 
 
@@ -185,7 +191,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -242,7 +248,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />標籤</a>
   </li>
@@ -302,140 +308,315 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Machine Learning<small>標籤</small>
-        </h1>
-      </div>
-
-      
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://geniusoridiot.github.io/2018/05/30/Machine-Learning-Linear-Regression-Algorithm/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MDMORY">
+      <meta itemprop="description" content="做一个大小写不分的人~">
+      <meta itemprop="image" content="/images/1526912730793.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="俊のWEBSITE">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/05/30/Machine-Learning-Linear-Regression-Algorithm/" itemprop="url">
-              
-                <span itemprop="name">机器学习-线性回归算法</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">机器学习-线性回归算法
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-30T21:15:31+08:00"
-              content="2018-05-30" >
-          05-30
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+
+              
+                
+              
+
+              <time title="創建時間：2018-05-30 21:15:31" itemprop="dateCreated datePublished" datetime="2018-05-30T21:15:31+08:00">2018-05-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新於</span>
+                
+                <time title="修改時間：2018-05-31 00:02:37" itemprop="dateModified" datetime="2018-05-31T00:02:37+08:00">2018-05-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Math/" itemprop="url" rel="index"><span itemprop="name">Math</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Math/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/30/Machine-Learning-Linear-Regression-Algorithm/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">評論數：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/30/Machine-Learning-Linear-Regression-Algorithm/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/30/Machine-Learning-Linear-Regression-Algorithm/" class="leancloud_visitors" data-flag-title="机器学习-线性回归算法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">閱讀次數：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-letters-count">
+             &nbsp; | &nbsp;
+            <span>字數：869 字</span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/30/Machine-Learning-Supervised-And-Unsupervised/" itemprop="url">
-              
-                <span itemprop="name">机器学习-监督学习与非监督学习</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-30T21:11:43+08:00"
-              content="2018-05-30" >
-          05-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/23/MachineLearning-Welcome/" itemprop="url">
-              
-                <span itemprop="name">机器学习-Welcome</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-23T19:46:14+08:00"
-              content="2018-05-23" >
-          05-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>线性回归，在做简单的数据分析时是最常用到的手段。</p>
+<p>如果线性拟合不管用了？——那个时候再去考虑试试别的算法好了。</p>
+<a id="more"></a>
+<hr>
+<blockquote>
+<p> 线性回归是回归问题中经常用到的一种算法。</p>
+</blockquote>
+<p>这在某种意义上有点像在解决<code>求解一次方程系数</code>的初级数学题，但却远比这要复杂得多。</p>
+<p>首先，这些点其实并不在一条直线上，而是离散的状态，甚至有时候你很难想象把这些混乱的点拟合成一条直线是否是明智之举。</p>
+<p><img src="/images/LinearRegression/dataset.jpg" alt="数据集"></p>
+<p>不过，我们还是希望能这么做。</p>
+<h4 id="假想函数-Hypothesis-Function"><a href="#假想函数-Hypothesis-Function" class="headerlink" title="假想函数-Hypothesis Function"></a>假想函数-Hypothesis Function</h4><p>我们先明确一些符号所代表的含义：</p>
+<ul>
+<li>$ (x^{i},y^{i}) $：第 $i$ 组数据，$m$ 则代表所有训练数据的总数（就是图中所有点的个数）</li>
+<li>$ h(x) = θ_0+θ_1x $：假想拟合出的线性回归函数。</li>
+<li>$ θ_0、θ_1 $：特征系数，每个特征系数对应一个特征参数 $x_i$，$θ_0$ 比较特殊，本身对应着一个特殊的特征参数 $x_0$，只是 $x_0=1$ 罢了</li>
+</ul>
+<p>在建立假想函数之前，我们需要有一个概念：真实数据总是伴随着各种各样的随机性，从而呈现出让人捉摸不透的分布，但在离散的分布中必然存在着合理的函数关系。假想函数正是以此为前提，假定出的符合数学规律并且尽量贴合实际数据的函数关系。</p>
+<hr>
+<p>这里稍微发散一下，假想函数和数据集是对应的，如果给定的数据集有两个特征参数（比如房价参考特征除了房间面积外还有房间间数），那么就会有：</p>
+<ul>
+<li>数据集的表示：$ (x_1^i,x_2^{i},y^{i}) $</li>
+<li>假想函数的表示：$ h(x) = θ_0+θ_1x_1+θ_2x_2 $</li>
+</ul>
+<h4 id="代价函数-Cost-Function"><a href="#代价函数-Cost-Function" class="headerlink" title="代价函数-Cost Function"></a>代价函数-Cost Function</h4><p>这个假想函数不会是随手画的，必须有一个用来矫正这条线的函数，这就是代价函数：</p>
+<p>$$ J(θ_0,θ_1) = \frac 1 {2m} \sum _{i=1}^m(h_θ(x_i)-y_i)^2 $$</p>
+<p>这种形式的公式倒不陌生，很像方差公式，而方差是体现一组数据离散程度的指标，所以这样定义的代价函数也并不是没有道理的。</p>
+<p>我们知道，方差越小，数据越集中。因此，在这里换个说法就是：</p>
+<blockquote>
+<p>代价函数越小，图中的点离假想函数越集中。找到代价函数的最小值，就是我们的假想函数的终点。</p>
+</blockquote>
+<h4 id="求函数的极小值"><a href="#求函数的极小值" class="headerlink" title="求函数的极小值"></a>求函数的极小值</h4><p>从<code>Pro.Ng</code>的讲解中，我突然想到了<code>牛顿迭代</code>。</p>
+<p>看这幅图：</p>
+<p><img src="/images/LinearRegression/descent.jpg" alt="求极小值"></p>
+<p>还有当初用来演示牛顿迭代的动画：</p>
+<p><a href="https://ggbm.at/dQgBFdW7" target="_blank" rel="noopener"><strong>→点击演示←</strong></a></p>
+<p>没必要刻意去理解导数，从图形直观完全可以理解这样做的道理。</p>
+<p>导数，只是一个工具而已。</p>
+<h4 id="梯度下降-Gradient-Descent"><a href="#梯度下降-Gradient-Descent" class="headerlink" title="梯度下降-Gradient Descent"></a>梯度下降-Gradient Descent</h4><blockquote>
+<p>梯度下降实际上是对每一个特征系数<strong>‘分别’、’’同时’</strong>进行迭代</p>
+</blockquote>
+<p><img src="/images/LinearRegression/each-descent.jpg" alt="梯度下降"></p>
+<p>一次梯度下降的顺序：</p>
+<ul>
+<li>对系数 $θ_0$ 下降：$ θ_{0_temp}:=θ_0-α\frac δ {δθ_0}J(θ_0,θ_1) $，$ θ_1 $ 看作常量</li>
+<li>对系数 $θ_1$ 下降：$ θ_{1_temp}:=θ_1-α\frac δ {δθ_1}J(θ_0,θ_1) $，$ θ_0 $ 看作常量</li>
+<li>对系数 $θ_0$ 赋值：$ θ_0:=θ_{0_temp}$</li>
+<li>对系数 $θ_1$ 赋值：$ θ_1:=θ_{1_temp}$</li>
+</ul>
+<p>记住，始终将所有特征系数作为一组，用前一组系数去计算下一组的系数，计算完后再赋值。</p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Andrew-Ng/" rel="tag"># Andrew Ng</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/30/Machine-Learning-Supervised-And-Unsupervised/" rel="next" title="机器学习-监督学习与非监督学习">
+                <i class="fa fa-chevron-left"></i> 机器学习-监督学习与非监督学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -456,8 +637,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -552,6 +742,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#假想函数-Hypothesis-Function"><span class="nav-number">1.</span> <span class="nav-text">假想函数-Hypothesis Function</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代价函数-Cost-Function"><span class="nav-number">2.</span> <span class="nav-text">代价函数-Cost Function</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#求函数的极小值"><span class="nav-number">3.</span> <span class="nav-text">求函数的极小值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#梯度下降-Gradient-Descent"><span class="nav-number">4.</span> <span class="nav-text">梯度下降-Gradient Descent</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -686,6 +892,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
@@ -727,6 +937,30 @@
 
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'geniusoridiot',
+            repo: 'gitment-comments',
+            
+            lang: "zh-TW" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '517dbd7c53d6c4a1b8ff98053fb7ef180e06aad8',
+            
+                client_id: '0fca37813c3ef4059406'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 
@@ -864,6 +1098,30 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 

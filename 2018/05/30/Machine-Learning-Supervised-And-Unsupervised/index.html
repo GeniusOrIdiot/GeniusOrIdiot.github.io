@@ -112,32 +112,25 @@
 
 
 
-  <meta name="description" content="预测房价、预测股价、天气预报判断是否下雨……这里面究竟隐藏着哪些不为人知的秘密？ 接下来让我们初窥机器学习之监督学习Supervidesd Learning的奥秘！ (真是相当中二的开场白了……🤣)">
+  <meta name="description" content="监督学习与非监督学习最本质的区别是什么？">
 <meta name="keywords" content="Machine Learning,Andrew Ng">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习-SupervisedLearning">
-<meta property="og:url" content="http://geniusoridiot.github.io/2018/05/26/MachineLearning-SupervisedLearning/index.html">
+<meta property="og:title" content="机器学习-监督学习与非监督学习">
+<meta property="og:url" content="http://geniusoridiot.github.io/2018/05/30/Machine-Learning-Supervised-And-Unsupervised/index.html">
 <meta property="og:site_name" content="俊のWEBSITE">
-<meta property="og:description" content="预测房价、预测股价、天气预报判断是否下雨……这里面究竟隐藏着哪些不为人知的秘密？ 接下来让我们初窥机器学习之监督学习Supervidesd Learning的奥秘！ (真是相当中二的开场白了……🤣)">
+<meta property="og:description" content="监督学习与非监督学习最本质的区别是什么？">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:image" content="http://geniusoridiot.github.io/images/MachineLearning-Supervised/scores.jpg">
-<meta property="og:image" content="http://geniusoridiot.github.io/images/MachineLearning-Supervised/scores-2.jpg">
-<meta property="og:image" content="http://geniusoridiot.github.io/images/MachineLearning-Supervised/scores-3.jpg">
-<meta property="og:image" content="http://geniusoridiot.github.io/images/MachineLearning-Supervised/wish.jpg">
-<meta property="og:image" content="http://geniusoridiot.github.io/images/MachineLearning-Supervised/cancer.jpg">
-<meta property="og:image" content="http://geniusoridiot.github.io/images/MachineLearning-Supervised/cancer-2.jpg">
-<meta property="og:updated_time" content="2018-05-27T07:07:49.604Z">
+<meta property="og:updated_time" content="2018-05-30T16:02:19.825Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习-SupervisedLearning">
-<meta name="twitter:description" content="预测房价、预测股价、天气预报判断是否下雨……这里面究竟隐藏着哪些不为人知的秘密？ 接下来让我们初窥机器学习之监督学习Supervidesd Learning的奥秘！ (真是相当中二的开场白了……🤣)">
-<meta name="twitter:image" content="http://geniusoridiot.github.io/images/MachineLearning-Supervised/scores.jpg">
+<meta name="twitter:title" content="机器学习-监督学习与非监督学习">
+<meta name="twitter:description" content="监督学习与非监督学习最本质的区别是什么？">
 
 
 
 
 
 
-  <link rel="canonical" href="http://geniusoridiot.github.io/2018/05/26/MachineLearning-SupervisedLearning/"/>
+  <link rel="canonical" href="http://geniusoridiot.github.io/2018/05/30/Machine-Learning-Supervised-And-Unsupervised/"/>
 
 
 
@@ -147,7 +140,7 @@
   };
 </script>
 
-  <title>机器学习-SupervisedLearning | 俊のWEBSITE</title>
+  <title>机器学习-监督学习与非监督学习 | 俊のWEBSITE</title>
   
 
 
@@ -331,7 +324,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://geniusoridiot.github.io/2018/05/26/MachineLearning-SupervisedLearning/">
+    <link itemprop="mainEntityOfPage" href="http://geniusoridiot.github.io/2018/05/30/Machine-Learning-Supervised-And-Unsupervised/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MDMORY">
@@ -348,7 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">机器学习-SupervisedLearning
+          <h1 class="post-title" itemprop="name headline">机器学习-监督学习与非监督学习
               
             
           </h1>
@@ -373,7 +366,7 @@
                 
               
 
-              <time title="創建時間：2018-05-26 09:36:19" itemprop="dateCreated datePublished" datetime="2018-05-26T09:36:19+08:00">2018-05-26</time>
+              <time title="創建時間：2018-05-30 21:11:43" itemprop="dateCreated datePublished" datetime="2018-05-30T21:11:43+08:00">2018-05-30</time>
             
 
             
@@ -390,7 +383,7 @@
                 
                   <span class="post-meta-item-text">更新於</span>
                 
-                <time title="修改時間：2018-05-27 15:07:49" itemprop="dateModified" datetime="2018-05-27T15:07:49+08:00">2018-05-27</time>
+                <time title="修改時間：2018-05-31 00:02:19" itemprop="dateModified" datetime="2018-05-31T00:02:19+08:00">2018-05-31</time>
               
             
           </span>
@@ -429,8 +422,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/26/MachineLearning-SupervisedLearning/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">評論數：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/26/MachineLearning-SupervisedLearning/" itemprop="commentsCount"></span>
+                <a href="/2018/05/30/Machine-Learning-Supervised-And-Unsupervised/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">評論數：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/30/Machine-Learning-Supervised-And-Unsupervised/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -438,7 +431,7 @@
 
           
           
-             <span id="/2018/05/26/MachineLearning-SupervisedLearning/" class="leancloud_visitors" data-flag-title="机器学习-SupervisedLearning">
+             <span id="/2018/05/30/Machine-Learning-Supervised-And-Unsupervised/" class="leancloud_visitors" data-flag-title="机器学习-监督学习与非监督学习">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -453,7 +446,7 @@
           
             <span class="post-letters-count">
              &nbsp; | &nbsp;
-            <span>字數：2,525 字</span>
+            <span>字數：795 字</span>
             </span>
           
 
@@ -476,74 +469,80 @@
       
 
       
-        <p>预测房价、预测股价、天气预报判断是否下雨……这里面究竟隐藏着哪些不为人知的秘密？</p>
-<p>接下来让我们初窥机器学习之监督学习<code>Supervidesd Learning</code>的奥秘！</p>
-<p><code>(真是相当中二的开场白了……🤣)</code></p>
+        <p>监督学习与非监督学习最本质的区别是什么？</p>
 <a id="more"></a>
-<p>碰巧最近有个朋友家小孩中考填报志愿，他给了我一份孩子最近六次考试成绩的走势图，让我给点意见，如图：</p>
-<p><img src="/images/MachineLearning-Supervised/scores.jpg" alt="模拟成绩"></p>
-<p>这种数量的样本实在不足以说明什么问题，也实在无法给出具有建树性的意见，我查阅了最近3年当地中学的录取线，然后根据这张图的走势（整体还是上升的趋势）和平均值，给了一点建议。</p>
 <hr>
-<p>在这个大数据<code>Big Data</code>的时代，还在人工做分析预测的是不是有点落伍<code>out</code>了？身为21世纪有为程序员🤣，即使是面对这样的小预测<code>其实关乎一个孩子的升学😑</code>，还是很想搞出点动静来呢！</p>
-<h3 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题"></a>分析问题</h3><p>我们先分析一下，这个问题，目的有两个：预测分数、决定志愿</p>
-<h4 id="预测分数-名次"><a href="#预测分数-名次" class="headerlink" title="预测分数/名次"></a>预测分数/名次</h4><p>上述案例中的数据集<code>Data Set</code>可以说是很没有参考性了，能预测的东西很有限。对于给出的数据集，需要一个输入<code>input</code>和一个输出<code>output</code>，输入可以是影响到考试的因素，如试题难度、考试状态等，输出则比较直观，就是成绩/名次，尤为重要的一点，就是数据量要大，要很大，否则，偶然性因素<code>Accidental Factor</code>会极大干扰预测结果。</p>
-<p>像下面这样一个数据集(部分)，可以抽象出来的信息就比较多了：</p>
-<p><img src="/images/MachineLearning-Supervised/scores-2.jpg" alt="scores2"></p>
-<p>相对来说，这样的图就比较正常<code>logical</code>，成绩稳定的人，这样的线一般更趋近于水平线，而受难易度影响较大的则会显示出滑坡<code>decline</code>的趋势。</p>
-<p>相对来说，中考这样的大型考试，难度会比较中庸，姑且认为是在<code>6</code>附近，那么可以大致预测该考生的中考成绩会在如图<code>575</code>分上下。当然，这也仅仅是预测<code>predict</code>而已，万一人家一个不小心超常发挥了呢？🤣</p>
-<h4 id="决定志愿"><a href="#决定志愿" class="headerlink" title="决定志愿"></a>决定志愿</h4><p>仅仅是预测分数其实还不够，而且万一预测的分数看上去还那么低<code>low</code>，不把人给急哭了😓……</p>
-<p>决定性的成果还是能给出一个关乎志愿填报的建议<code>Advise</code>，能起到决策<code>Decision</code>性的作用的建议。</p>
-<p>以下是某学生模拟的xx中学历年的模拟试题成绩：</p>
-<p><img src="/images/MachineLearning-Supervised/scores-3.jpg" alt="scores3"></p>
-<p>据此绘制出难度参考下的志愿达成结果：</p>
-<p><img src="/images/MachineLearning-Supervised/wish.jpg" alt="wish"></p>
-<p>……很抱歉，貌似结果不大理想。</p>
-<p>也就是说，只有当中考难度系数比较低的时候，他才有机会入围，而难度系数较高时，几率就很渺茫了，如果是机器在预测<code>predict</code>，那么他将得到一个否定的结论。<code>当然，本着关怀考生的原则，还是委婉地让其考虑考进概率更高的中学吧~😓</code></p>
-<h3 id="回到机器学习"><a href="#回到机器学习" class="headerlink" title="回到机器学习"></a>回到机器学习</h3><p>问题似乎已经分析得很明了了，但这和机器学习又有什么关系呢？</p>
-<p>聪明的小伙伴也许已经能领会到，对上面的例子中的图表，进行拟合、分析、得出结论的，难道是人类自己吗？不！少量的数据量，或许可以自己人工<code>manual</code>处理，但是如果是一个孩子一学期的成绩考核汇总、或是整个学校的学生报考志愿系统的话，那个数据量绝不是人类可以胜任的！</p>
-<p>所以，机器学习<code>Machine Learning</code>是必不可少的。</p>
-<p>上述的两个问题，正是机器学习中监督学习<code>Supervised Learning</code>的两类问题：回归问题<code>Regression Problem</code>和分类问题<code>Classification Problem</code>。</p>
-<blockquote>
-<p> 监督学习：程序需要一定成本的数据集对数据进行分析、拟合，从而对相关的问题给出符合规律的结果或结论。(不要被名称吓到，其实就是机器从数据中总结规律，给出建议的学习方式)</p>
+<p>其实，说白了，就是<strong>主观题</strong>和<strong>客观题</strong>的区别。</p>
+<p>客观题：答案是死的，不管你是死记硬背还是找规律，答出来对就是对，错就是错。</p>
+<p>主观题：答案不指定，反正给你一堆材料，只要你答得言之有理，即可得分。</p>
+<h3 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h3><blockquote>
+<p>数据集有输入<code>input</code>信息和输出<code>output</code>信息，机器学习算法通过对输入和输出的分析，得到两者之间的关联关系，从而可以根据不同于数据集中输入内容的数据，模拟预测该数据可能产生的输出。</p>
 </blockquote>
-<p>两种问题最根本的区别在于：学习算法最终得到的是一个连续可预测的结果值<code>回归问题</code>，还是一个划分类别的判定值<code>分类问题</code>。</p>
-<h4 id="回归问题"><a href="#回归问题" class="headerlink" title="回归问题"></a>回归问题</h4><p>正如上述<code>预测分数/名次</code>的问题，我们需要根据数据集<code>Data Set</code> 对以后每种难度的试题预测考生的分数，这样就需要对散点图进行拟合，形成一条符合规律的曲线<code>或是直线</code>，实际上是将数据集里的离散值进行回归，得到回归函数，从而对函数上任意位置的结果进行预测（<code>计算</code>）。</p>
-<p>其实早在高中阶段的数学课程中就有接触过这类问题——线性回归<code>Linear Regression</code>，回归问题里较为简单的一种。（(#`O′)！高中的东西谁还记得啊！🙄）</p>
-<p>那我们更早其实在初中就有接触过这类问题——一次函数<code>又称线性函数Linear Function</code>。（高中都记不得，还提初中？！😤————不对不对，一次函数好歹还记得一点……🤔）</p>
-<p>举个栗子吧~</p>
-<blockquote>
-<p>小明去买汽水，第一次他只买了一瓶，给了老板3块钱，后来一次体育课，他帮同学带，一共要买5瓶，他不知道自己钱带的够不够，希望在座的各位大佬帮忙算一下……😏</p>
+<p>监督学习处理的问题有两种比较通用的划分：</p>
+<h4 id="回归问题"><a href="#回归问题" class="headerlink" title="回归问题"></a>回归问题</h4><blockquote>
+<p>数据的输入和输出有一定的连续性，输入和输出有一定的关系可寻。</p>
 </blockquote>
-<p>别小看这个问题哦~这可是线性回归问题的鼻祖(<code>认真脸~</code>)！</p>
-<p>首先，你不要管它什么 <code>总价=单价*数量</code>，万一这个老板是个不良商家，第二瓶价格翻倍怎么办？又或者老板其实是个好人<code>Good Man</code>，第二瓶半价，第三瓶再半价！那又怎么办？</p>
-<p>所以说<code>总价=单价*数量</code>只是更符合规律<code>regular</code>，才被认为是正确的算法<code>Algorithm</code>。假设总价为<code>y</code>，数量为<code>x</code>，那么这个线性函数就是：$ y=3*x $</p>
-<p>然后，我们就基于这个算法使用了几千年~</p>
-<p>现在我们跳跃一点，看这个函数：</p>
-<p>$$ y=θ_1x_1+θ_2x_2+θ_3x_3+… $$</p>
-<p>和上面的 $ y=3*x $ 比起来也就多了一堆类似 $ 3 * x $ 之类的东西罢了嘛~</p>
-<p>你大可以理解为：</p>
-<blockquote>
-<p>小明现在是去超市买东西，买了很多很多东西：汽水 $ x_1 $ 瓶、雪糕 $ x_2 $ 根、薯片 $ x_3 $ 袋……</p>
+<p>举栗子：</p>
+<ul>
+<li>房价的预测<ul>
+<li>房间面积：从大到小有连续性</li>
+<li>房价：从低到高有连续性</li>
+<li>关系：一般房间面积越大，房价越高</li>
+</ul>
+</li>
+<li>身高的预测<ul>
+<li>脚掌长度：长度有连续性</li>
+<li>身高：高度有连续性</li>
+<li>关系：人体身高和脚掌长度有一定的关系</li>
+</ul>
+</li>
+</ul>
+<h4 id="分类问题"><a href="#分类问题" class="headerlink" title="分类问题"></a>分类问题</h4><blockquote>
+<p>数据的输出按照有效的输入特征以一定的分类标准呈现，数据集根据输出的类别呈现聚类趋势</p>
 </blockquote>
-<p>受每样东西单价的影响，以及购买数量的约束，总价会不一样。</p>
-<p>只要小明往超市跑的次数足够多，给的样本数足够多，通过线性回归的算法，是可以计算每种商品的单价的——当然，是在你不直接去超市询问价格的前提下<code>虽然没人这么做~</code>🙃。</p>
-<p>这之后，只要小明说他要买哪些东西，各要多少，你就可以给他算出总价，避免他因为少带了钱而尴尬。</p>
-<p>实际上，线性回归只是回归问题的一种，我们需要掌握和理解的是这样一种算法的概念和想法<code>idea</code>，至于那些个 $ θ_1、θ_2、θ_3…$ 怎么算，管它呢！反正有工具帮我们算。</p>
-<h4 id="分类问题"><a href="#分类问题" class="headerlink" title="分类问题"></a>分类问题</h4><p><code>Pro.Ng</code>课上介绍了判断肿瘤是良性还是恶性的问题，我还想引出一个更有意思的话题——判断一个人是男，是女——还是<strike>伪娘</strike>？</p>
-<p>这里首先要搞清楚一个细节：这个分类，不是说必须要得出<code>是/否</code>的结论，只要得出的结论是一个类别区分的结果集就可以了~比如说：男、女、<strike>伪娘</strike>😏</p>
-<p><code>Pro.Ng</code>从年龄和肿瘤的大小两个维度将数据集<code>Data Set</code>进行了整理，最终得到一个聚类形式的散点图：</p>
-<p><img src="/images/MachineLearning-Supervised/cancer.jpg" alt="cancer"></p>
-<p>红色代表恶性<code>malignant</code>，蓝色代表良性<code>benign</code>，这个算法会根据这个图，画一条直线把数据集分开，如果现在有一个病人，年龄和肿瘤大小对应的点在直线下方，这个算法就会判断病人的肿瘤是良性的。</p>
-<p><img src="/images/MachineLearning-Supervised/cancer-2.jpg" alt="cancer-2"></p>
-<p>这是一个有两个特征<code>Features</code>的分类问题，但实际上判断肿瘤的性质需要的绝不仅仅只有两个维度，为了便于理解，<code>Pro.Ng</code>才这么讲解。</p>
-<p>对于性别，涉及到的特征也有很多，比如说：头发长短、是否有胡子、说话的音调、是否有体香等等，以此作出的聚类图会是一个多维的图(还不会用<code>Octave</code>画图真的对不住)。</p>
-<p>那<strike>伪娘</strike>算什么呢？看一下上面的图，良性肿瘤聚集区是不是有一个恶性的？这个肿瘤它喜欢模仿良性肿瘤的一些特征，从而达到鱼目混珠的目的。所以，你选择的维度越多，特征就越明显，最终的分类也会更加精确。</p>
-<h3 id="监督学习Supervised-Learning"><a href="#监督学习Supervised-Learning" class="headerlink" title="监督学习Supervised Learning"></a>监督学习<code>Supervised Learning</code></h3><p>什么样的事情需要监督呢？</p>
-<p>比如考试，最后你需要上交一份试题的解答；比如说工作，最终你要做完领导安排给你的事情……</p>
-<p>受监督的事情最终都要有一个特定<code>Specific</code>的结果。预测分数、判断志愿达成、预测肿瘤性质、预测性别……这些都需要给出一个明确的答案<code>answer</code>。</p>
-<p>相对的，就会有一些事情，不需要给出特别明确的结果的。比如网易云的智能推荐，它收集你听过的歌作为数据集，并没有对此给出一个特定的结论，它只是对你的品味进行了整理归纳，然后给你推荐类似的歌曲而已。</p>
-<p>这种学习算法我们称之为：非监督学习<code>Unsupervised Learning</code></p>
-<p>想了解更多关于”非监督学习”的内容吗？下一篇：<code>MachineLearning-UnsupervisedLearning</code>敬请期待！</p>
+<p>举栗子：</p>
+<ul>
+<li>肿瘤性质：<ul>
+<li>肿瘤有良性和恶性之分</li>
+<li>不同特征的病人群体数据，分良性和恶性肿瘤聚合在一起</li>
+</ul>
+</li>
+<li>性别区分：<ul>
+<li>性别有男女之分（伪娘、人妖……）</li>
+<li>形态、音声、肤质特征下，性别数据基本会按男女聚类呈现</li>
+</ul>
+</li>
+</ul>
+<h3 id="非监督学习"><a href="#非监督学习" class="headerlink" title="非监督学习"></a>非监督学习</h3><blockquote>
+<p>相比较于监督学习，非监督学习并不指定输出信息，需要机器学习算法自己根据给定的数据，进行有意义的数据分析</p>
+</blockquote>
+<h4 id="聚类算法"><a href="#聚类算法" class="headerlink" title="聚类算法"></a>聚类算法</h4><blockquote>
+<p>对于给定数据的已有特征，对其进行一些规则上的分类统计，聚类，也就是分类聚合的意思</p>
+</blockquote>
+<p>举栗子：</p>
+<ul>
+<li>客户群体划分：<ul>
+<li>根据客户的消费表现，将客户划分为不同需求的受众群体</li>
+<li>根据客户的人脉关系，对客户的社交能力评级划分</li>
+</ul>
+</li>
+<li>声纹识别：<ul>
+<li>将嘈杂的声音信息进行处理分离，得到有效的信息</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>之前比较迷监督学习的分类问题和非监督学习的聚类算法，感觉两个东西没什么区别。</p>
+<p>如果有同感的，可以细细体会一下：</p>
+<blockquote>
+<p>监督学习和非监督学习最大的区别在于输出信息是否在数据集中已经给定</p>
+</blockquote>
+<p>肿瘤的良性还是恶性，在数据集中是已知的信息；而杂糅的声纹在信息中并没有指出哪段声纹是属于谁发出的。</p>
+<p>想明白的同学参考一个问题：</p>
+<blockquote>
+<p>对男性和女性的声纹进行数据采集，之后对某一个人的声音进行识别是男声还是女声。</p>
+<p>这属于那种机器学习算法？</p>
+</blockquote>
 
       
     </div>
@@ -603,6 +602,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/30/Machine-Learning-Linear-Regression-Algorithm/" rel="prev" title="机器学习-线性回归算法">
+                机器学习-线性回归算法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -687,7 +690,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">文章</span>
                   </a>
                 </div>
@@ -773,7 +776,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#分析问题"><span class="nav-number">1.</span> <span class="nav-text">分析问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#预测分数-名次"><span class="nav-number">1.1.</span> <span class="nav-text">预测分数/名次</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#决定志愿"><span class="nav-number">1.2.</span> <span class="nav-text">决定志愿</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回到机器学习"><span class="nav-number">2.</span> <span class="nav-text">回到机器学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#回归问题"><span class="nav-number">2.1.</span> <span class="nav-text">回归问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分类问题"><span class="nav-number">2.2.</span> <span class="nav-text">分类问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监督学习Supervised-Learning"><span class="nav-number">3.</span> <span class="nav-text">监督学习Supervised Learning</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#监督学习"><span class="nav-number">1.</span> <span class="nav-text">监督学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#回归问题"><span class="nav-number">1.1.</span> <span class="nav-text">回归问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分类问题"><span class="nav-number">1.2.</span> <span class="nav-text">分类问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非监督学习"><span class="nav-number">2.</span> <span class="nav-text">非监督学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#聚类算法"><span class="nav-number">2.1.</span> <span class="nav-text">聚类算法</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1119,30 +1122,6 @@
   
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      },
-      TeX: {equationNumbers: { autoNumber: "AMS" }}
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
   
 
 
