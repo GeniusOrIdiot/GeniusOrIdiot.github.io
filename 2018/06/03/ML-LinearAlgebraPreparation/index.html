@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="俊のWEBSITE">
 <meta property="og:description" content="需要更深入地学习机器学习及其算法，线性代数的一些基础的知识技能是有必要的。">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2018-06-04T11:23:19.704Z">
+<meta property="og:updated_time" content="2018-06-04T11:24:12.457Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-线性代数技能预备">
 <meta name="twitter:description" content="需要更深入地学习机器学习及其算法，线性代数的一些基础的知识技能是有必要的。">
@@ -383,7 +383,7 @@
                 
                   <span class="post-meta-item-text">更新於</span>
                 
-                <time title="修改時間：2018-06-04 19:23:19" itemprop="dateModified" datetime="2018-06-04T19:23:19+08:00">2018-06-04</time>
+                <time title="修改時間：2018-06-04 19:24:12" itemprop="dateModified" datetime="2018-06-04T19:24:12+08:00">2018-06-04</time>
               
             
           </span>
@@ -446,7 +446,7 @@
           
             <span class="post-letters-count">
              &nbsp; | &nbsp;
-            <span>字數：1,783 字</span>
+            <span>字數：1,784 字</span>
             </span>
           
 
@@ -536,7 +536,7 @@
 <h4 id="在Octave中练习矩阵运算（三）"><a href="#在Octave中练习矩阵运算（三）" class="headerlink" title="在Octave中练习矩阵运算（三）"></a>在Octave中练习矩阵运算（三）</h4><p>前面接触了单位矩阵、逆和转置，现在在 $Octave$ 中试试吧！</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">% Initialize random matrices A</span><br><span class="line">A = [1,2;4,5]</span><br><span class="line"></span><br><span class="line">% Initialize a 2 by 2 identity matrix</span><br><span class="line">I = eye(2)</span><br><span class="line"></span><br><span class="line">% The above notation is the same as I = [1,0;0,1]</span><br><span class="line"></span><br><span class="line">% What happens when we multiply I*A ? </span><br><span class="line">IA = I*A </span><br><span class="line"></span><br><span class="line">% How about A*I ? </span><br><span class="line">AI = A*I </span><br><span class="line"></span><br><span class="line">% Note that before AB != BA but IA = AI</span><br><span class="line"></span><br><span class="line">% Initialize matrix B</span><br><span class="line">B = [1,2,0;0,5,6;7,0,9]</span><br><span class="line"></span><br><span class="line">% Transpose B</span><br><span class="line">B_trans = B&apos; </span><br><span class="line"></span><br><span class="line">% Take the inverse of B</span><br><span class="line">B_inv = inv(B)</span><br><span class="line"></span><br><span class="line">% What is B^(-1)*B? </span><br><span class="line">B_invB = inv(B)*B</span><br><span class="line">% Make sure you understand why we got that result</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>值得注意的是：满足 $AI = IA$ 的矩阵 $A$ 也必须是方阵。</p>
+<p>$PS:$ 值得注意的是：满足 $AI = IA$ 的矩阵 $A$ 也必须是方阵。</p>
 <p>由此可以细化单位矩阵部分的结论：</p>
 </blockquote>
 <p>$$<br>A_{m×n}×I_n=A_{m×n}=I_m×A_{m×n}<br>$$</p>
