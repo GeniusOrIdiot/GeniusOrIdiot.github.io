@@ -112,24 +112,25 @@
 
 
 
-  <meta name="description" content="做一个大小写不分的人~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分類">
-<meta property="og:url" content="http://geniusoridiot.github.io/categories/index.html">
+  <meta name="description" content="Pro.Ng视频里的标准方程Normal Equation是怎么推导出来的？">
+<meta name="keywords" content="Machine Learning,Andrew Ng">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习-线性回归标准方程的推导">
+<meta property="og:url" content="http://geniusoridiot.github.io/2018/06/06/ML-NormalEquation/index.html">
 <meta property="og:site_name" content="俊のWEBSITE">
-<meta property="og:description" content="做一个大小写不分的人~">
+<meta property="og:description" content="Pro.Ng视频里的标准方程Normal Equation是怎么推导出来的？">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2018-06-04T11:33:12.352Z">
+<meta property="og:updated_time" content="2018-06-06T12:56:50.470Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分類">
-<meta name="twitter:description" content="做一个大小写不分的人~">
+<meta name="twitter:title" content="机器学习-线性回归标准方程的推导">
+<meta name="twitter:description" content="Pro.Ng视频里的标准方程Normal Equation是怎么推导出来的？">
 
 
 
 
 
 
-  <link rel="canonical" href="http://geniusoridiot.github.io/categories/"/>
+  <link rel="canonical" href="http://geniusoridiot.github.io/2018/06/06/ML-NormalEquation/"/>
 
 
 
@@ -139,7 +140,7 @@
   };
 </script>
 
-  <title>分類 | 俊のWEBSITE</title>
+  <title>机器学习-线性回归标准方程的推导 | 俊のWEBSITE</title>
   
 
 
@@ -251,7 +252,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分類</a>
   </li>
@@ -303,92 +304,246 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://geniusoridiot.github.io/2018/06/06/ML-NormalEquation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MDMORY">
+      <meta itemprop="description" content="做一个大小写不分的人~">
+      <meta itemprop="image" content="/images/1526912730793.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="俊のWEBSITE">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">分類</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                  
-                    
-                  
-                
-                目前共有 3 個分類
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math/">Math</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Math/Machine-Learning/">Machine Learning</a><span class="category-list-count">5</span></li></ul></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">机器学习-线性回归标准方程的推导
+              
+            
+          </h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+
+              
+                
+              
+
+              <time title="創建時間：2018-06-06 20:39:12 / 修改時間：20:56:50" itemprop="dateCreated datePublished" datetime="2018-06-06T20:39:12+08:00">2018-06-06</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Math/" itemprop="url" rel="index"><span itemprop="name">Math</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Math/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/06/ML-NormalEquation/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">評論數：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/06/06/ML-NormalEquation/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/06/06/ML-NormalEquation/" class="leancloud_visitors" data-flag-title="机器学习-线性回归标准方程的推导">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">閱讀次數：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-letters-count">
+             &nbsp; | &nbsp;
+            <span>字數：151 字</span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p><code>Pro.Ng</code>视频里的标准方程<code>Normal Equation</code>是怎么推导出来的？</p>
+<a id="more"></a>
+<hr>
+<p>乍看觉得一脸萌币有木有？……<br>$$<br>θ=(X^TX)^{-1}X^Ty<br>$$<br>用 $Octave$ 试了一下，确实是对的😮</p>
+<p>到底是怎么一回事呢？🤔</p>
+<p>我们知道：<br>$$<br>y=Xθ<br>$$<br>即：特征矩阵乘以特征系数得到结果集</p>
+<p>按顺序做以下转换：<br>$$<br>X^Ty=X^TXθ……两边同左乘X^T<br>$$</p>
+<p>$$<br>(X^TX)^{-1}X^Ty=(X^TX)^{-1}X^TXθ……两边同左乘((X^TX)^{-1})<br>$$</p>
+<p>由于 $(X^TX)^{-1}$ 与 $X^TX$ 互逆，乘积为单位矩阵 $I$，于是：<br>$$<br>(X^TX)^{-1}X^Ty=(X^TX)^{-1}X^TXθ=Iθ=θ<br>$$<br>只能说—— $666$！</p>
+
       
     </div>
+
     
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Andrew-Ng/" rel="tag"># Andrew Ng</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/03/ML-LinearAlgebraPreparation/" rel="next" title="机器学习-线性代数技能预备">
+                <i class="fa fa-chevron-left"></i> 机器学习-线性代数技能预备
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
 
-    
-    
-    
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -861,6 +1016,30 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
