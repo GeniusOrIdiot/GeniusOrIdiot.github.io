@@ -112,23 +112,24 @@
 
 
 
-  <meta name="description" content="做一个大小写不分的人~">
-<meta property="og:type" content="website">
+  <meta name="description" content="逻辑回归分类问题 分类问题classification一般会将问题的结果归纳为互不关联的几个类别class  如果用线性回归的思维处理分类问题，我们可以：$$h(x) \ge 0.5时，取1 \\h(x) &amp;lt; 0.5时，取0$$姑且我们只考虑只有两个分类的情况，当然，会有多个分类的情况。 假想函数表达式我们并不希望我们的假想函数最终给出 $&amp;gt;1$ 或是 $&amp;lt;0$ 的结果，这没有任">
+<meta property="og:type" content="article">
 <meta property="og:title" content="俊のWEBSITE">
-<meta property="og:url" content="http://geniusoridiot.github.io/categories/Math/Machine-Learning/Octave/index.html">
+<meta property="og:url" content="http://geniusoridiot.github.io/2018/06/18/ML-LogisticRegression/index.html">
 <meta property="og:site_name" content="俊のWEBSITE">
-<meta property="og:description" content="做一个大小写不分的人~">
+<meta property="og:description" content="逻辑回归分类问题 分类问题classification一般会将问题的结果归纳为互不关联的几个类别class  如果用线性回归的思维处理分类问题，我们可以：$$h(x) \ge 0.5时，取1 \\h(x) &amp;lt; 0.5时，取0$$姑且我们只考虑只有两个分类的情况，当然，会有多个分类的情况。 假想函数表达式我们并不希望我们的假想函数最终给出 $&amp;gt;1$ 或是 $&amp;lt;0$ 的结果，这没有任">
 <meta property="og:locale" content="zh-TW">
+<meta property="og:updated_time" content="2018-06-18T04:46:55.795Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="俊のWEBSITE">
-<meta name="twitter:description" content="做一个大小写不分的人~">
+<meta name="twitter:description" content="逻辑回归分类问题 分类问题classification一般会将问题的结果归纳为互不关联的几个类别class  如果用线性回归的思维处理分类问题，我们可以：$$h(x) \ge 0.5时，取1 \\h(x) &amp;lt; 0.5时，取0$$姑且我们只考虑只有两个分类的情况，当然，会有多个分类的情况。 假想函数表达式我们并不希望我们的假想函数最终给出 $&amp;gt;1$ 或是 $&amp;lt;0$ 的结果，这没有任">
 
 
 
 
 
 
-  <link rel="canonical" href="http://geniusoridiot.github.io/categories/Math/Machine-Learning/Octave/"/>
+  <link rel="canonical" href="http://geniusoridiot.github.io/2018/06/18/ML-LogisticRegression/"/>
 
 
 
@@ -138,7 +139,7 @@
   };
 </script>
 
-  <title>分類: Octave | 俊のWEBSITE</title>
+  <title> | 俊のWEBSITE</title>
   
 
 
@@ -185,7 +186,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -250,7 +251,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分類</a>
   </li>
@@ -302,113 +303,229 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Octave<small>分類</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://geniusoridiot.github.io/2018/06/18/ML-LogisticRegression/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MDMORY">
+      <meta itemprop="description" content="做一个大小写不分的人~">
+      <meta itemprop="image" content="/images/1526912730793.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="俊のWEBSITE">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/06/10/ML-OctaveTutorial-2/" itemprop="url">
-              
-                <span itemprop="name">机器学习-Octave简易教程(2)</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-10T19:05:44+08:00"
-              content="2018-06-10" >
-          06-10
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+
+              
+                
+              
+
+              <time title="創建時間：2018-06-18 10:12:18 / 修改時間：12:46:55" itemprop="dateCreated datePublished" datetime="2018-06-18T10:12:18+08:00">2018-06-18</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/18/ML-LogisticRegression/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">評論數：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/06/18/ML-LogisticRegression/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/06/18/ML-LogisticRegression/" class="leancloud_visitors" data-flag-title="">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">閱讀次數：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-letters-count">
+             &nbsp; | &nbsp;
+            <span>字數：213 字</span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/09/ML-OctaveTutorial/" itemprop="url">
-              
-                <span itemprop="name">机器学习-Octave简易教程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-09T21:21:47+08:00"
-              content="2018-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <h3 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h3><h4 id="分类问题"><a href="#分类问题" class="headerlink" title="分类问题"></a>分类问题</h4><blockquote>
+<p>分类问题<code>classification</code>一般会将问题的结果归纳为互不关联的几个类别<code>class</code></p>
+</blockquote>
+<p>如果用线性回归的思维处理分类问题，我们可以：<br>$$<br>h(x) \ge 0.5时，取1 \\<br>h(x) &lt; 0.5时，取0<br>$$<br>姑且我们只考虑只有两个分类的情况，当然，会有多个分类的情况。</p>
+<h4 id="假想函数表达式"><a href="#假想函数表达式" class="headerlink" title="假想函数表达式"></a>假想函数表达式</h4><p>我们并不希望我们的假想函数最终给出 $&gt;1$ 或是 $&lt;0$ 的结果，这没有任何意义。通过逻辑函数 $Sigmoid \ Function$ 可以将假想函数的值限制在 $0-1$范围内。<br>$$<br>h_θ(x) = g(θ^Tx) \\<br>z=θ^Tx \\<br>g(z) = \frac 1 {1+e^{-z}}<br>$$<br>解释一下这个函数：$g(z) = \frac 1 {1+e^z}$<br>$$<br>当z<0时,\ e^{-z}="">1,\ 0&lt;\frac 1 {1+e^{-z}}<0.5,\ y="0;\\\\" 当z="">0时,\ 0&lt;e^{-z}&lt;1, 0.5&lt;\frac 1 {1+e^{-z}}&lt;1,\ y=1<br>$$</0.5,\></0时,\></p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/10/ML-OctaveTutorial-2/" rel="next" title="机器学习-Octave简易教程(2)">
+                <i class="fa fa-chevron-left"></i> 机器学习-Octave简易教程(2)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/19/python+django+docker/" rel="prev" title="python+django+docker:是真的爽">
+                python+django+docker:是真的爽 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -429,8 +546,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -539,6 +665,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑回归"><span class="nav-number">1.</span> <span class="nav-text">逻辑回归</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分类问题"><span class="nav-number">1.1.</span> <span class="nav-text">分类问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#假想函数表达式"><span class="nav-number">1.2.</span> <span class="nav-text">假想函数表达式</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -673,6 +815,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
@@ -714,6 +860,30 @@
 
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'geniusoridiot',
+            repo: 'gitment-comments',
+            
+            lang: "zh-TW" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '517dbd7c53d6c4a1b8ff98053fb7ef180e06aad8',
+            
+                client_id: '0fca37813c3ef4059406'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 

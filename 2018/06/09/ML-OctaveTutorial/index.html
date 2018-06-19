@@ -121,7 +121,7 @@
 <meta property="og:description" content="Octave基本教程 &amp;gt; eye(2)  % 单位矩阵ans =Diagonal Matrix   1   0   0   1">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="http://geniusoridiot.github.io/images/ML-Octave/1528553786815.jpg">
-<meta property="og:updated_time" content="2018-06-09T14:41:01.664Z">
+<meta property="og:updated_time" content="2018-06-10T11:31:08.412Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-Octave简易教程">
 <meta name="twitter:description" content="Octave基本教程 &amp;gt; eye(2)  % 单位矩阵ans =Diagonal Matrix   1   0   0   1">
@@ -368,12 +368,24 @@
                 
               
 
-              <time title="創建時間：2018-06-09 21:21:47 / 修改時間：22:41:01" itemprop="dateCreated datePublished" datetime="2018-06-09T21:21:47+08:00">2018-06-09</time>
+              <time title="創建時間：2018-06-09 21:21:47" itemprop="dateCreated datePublished" datetime="2018-06-09T21:21:47+08:00">2018-06-09</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新於</span>
+                
+                <time title="修改時間：2018-06-10 19:31:08" itemprop="dateModified" datetime="2018-06-10T19:31:08+08:00">2018-06-10</time>
               
             
           </span>
@@ -443,7 +455,7 @@
           
             <span class="post-letters-count">
              &nbsp; | &nbsp;
-            <span>字數：513 字</span>
+            <span>字數：648 字</span>
             </span>
           
 
@@ -476,6 +488,7 @@
 <h4 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h4><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">&gt; <span class="number">1</span> == <span class="number">2</span> <span class="comment">% false</span></span><br><span class="line"><span class="built_in">ans</span> = <span class="number">0</span></span><br><span class="line">&gt; <span class="number">1</span> ~= <span class="number">2</span> <span class="comment">% not equals: true</span></span><br><span class="line"><span class="built_in">ans</span> = <span class="number">1</span></span><br><span class="line">&gt; <span class="number">1</span> &amp;&amp; <span class="number">0</span> <span class="comment">% AND</span></span><br><span class="line"><span class="built_in">ans</span> = <span class="number">0</span></span><br><span class="line">&gt; <span class="number">1</span> || <span class="number">0</span> <span class="comment">% OR</span></span><br><span class="line"><span class="built_in">ans</span> = <span class="number">1</span></span><br><span class="line">&gt; xor(<span class="number">1</span>,<span class="number">0</span>)</span><br><span class="line"><span class="built_in">ans</span> = <span class="number">1</span></span><br></pre></td></tr></table></figure>
 <h4 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h4><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">&gt; a = <span class="number">3</span></span><br><span class="line">a =  <span class="number">3</span></span><br><span class="line">&gt; a = <span class="number">3</span>;  <span class="comment">% 利用;符号控制是否输出结果</span></span><br><span class="line">&gt; a  <span class="comment">% 声明过的变量可以直接输入变量名来输出</span></span><br><span class="line">a =  <span class="number">3</span></span><br><span class="line">&gt; a = <span class="built_in">pi</span>;</span><br><span class="line">&gt; <span class="built_in">disp</span>(a)  <span class="comment">% 直接输出值，不显示变量名</span></span><br><span class="line"><span class="number">3.1416</span></span><br><span class="line">&gt; <span class="built_in">disp</span>(sprintf(<span class="string">'2 decimals: %0.2f'</span>, a))  <span class="comment">% 使用sprintf按需要输出</span></span><br><span class="line"><span class="number">2</span> decimals: <span class="number">3.14</span></span><br><span class="line">&gt; <span class="built_in">disp</span>(sprintf(<span class="string">'6 decimals: %0.6f'</span>, a))</span><br><span class="line"><span class="number">6</span> decimals: <span class="number">3.141593</span></span><br><span class="line">&gt; <span class="comment">% 此外：'%0.2f'是C的语法。'%w.h f'：表示输出的总宽度是w小数点后保留h位浮点数(f)类型数值，如果实际长度大于他想控制输出的长度w，则还是按实际长度输出</span></span><br></pre></td></tr></table></figure>
 <h4 id="声明矩阵"><a href="#声明矩阵" class="headerlink" title="声明矩阵"></a>声明矩阵</h4><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">&gt; A = [<span class="number">1</span> <span class="number">2</span>;<span class="number">3</span> <span class="number">4</span>;<span class="number">5</span> <span class="number">6</span>]</span><br><span class="line">A =</span><br><span class="line"></span><br><span class="line">   <span class="number">1</span>   <span class="number">2</span></span><br><span class="line">   <span class="number">3</span>   <span class="number">4</span></span><br><span class="line">   <span class="number">5</span>   <span class="number">6</span></span><br><span class="line"></span><br><span class="line">&gt; A = [<span class="number">1</span>,<span class="number">2</span>;<span class="number">3</span>,<span class="number">4</span>;<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line">A =</span><br><span class="line"></span><br><span class="line">   <span class="number">1</span>   <span class="number">2</span></span><br><span class="line">   <span class="number">3</span>   <span class="number">4</span></span><br><span class="line">   <span class="number">5</span>   <span class="number">6</span></span><br><span class="line">   </span><br><span class="line">&gt; A = [<span class="number">1</span>,<span class="number">2</span>;</span><br><span class="line">&gt; <span class="number">3</span>,<span class="number">4</span>;</span><br><span class="line">&gt; <span class="number">5</span>,<span class="number">6</span>]  <span class="comment">% 使用;时，你还可以换行以矩阵的格式输入</span></span><br><span class="line">A =</span><br><span class="line"></span><br><span class="line">   <span class="number">1</span>   <span class="number">2</span></span><br><span class="line">   <span class="number">3</span>   <span class="number">4</span></span><br><span class="line">   <span class="number">5</span>   <span class="number">6</span></span><br><span class="line"></span><br><span class="line">&gt; v = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]  <span class="comment">% vector</span></span><br><span class="line">v =</span><br><span class="line"></span><br><span class="line">   <span class="number">1</span>   <span class="number">2</span>   <span class="number">3</span></span><br><span class="line"></span><br><span class="line">&gt; v = [<span class="number">1</span>;<span class="number">2</span>;<span class="number">3</span>]  <span class="comment">% column vector</span></span><br><span class="line">v =</span><br><span class="line"></span><br><span class="line">   <span class="number">1</span></span><br><span class="line">   <span class="number">2</span></span><br><span class="line">   <span class="number">3</span></span><br><span class="line"></span><br><span class="line">&gt; v = <span class="number">1</span>:<span class="number">0.2</span>:<span class="number">2</span>  <span class="comment">% 以0.2为增量从1到2的数构成的矩阵</span></span><br><span class="line">v =</span><br><span class="line"></span><br><span class="line">    <span class="number">1.0000</span>    <span class="number">1.2000</span>    <span class="number">1.4000</span>    <span class="number">1.6000</span>    <span class="number">1.8000</span>    <span class="number">2.0000</span></span><br><span class="line"></span><br><span class="line">&gt; v = <span class="number">1</span>:<span class="number">6</span>  <span class="comment">% 默认增量为1</span></span><br><span class="line">v =</span><br><span class="line"></span><br><span class="line">   <span class="number">1</span>   <span class="number">2</span>   <span class="number">3</span>   <span class="number">4</span>   <span class="number">5</span>   <span class="number">6</span></span><br><span class="line"></span><br><span class="line">&gt; <span class="built_in">ones</span>(<span class="number">2</span>,<span class="number">3</span>)  <span class="comment">% 全部为1的矩阵</span></span><br><span class="line"><span class="built_in">ans</span> =</span><br><span class="line"></span><br><span class="line">   <span class="number">1</span>   <span class="number">1</span>   <span class="number">1</span></span><br><span class="line">   <span class="number">1</span>   <span class="number">1</span>   <span class="number">1</span></span><br><span class="line"></span><br><span class="line">&gt; <span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">2</span>)  <span class="comment">% 全部为0的矩阵</span></span><br><span class="line"><span class="built_in">ans</span> =</span><br><span class="line"></span><br><span class="line">   <span class="number">0</span>   <span class="number">0</span></span><br><span class="line">   <span class="number">0</span>   <span class="number">0</span></span><br><span class="line">   <span class="number">0</span>   <span class="number">0</span></span><br><span class="line"></span><br><span class="line">&gt; <span class="built_in">eye</span>(<span class="number">2</span>)  <span class="comment">% 单位矩阵</span></span><br><span class="line"><span class="built_in">ans</span> =</span><br><span class="line"></span><br><span class="line">Diagonal Matrix</span><br><span class="line"></span><br><span class="line">   <span class="number">1</span>   <span class="number">0</span></span><br><span class="line">   <span class="number">0</span>   <span class="number">1</span></span><br><span class="line"></span><br><span class="line">&gt; w = <span class="built_in">rand</span>(<span class="number">1</span>,<span class="number">3</span>)  <span class="comment">% 全部是0~1随机值的矩阵</span></span><br><span class="line">w =</span><br><span class="line"></span><br><span class="line">   <span class="number">0.74666</span>   <span class="number">0.34772</span>   <span class="number">0.21182</span></span><br><span class="line"></span><br><span class="line">&gt; w = <span class="built_in">randn</span>(<span class="number">1</span>,<span class="number">6</span>)  <span class="comment">% 高斯随机变量</span></span><br><span class="line">w =</span><br><span class="line"></span><br><span class="line">  <span class="number">-0.99990</span>  <span class="number">-0.10855</span>  <span class="number">-0.86680</span>  <span class="number">-0.94371</span>  <span class="number">-0.87955</span>   <span class="number">0.66501</span></span><br></pre></td></tr></table></figure>
+<h4 id="矩阵的大小"><a href="#矩阵的大小" class="headerlink" title="矩阵的大小"></a>矩阵的大小</h4><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">&gt; A = [<span class="number">1</span> <span class="number">2</span>; <span class="number">3</span> <span class="number">4</span>; <span class="number">5</span> <span class="number">6</span>]</span><br><span class="line">A =</span><br><span class="line"></span><br><span class="line">   <span class="number">1</span>   <span class="number">2</span></span><br><span class="line">   <span class="number">3</span>   <span class="number">4</span></span><br><span class="line">   <span class="number">5</span>   <span class="number">6</span></span><br><span class="line"></span><br><span class="line">&gt; <span class="built_in">size</span>(A)</span><br><span class="line"><span class="built_in">ans</span> =</span><br><span class="line"></span><br><span class="line">   <span class="number">3</span>   <span class="number">2</span></span><br><span class="line"></span><br><span class="line">&gt; <span class="built_in">size</span>(A,<span class="number">1</span>)  <span class="comment">% 第一个维度对应的大小 3</span></span><br><span class="line"><span class="built_in">ans</span> =  <span class="number">3</span></span><br><span class="line">&gt; <span class="built_in">size</span>(A,<span class="number">2</span>)  <span class="comment">% 第二个维度对应的大小 2</span></span><br><span class="line"><span class="built_in">ans</span> =  <span class="number">2</span></span><br><span class="line">&gt; <span class="built_in">size</span>(A,<span class="number">3</span>)  <span class="comment">% 虽然没有考虑过更高阶的矩阵，但是默认更高的维度对应元素都是1</span></span><br><span class="line"><span class="built_in">ans</span> =  <span class="number">1</span></span><br><span class="line">&gt; <span class="built_in">size</span>(A,<span class="number">4</span>)</span><br><span class="line"><span class="built_in">ans</span> =  <span class="number">1</span></span><br><span class="line">&gt; V = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">V =</span><br><span class="line"></span><br><span class="line">   <span class="number">1</span>   <span class="number">2</span>   <span class="number">3</span>   <span class="number">4</span></span><br><span class="line"></span><br><span class="line">&gt; <span class="built_in">length</span>(V)  <span class="comment">% 向量的长度</span></span><br><span class="line"><span class="built_in">ans</span> =  <span class="number">4</span></span><br><span class="line">&gt; <span class="built_in">length</span>(A)  <span class="comment">% 对矩阵而言就是最大的那个维度的长度</span></span><br><span class="line"><span class="built_in">ans</span> =  <span class="number">3</span></span><br></pre></td></tr></table></figure>
 <h4 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h4><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">&gt; w = <span class="number">6</span> + <span class="built_in">sqrt</span>(<span class="number">10</span>)*(<span class="built_in">randn</span>(<span class="number">1</span>,<span class="number">10000</span>));  <span class="comment">% 这是一个有10000个数的矩阵</span></span><br><span class="line">&gt; hist(w)  <span class="comment">% 展示如下</span></span><br><span class="line">&gt; hist(w,<span class="number">50</span>)  <span class="comment">% 以50条直方展示的直方图</span></span><br></pre></td></tr></table></figure>
 <p><img src="/images/ML-Octave/1528553786815.jpg" alt="高斯随机数正态分布图"></p>
 
@@ -539,6 +552,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/10/ML-OctaveTutorial-2/" rel="prev" title="机器学习-Octave简易教程(2)">
+                机器学习-Octave简易教程(2) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -623,7 +640,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">文章</span>
                   </a>
                 </div>
@@ -644,7 +661,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">分類</span>
                   </a>
                 </div>
@@ -679,7 +698,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">標籤</span>
                   </a>
                 </div>
@@ -715,7 +740,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础操作"><span class="nav-number">1.</span> <span class="nav-text">基础操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本数学运算"><span class="nav-number">1.1.</span> <span class="nav-text">基本数学运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑运算"><span class="nav-number">1.2.</span> <span class="nav-text">逻辑运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声明变量"><span class="nav-number">1.3.</span> <span class="nav-text">声明变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声明矩阵"><span class="nav-number">1.4.</span> <span class="nav-text">声明矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#画图"><span class="nav-number">1.5.</span> <span class="nav-text">画图</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础操作"><span class="nav-number">1.</span> <span class="nav-text">基础操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本数学运算"><span class="nav-number">1.1.</span> <span class="nav-text">基本数学运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑运算"><span class="nav-number">1.2.</span> <span class="nav-text">逻辑运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声明变量"><span class="nav-number">1.3.</span> <span class="nav-text">声明变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声明矩阵"><span class="nav-number">1.4.</span> <span class="nav-text">声明矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#矩阵的大小"><span class="nav-number">1.5.</span> <span class="nav-text">矩阵的大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#画图"><span class="nav-number">1.6.</span> <span class="nav-text">画图</span></a></li></ol></li></ol></div>
             
 
           </div>

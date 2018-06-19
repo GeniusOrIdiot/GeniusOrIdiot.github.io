@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-TW">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="利用python+django+docker快速搭建一个项目">
+<meta name="keywords" content="python,dgango,docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python+django+docker:是真的爽">
+<meta property="og:url" content="http://geniusoridiot.github.io/2018/06/19/python+django+docker/index.html">
+<meta property="og:site_name" content="俊のWEBSITE">
+<meta property="og:description" content="利用python+django+docker快速搭建一个项目">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="http://geniusoridiot.github.io/images/django-images/1529407652189.jpg">
+<meta property="og:image" content="http://geniusoridiot.github.io/images/django-images/1529411176747.jpg">
+<meta property="og:updated_time" content="2018-06-19T12:36:02.740Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python+django+docker:是真的爽">
+<meta name="twitter:description" content="利用python+django+docker快速搭建一个项目">
+<meta name="twitter:image" content="http://geniusoridiot.github.io/images/django-images/1529407652189.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://geniusoridiot.github.io/2018/06/19/python+django+docker/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>python+django+docker:是真的爽 | 俊のWEBSITE</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">俊のWEBSITE</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">三尺微命，一介书生</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首頁</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />關於</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />標籤</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分類</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />歸檔</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+    
+      
+    
+    <a href="https://github.com/geniusoridiot" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
+    
+      </a>
+    
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://geniusoridiot.github.io/2018/06/19/python+django+docker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MDMORY">
+      <meta itemprop="description" content="做一个大小写不分的人~">
+      <meta itemprop="image" content="/images/1526912730793.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="俊のWEBSITE">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python+django+docker:是真的爽
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+
+              
+                
+              
+
+              <time title="創建時間：2018-06-19 20:29:58 / 修改時間：20:36:02" itemprop="dateCreated datePublished" datetime="2018-06-19T20:29:58+08:00">2018-06-19</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/19/python+django+docker/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">評論數：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/06/19/python+django+docker/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/06/19/python+django+docker/" class="leancloud_visitors" data-flag-title="python+django+docker:是真的爽">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">閱讀次數：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-letters-count">
+             &nbsp; | &nbsp;
+            <span>字數：1,863 字</span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>利用<code>python+django+docker</code>快速搭建一个项目<br><a id="more"></a></p>
+<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><ul>
+<li><p><code>python</code>：<code>version-3.6.3</code></p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 检查python版本</span></span><br><span class="line">$ python --version</span><br><span class="line">Python 2.7.10	<span class="comment"># 系统已经装了，但是更新版本敲麻烦的，我们用brew重装吧</span></span><br><span class="line"><span class="comment"># brew install python会安装2.7的版本，我们用下面的命令</span></span><br><span class="line">$ brew install python3	<span class="comment"># 这样之后命令行就要用'python3'才行了</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果遇到<code>brew</code>的更新，就像这样→<code>Updating Homebrew...</code>，可以<code>Ctrl+c</code>跳过</p>
+</blockquote>
+</li>
+<li><p><code>django</code>：<code>version-2.0.6</code></p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># python3 &gt;= 3.4 已经包含了pip，可以直接使用</span></span><br><span class="line">$ pip install django</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>docker</code></p>
+</li>
+</ul>
+<h3 id="构建一个项目"><a href="#构建一个项目" class="headerlink" title="构建一个项目"></a>构建一个项目</h3><h4 id="确认django版本"><a href="#确认django版本" class="headerlink" title="确认django版本"></a>确认<code>django</code>版本</h4><p>在你的终端打开<code>python</code></p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ python3	<span class="comment"># 重要！之后所有的 python3 指令，会使用 python 代替，如有必要，自行替换</span></span><br></pre></td></tr></table></figure>
+<p>然后在<code>python</code>命令行界面输入</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> django</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(django.get_version())</span><br><span class="line"><span class="number">2.0</span><span class="number">.6</span></span><br></pre></td></tr></table></figure>
+<h4 id="新建一个项目"><a href="#新建一个项目" class="headerlink" title="新建一个项目"></a>新建一个项目</h4><p>在你的终端输入下面的命令</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ django-admin startproject mysite	<span class="comment"># 项目名自取，只允许数字、字母和'_'</span></span><br></pre></td></tr></table></figure>
+<p>新建的项目的结构看起来像这样：</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">mysite/</span><br><span class="line">    manage.py	<span class="comment"># 与 django 项目进行交互的文件，我们会用它来启动应用</span></span><br><span class="line">    mysite/		<span class="comment"># 主要目录，包含配置文件</span></span><br><span class="line">        __init__.py</span><br><span class="line">        settings.py	<span class="comment"># 重要，配置项，包括中间件、模板、数据库连接等</span></span><br><span class="line">        urls.py	<span class="comment"># 路径分发的配置</span></span><br><span class="line">        wsgi.py	<span class="comment"># WSGI 的 entry-point 暂不管</span></span><br></pre></td></tr></table></figure>
+<p>现在，你可以尝试启动这个项目了，不需要任何页面和接口或者是模型。</p>
+<p>执行下面的命令：</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ python manage.py runserver</span><br></pre></td></tr></table></figure>
+<p>你会看到：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">June 15, 2018 - 15:50:53</span><br><span class="line">Django version 2.0, using settings &apos;mysite.settings&apos;</span><br><span class="line">Starting development server at http://127.0.0.1:8000/</span><br><span class="line">Quit the server with CONTROL-C.</span><br></pre></td></tr></table></figure>
+<p>点击<code>http://127.0.0.1:8000/</code>打开，看到一个小火箭起飞的页面，就说明应用已经启动。</p>
+<h4 id="新建一个模块"><a href="#新建一个模块" class="headerlink" title="新建一个模块"></a>新建一个模块</h4><p><code>django</code>建议一个项目按照功能划分模块</p>
+<p>让我们开始新建一个模块</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ python manage.py startapp polls	<span class="comment"># 负责 投票'poll' 功能的模块</span></span><br></pre></td></tr></table></figure>
+<p>新的模块看起像这样：</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">polls/</span><br><span class="line">    __init__.py</span><br><span class="line">    admin.py	<span class="comment"># 基于 django 管理模型的选项(可选)</span></span><br><span class="line">    apps.py		<span class="comment"># 注册应用名</span></span><br><span class="line">    migrations/		<span class="comment"># 数据库迁移的自动构建文件</span></span><br><span class="line">        __init__.py</span><br><span class="line">    models.py	<span class="comment"># 数据模型</span></span><br><span class="line">    tests.py	<span class="comment"># 测试代码</span></span><br><span class="line">    views.py	<span class="comment"># 视图、接口</span></span><br></pre></td></tr></table></figure>
+<p>如果要开始写你的第一个接口，请先在<code>polls/</code>下新建一个<code>urls.py</code>文件</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">polls/</span><br><span class="line">    ...		<span class="comment"># 同上</span></span><br><span class="line">    urls.py	<span class="comment"># 配置 API 路径</span></span><br></pre></td></tr></table></figure>
+<p>在 views.py 中添加 index 方法</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># polls/views.py</span></span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">"Hello, world. You're at the polls index."</span>)</span><br></pre></td></tr></table></figure>
+<p>在<code>urls.py</code>中加入下面的代码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># polls/urls.py</span></span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views	<span class="comment"># 当前目录下的 views.py ，提供 API 方法</span></span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">''</span>, views.index, name=<span class="string">'index'</span>),	<span class="comment"># 在 views.py 中添加的 index 方法</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>这样<code>polls</code>项目的视图还依然不在<code>mysite</code>的管理中，需要在<code>mysite</code>目录（里面的那个）下的<code>urls.py</code>中添加</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># mysite/urls.py</span></span><br><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> include, path</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">'polls/'</span>, include(<span class="string">'polls.urls'</span>)),	<span class="comment"># 添加的 poll 模块的 url</span></span><br><span class="line">    path(<span class="string">'admin/'</span>, admin.site.urls),	<span class="comment"># django 的默认管理页面</span></span><br><span class="line">]</span><br><span class="line"><span class="comment"># path() 可以有4个参数，依次是：route, view, keywordsargs, name</span></span><br></pre></td></tr></table></figure>
+<p>现在，再次启动项目</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ python manage.py runserver</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果出现</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; You have 14 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.</span><br><span class="line">&gt; Run &apos;python manage.py migrate&apos; to apply them.</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>这样的警告，可以暂时无视掉。</p>
+</blockquote>
+<p>打开<code>http://127.0.0.1:8000/polls/</code>验证我们的第一个接口是否返回了正确的信息。</p>
+<h4 id="django数据库-API"><a href="#django数据库-API" class="headerlink" title="django数据库 API"></a><code>django</code>数据库 API</h4><blockquote>
+<p>本篇只讨论<code>django</code>与<code>mysql</code>的集成</p>
+</blockquote>
+<p><code>dejango</code>自带了<code>sqlite3</code>数据库引擎</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.sqlite3'</span>,</span><br><span class="line">        <span class="string">'NAME'</span>: os.path.join(BASE_DIR, <span class="string">'db.sqlite3'</span>),</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>要改成我们使用的<code>mysql</code>数据库</p>
+<p>需要在<code>mysite/settings.py</code>中修改</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,	<span class="comment"># 主要就是这个</span></span><br><span class="line">        <span class="string">'NAME'</span>: <span class="string">'name'</span>,</span><br><span class="line">        <span class="string">'USER'</span>: <span class="string">'user'</span>,</span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">'pwd'</span>,</span><br><span class="line">        <span class="string">'HOST'</span>: <span class="string">'host'</span>,</span><br><span class="line">        <span class="string">'PORT'</span>: <span class="string">'port'</span>,</span><br><span class="line">        <span class="string">'init_command'</span>: <span class="string">'SET default_storage_engine=INNODB'</span>,	<span class="comment"># 配置引擎</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>安装<code>mysql</code>的引擎</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ pip install pymysql</span><br></pre></td></tr></table></figure>
+<p>在<code>mysite/__init__.py</code>中添加</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># mysite/__init__.py</span></span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line">pymysql.install_as_MySQLdb()</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong><em>备注：</em></strong>因为出现了</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module.</span><br><span class="line">Did you install mysqlclient?</span><br></pre></td></tr></table></figure>
+<p>这样的错误信息而去安装<code>mysqlclient</code>的肯定不止我一个……</p>
+<p>至于为什么，参见一下这篇文章：<a href="https://imshusheng.com/python/216.html" target="_blank" rel="noopener">centos下安装python3.x+django的mysql驱动</a></p>
+<p>里面提到，<code>mysql-python</code>也是没用的</p>
+<hr>
+<p>确保数据库连接没问题后，先把<code>django</code>自带的在<code>settings.py</code>中包含的一堆模块跑起来</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    <span class="string">'django.contrib.admin'</span>,</span><br><span class="line">    <span class="string">'django.contrib.auth'</span>,</span><br><span class="line">    <span class="string">'django.contrib.contenttypes'</span>,</span><br><span class="line">    <span class="string">'django.contrib.sessions'</span>,</span><br><span class="line">    <span class="string">'django.contrib.messages'</span>,</span><br><span class="line">    <span class="string">'django.contrib.staticfiles'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>执行</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ python manager.py migrate</span><br></pre></td></tr></table></figure>
+<p>这会在你的数据库中创建若干数量的表，用于用户、组以及权限的管理</p>
+<p>这时运行项目，就不会再报警了</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ python manage.py runserver</span><br></pre></td></tr></table></figure>
+<p>这时打开<code>http://127.0.0.1:8000/admin/</code>，会有一个<code>Django administration</code>的管理员登录界面</p>
+<p><img src="/images/django-images/1529407652189.jpg" alt="Django administration"></p>
+<p>我们来创建一个用户</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ python manage.py createsuperuser</span><br></pre></td></tr></table></figure>
+<p>然后依次填入</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">Username (leave blank to use <span class="string">'系统用户名'</span>): admin	<span class="comment"># 就叫 admin 吧</span></span><br><span class="line">Email address:	<span class="comment"># 可不填</span></span><br><span class="line">Password:	<span class="comment"># 自填，不可见</span></span><br><span class="line">Password (again):	<span class="comment"># 自填，不可见</span></span><br><span class="line">Superuser created successfully.</span><br></pre></td></tr></table></figure>
+<p>现在可以登录了，不过只能管理用户和权限而已，暂且不管。</p>
+<hr>
+<h5 id="创建模型"><a href="#创建模型" class="headerlink" title="创建模型"></a>创建模型</h5><p>在<code>models.py</code>中创建模型</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># polls/models.py</span></span><br><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Question</span><span class="params">(models.Model)</span>:</span>	<span class="comment"># 对于投票，需要一些问题</span></span><br><span class="line">    question_text = models.CharField(max_length=<span class="number">200</span>)</span><br><span class="line">    pub_date = models.DateTimeField(<span class="string">'date published'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Choice</span><span class="params">(models.Model)</span>:</span>		<span class="comment"># 还需要每个问题有一些选择</span></span><br><span class="line">    question = models.ForeignKey(Question, on_delete=models.CASCADE)</span><br><span class="line">    choice_text = models.CharField(max_length=<span class="number">200</span>)</span><br><span class="line">    votes = models.IntegerField(default=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>详细的<code>Model Fields</code>可以参见文档：<a href="https://docs.djangoproject.com/en/2.0/ref/models/fields/#django.db.models.Field" target="_blank" rel="noopener">Model field reference</a></p>
+<h5 id="激活模型"><a href="#激活模型" class="headerlink" title="激活模型"></a>激活模型</h5><p>首先需要将我们的<code>polls</code>纳入管理，在<code>settings.py</code>中添加</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># mysite/settings.py</span></span><br><span class="line">INSTALLED_APPS = [</span><br><span class="line">    <span class="string">'polls.apps.PollsConfig'</span>,	<span class="comment"># 纳入 INSTALLED_APPS</span></span><br><span class="line">    <span class="string">'django.contrib.admin'</span>,</span><br><span class="line">    <span class="string">'django.contrib.auth'</span>,</span><br><span class="line">    <span class="string">'django.contrib.contenttypes'</span>,</span><br><span class="line">    <span class="string">'django.contrib.sessions'</span>,</span><br><span class="line">    <span class="string">'django.contrib.messages'</span>,</span><br><span class="line">    <span class="string">'django.contrib.staticfiles'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>这样<code>migrate</code>会将我们的<code>polls</code>中的模型也纳入管理对象中</p>
+<p>在终端执行</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ python3 manage.py makemigrations polls	<span class="comment"># polls 指定模块，可不加，对应全部模块</span></span><br><span class="line">Migrations <span class="keyword">for</span> <span class="string">'polls'</span>:</span><br><span class="line">  polls/migrations/0001_initial.py</span><br><span class="line">    - Create model Choice</span><br><span class="line">    - Create model Question</span><br><span class="line">    - Add field question to choice</span><br></pre></td></tr></table></figure>
+<p>我们看一下，生成的文件</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Generated by Django 2.0.6 on 2018-06-19 11:47</span></span><br><span class="line"><span class="comment"># 排版需要，已简化部分代码</span></span><br><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> migrations, models</span><br><span class="line"><span class="keyword">import</span> django.db.models.deletion</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Migration</span><span class="params">(migrations.Migration)</span>:</span></span><br><span class="line"></span><br><span class="line">    initial = <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">    dependencies = [</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    operations = [</span><br><span class="line">        migrations.CreateModel(</span><br><span class="line">            name=<span class="string">'Choice'</span>,</span><br><span class="line">            fields=[</span><br><span class="line">                ...</span><br><span class="line">            ],</span><br><span class="line">        ),</span><br><span class="line">        migrations.CreateModel(</span><br><span class="line">            name=<span class="string">'Question'</span>,</span><br><span class="line">            fields=[</span><br><span class="line">                ...</span><br><span class="line">            ],</span><br><span class="line">        ),</span><br><span class="line">        migrations.AddField(</span><br><span class="line">            model_name=<span class="string">'choice'</span>,</span><br><span class="line">            name=<span class="string">'question'</span>,</span><br><span class="line">            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=<span class="string">'polls.Question'</span>),</span><br><span class="line">        ),</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
+<p>可以理解为使用<code>migration</code>的<code>CreateModel()</code>创建模型</p>
+<p>怎么创建的呢？</p>
+<p>接下来执行</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ python manage.py sqlmigrate polls 0001	<span class="comment"># 0001 是上面生成的文件的代号</span></span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">BEGIN</span>;</span><br><span class="line"><span class="comment">--</span></span><br><span class="line"><span class="comment">-- Create model Choice</span></span><br><span class="line"><span class="comment">--</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">"polls_choice"</span> (<span class="string">"id"</span> <span class="built_in">integer</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> PRIMARY <span class="keyword">KEY</span> AUTOINCREMENT, <span class="string">"choice_text"</span> <span class="built_in">varchar</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>, <span class="string">"votes"</span> <span class="built_in">integer</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>);</span><br><span class="line"><span class="comment">--</span></span><br><span class="line"><span class="comment">-- Create model Question</span></span><br><span class="line"><span class="comment">--</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">"polls_question"</span> (<span class="string">"id"</span> <span class="built_in">integer</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> PRIMARY <span class="keyword">KEY</span> AUTOINCREMENT, <span class="string">"question_text"</span> <span class="built_in">varchar</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>, <span class="string">"pub_date"</span> datetime <span class="keyword">NOT</span> <span class="literal">NULL</span>);</span><br><span class="line"><span class="comment">--</span></span><br><span class="line"><span class="comment">-- Add field question to choice</span></span><br><span class="line"><span class="comment">--</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">"polls_choice"</span> <span class="keyword">RENAME</span> <span class="keyword">TO</span> <span class="string">"polls_choice__old"</span>;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">"polls_choice"</span> (<span class="string">"id"</span> <span class="built_in">integer</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> PRIMARY <span class="keyword">KEY</span> AUTOINCREMENT, <span class="string">"choice_text"</span> <span class="built_in">varchar</span>(<span class="number">200</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>, <span class="string">"votes"</span> <span class="built_in">integer</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>, <span class="string">"question_id"</span> <span class="built_in">integer</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">REFERENCES</span> <span class="string">"polls_question"</span> (<span class="string">"id"</span>) DEFERRABLE <span class="keyword">INITIALLY</span> <span class="keyword">DEFERRED</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">"polls_choice"</span> (<span class="string">"id"</span>, <span class="string">"choice_text"</span>, <span class="string">"votes"</span>, <span class="string">"question_id"</span>) <span class="keyword">SELECT</span> <span class="string">"id"</span>, <span class="string">"choice_text"</span>, <span class="string">"votes"</span>, <span class="literal">NULL</span> <span class="keyword">FROM</span> <span class="string">"polls_choice__old"</span>;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="string">"polls_choice__old"</span>;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> <span class="string">"polls_choice_question_id_c5b4b260"</span> <span class="keyword">ON</span> <span class="string">"polls_choice"</span> (<span class="string">"question_id"</span>);</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure>
+<p>实质上就是生成了一堆<code>sql</code>用于创建我们的模型对应的表结构</p>
+<p>上面的内容是预览，要想让<code>sql</code>生效</p>
+<p>执行</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ python manage.py migrate	<span class="comment"># 正式执行，这个命令会操作数据库</span></span><br><span class="line">Operations to perform:</span><br><span class="line">  Apply all migrations: admin, auth, contenttypes, polls, sessions</span><br><span class="line">Running migrations:</span><br><span class="line">  Applying polls.0001_initial... OK</span><br></pre></td></tr></table></figure>
+<p>这样，<code>django</code>模型和数据库模型的映射就正式建立了</p>
+<p>后面对<code>models.py</code>的修改，可以通过</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ python3 manage.py makemigrations</span><br><span class="line">$ python manage.py migrate</span><br></pre></td></tr></table></figure>
+<p>来更新数据库模型</p>
+<h5 id="管理模型"><a href="#管理模型" class="headerlink" title="管理模型"></a>管理模型</h5><blockquote>
+<p>将模型纳入<code>admin</code>模块进行界面化管理</p>
+</blockquote>
+<p>首先，在<code>polls/admin.py</code>中添加</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># polls/admin.py</span></span><br><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Question	<span class="comment"># 需要纳入管理的 models</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Register your models here.</span></span><br><span class="line">admin.site.register(Question)</span><br></pre></td></tr></table></figure>
+<p>重启服务，登录<code>Django administration</code></p>
+<p><img src="/images/django-images/1529411176747.jpg" alt="model manage"></p>
+<p>就可以管理<code>Question</code>了，很棒！</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/dgango/" rel="tag"># dgango</a>
+          
+            <a href="/tags/docker/" rel="tag"># docker</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/18/ML-LogisticRegression/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/1526912730793.jpg"
+                alt="MDMORY" />
+            
+              <p class="site-author-name" itemprop="name">MDMORY</p>
+              <p class="site-description motion-element" itemprop="description">做一个大小写不分的人~</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">文章</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分類</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">標籤</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境配置"><span class="nav-number">1.</span> <span class="nav-text">环境配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建一个项目"><span class="nav-number">2.</span> <span class="nav-text">构建一个项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#确认django版本"><span class="nav-number">2.1.</span> <span class="nav-text">确认django版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建一个项目"><span class="nav-number">2.2.</span> <span class="nav-text">新建一个项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建一个模块"><span class="nav-number">2.3.</span> <span class="nav-text">新建一个模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#django数据库-API"><span class="nav-number">2.4.</span> <span class="nav-text">django数据库 API</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建模型"><span class="nav-number">2.4.1.</span> <span class="nav-text">创建模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#激活模型"><span class="nav-number">2.4.2.</span> <span class="nav-text">激活模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#管理模型"><span class="nav-number">2.4.3.</span> <span class="nav-text">管理模型</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MDMORY</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動 v3.5.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.3.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'geniusoridiot',
+            repo: 'gitment-comments',
+            
+            lang: "zh-TW" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '517dbd7c53d6c4a1b8ff98053fb7ef180e06aad8',
+            
+                client_id: '0fca37813c3ef4059406'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("g04PEg8k1bxRk5oswxE8WOBE-gzGzoHsz", "6uBidtbQ9O8fOYnN3EAnDTYd");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "middleRight";
+      
+          pbOptions.networks = "QQZone,Wechat,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
