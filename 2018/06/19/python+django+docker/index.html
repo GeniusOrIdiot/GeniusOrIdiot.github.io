@@ -122,7 +122,7 @@
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="http://geniusoridiot.github.io/images/django-images/1529407652189.jpg">
 <meta property="og:image" content="http://geniusoridiot.github.io/images/django-images/1529411176747.jpg">
-<meta property="og:updated_time" content="2018-06-20T00:38:33.401Z">
+<meta property="og:updated_time" content="2018-06-20T14:39:19.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python+django+docker:创建+部署，就是这么简单">
 <meta name="twitter:description" content="利用python+django+docker快速搭建一个项目">
@@ -386,7 +386,7 @@
                 
                   <span class="post-meta-item-text">更新於</span>
                 
-                <time title="修改時間：2018-06-20 08:38:33" itemprop="dateModified" datetime="2018-06-20T08:38:33+08:00">2018-06-20</time>
+                <time title="修改時間：2018-06-20 22:39:19" itemprop="dateModified" datetime="2018-06-20T22:39:19+08:00">2018-06-20</time>
               
             
           </span>
@@ -442,7 +442,7 @@
           
             <span class="post-letters-count">
              &nbsp; | &nbsp;
-            <span>字數：1,869 字</span>
+            <span>字數：1,903 字</span>
             </span>
           
 
@@ -492,7 +492,7 @@
 <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ python manage.py runserver</span><br></pre></td></tr></table></figure>
 <p>你会看到：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">June 15, 2018 - 15:50:53</span><br><span class="line">Django version 2.0, using settings &apos;mysite.settings&apos;</span><br><span class="line">Starting development server at http://127.0.0.1:8000/</span><br><span class="line">Quit the server with CONTROL-C.</span><br></pre></td></tr></table></figure>
-<p>点击<code>http://127.0.0.1:8000/</code>打开，看到一个小火箭起飞的页面，就说明应用已经启动。</p>
+<p>点击 <a href="http://127.0.0.1:8000/" target="_blank" rel="noopener">http://127.0.0.1:8000/</a> 打开，看到一个小火箭起飞的页面，就说明应用已经启动。</p>
 <h4 id="新建一个模块"><a href="#新建一个模块" class="headerlink" title="新建一个模块"></a>新建一个模块</h4><p><code>django</code>建议一个项目按照功能划分模块</p>
 <p>让我们开始新建一个模块</p>
 <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ python manage.py startapp polls	<span class="comment"># 负责 投票'poll' 功能的模块</span></span><br></pre></td></tr></table></figure>
@@ -513,7 +513,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">You have 14 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.</span><br><span class="line">Run &apos;python manage.py migrate&apos; to apply them.</span><br></pre></td></tr></table></figure>
 <p>这样的警告，可以暂时无视掉。</p>
 <hr>
-<p>打开<code>http://127.0.0.1:8000/polls/</code>验证我们的第一个接口是否返回了正确的信息。</p>
+<p>打开 <a href="http://127.0.0.1:8000/polls/" target="_blank" rel="noopener">http://127.0.0.1:8000/polls/</a> 验证我们的第一个接口是否返回了正确的信息。</p>
 <h4 id="django数据库-API"><a href="#django数据库-API" class="headerlink" title="django数据库 API"></a><code>django</code>数据库 API</h4><blockquote>
 <p>本篇只讨论<code>django</code>与<code>mysql</code>的集成</p>
 </blockquote>
@@ -530,7 +530,7 @@
 <p><strong><em>备注：</em></strong>因为出现了</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module.</span><br><span class="line">Did you install mysqlclient?</span><br></pre></td></tr></table></figure>
 <p>这样的错误信息而去安装<code>mysqlclient</code>的肯定不止我一个……</p>
-<p>至于为什么，参见一下这篇文章：<a href="https://imshusheng.com/python/216.html" target="_blank" rel="noopener">centos下安装python3.x+django的mysql驱动</a></p>
+<p>至于为什么不这么做，参见一下这篇文章：<a href="https://imshusheng.com/python/216.html" target="_blank" rel="noopener">centos下安装python3.x+django的mysql驱动</a></p>
 <p>里面提到，<code>mysql-python</code>也是没用的</p>
 <hr>
 <p>确保数据库连接没问题后，先把<code>django</code>自带的在<code>settings.py</code>中包含的一堆模块跑起来</p>
@@ -540,7 +540,7 @@
 <p>这会在你的数据库中创建若干数量的表，用于用户、组以及权限的管理</p>
 <p>这时运行项目，就不会再报警了</p>
 <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ python manage.py runserver</span><br></pre></td></tr></table></figure>
-<p>这时打开<code>http://127.0.0.1:8000/admin/</code>，会有一个<code>Django administration</code>的管理员登录界面</p>
+<p>这时打开 <a href="http://127.0.0.1:8000/admin/" target="_blank" rel="noopener">http://127.0.0.1:8000/admin/</a> ，会有一个<code>Django administration</code>的管理员登录界面</p>
 <p><img src="/images/django-images/1529407652189.jpg" alt="Django administration"></p>
 <p>我们来创建一个用户</p>
 <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ python manage.py createsuperuser</span><br></pre></td></tr></table></figure>
@@ -555,9 +555,9 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># mysite/settings.py</span></span><br><span class="line">INSTALLED_APPS = [</span><br><span class="line">    <span class="string">'polls.apps.PollsConfig'</span>,	<span class="comment"># 纳入 INSTALLED_APPS</span></span><br><span class="line">    <span class="string">'django.contrib.admin'</span>,</span><br><span class="line">    <span class="string">'django.contrib.auth'</span>,</span><br><span class="line">    <span class="string">'django.contrib.contenttypes'</span>,</span><br><span class="line">    <span class="string">'django.contrib.sessions'</span>,</span><br><span class="line">    <span class="string">'django.contrib.messages'</span>,</span><br><span class="line">    <span class="string">'django.contrib.staticfiles'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <p>这样<code>migrate</code>会将我们的<code>polls</code>中的模型也纳入管理对象中</p>
 <p>在终端执行</p>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ python3 manage.py makemigrations polls	<span class="comment"># polls 指定模块，可不加，对应全部模块</span></span><br><span class="line">Migrations <span class="keyword">for</span> <span class="string">'polls'</span>:</span><br><span class="line">  polls/migrations/0001_initial.py</span><br><span class="line">    - Create model Choice</span><br><span class="line">    - Create model Question</span><br><span class="line">    - Add field question to choice</span><br></pre></td></tr></table></figure>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ python3 manage.py makemigrations polls	<span class="comment"># polls 指定模块，可不加，对应全部模块</span></span><br><span class="line">Migrations <span class="keyword">for</span> <span class="string">'polls'</span>:</span><br><span class="line">  polls/migrations/0001_initial.py	<span class="comment"># 这是生成的用于数据迁移的文件</span></span><br><span class="line">    - Create model Choice</span><br><span class="line">    - Create model Question</span><br><span class="line">    - Add field question to choice</span><br></pre></td></tr></table></figure>
 <p>我们看一下，生成的文件</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Generated by Django 2.0.6 on 2018-06-19 11:47</span></span><br><span class="line"><span class="comment"># 排版需要，已简化部分代码</span></span><br><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> migrations, models</span><br><span class="line"><span class="keyword">import</span> django.db.models.deletion</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Migration</span><span class="params">(migrations.Migration)</span>:</span></span><br><span class="line"></span><br><span class="line">    initial = <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">    dependencies = [</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    operations = [</span><br><span class="line">        migrations.CreateModel(</span><br><span class="line">            name=<span class="string">'Choice'</span>,</span><br><span class="line">            fields=[</span><br><span class="line">                ...</span><br><span class="line">            ],</span><br><span class="line">        ),</span><br><span class="line">        migrations.CreateModel(</span><br><span class="line">            name=<span class="string">'Question'</span>,</span><br><span class="line">            fields=[</span><br><span class="line">                ...</span><br><span class="line">            ],</span><br><span class="line">        ),</span><br><span class="line">        migrations.AddField(</span><br><span class="line">            model_name=<span class="string">'choice'</span>,</span><br><span class="line">            name=<span class="string">'question'</span>,</span><br><span class="line">            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=<span class="string">'polls.Question'</span>),</span><br><span class="line">        ),</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># polls/migrations/0001_initial.py</span></span><br><span class="line"><span class="comment"># Generated by Django 2.0.6 on 2018-06-19 11:47</span></span><br><span class="line"><span class="comment"># 排版需要，已简化部分代码</span></span><br><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> migrations, models</span><br><span class="line"><span class="keyword">import</span> django.db.models.deletion</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Migration</span><span class="params">(migrations.Migration)</span>:</span></span><br><span class="line"></span><br><span class="line">    initial = <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line">    dependencies = [</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    operations = [</span><br><span class="line">        migrations.CreateModel(</span><br><span class="line">            name=<span class="string">'Choice'</span>,</span><br><span class="line">            fields=[</span><br><span class="line">                ...</span><br><span class="line">            ],</span><br><span class="line">        ),</span><br><span class="line">        migrations.CreateModel(</span><br><span class="line">            name=<span class="string">'Question'</span>,</span><br><span class="line">            fields=[</span><br><span class="line">                ...</span><br><span class="line">            ],</span><br><span class="line">        ),</span><br><span class="line">        migrations.AddField(</span><br><span class="line">            model_name=<span class="string">'choice'</span>,</span><br><span class="line">            name=<span class="string">'question'</span>,</span><br><span class="line">            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=<span class="string">'polls.Question'</span>),</span><br><span class="line">        ),</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
 <p>可以理解为使用<code>migration</code>的<code>CreateModel()</code>创建模型</p>
 <p>怎么创建的呢？</p>
 <p>接下来执行</p>
@@ -568,7 +568,7 @@
 <p>上面的内容是预览，要想让<code>sql</code>生效</p>
 <p>执行</p>
 <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ python manage.py migrate	<span class="comment"># 正式执行，这个命令会操作数据库</span></span><br><span class="line">Operations to perform:</span><br><span class="line">  Apply all migrations: admin, auth, contenttypes, polls, sessions</span><br><span class="line">Running migrations:</span><br><span class="line">  Applying polls.0001_initial... OK</span><br></pre></td></tr></table></figure>
-<p>这样，<code>django</code>模型和数据库模型的映射就正式建立了</p>
+<p>这时，数据库会多出两个表<code>Question</code>和<code>Choice</code>，<code>django</code>模型和数据库模型的映射就正式建立了</p>
 <p>后面对<code>models.py</code>的修改，可以通过</p>
 <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ python3 manage.py makemigrations</span><br><span class="line">$ python manage.py migrate</span><br></pre></td></tr></table></figure>
 <p>来更新数据库模型</p>
@@ -579,7 +579,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># polls/admin.py</span></span><br><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Question	<span class="comment"># 需要纳入管理的 models</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Register your models here.</span></span><br><span class="line">admin.site.register(Question)</span><br></pre></td></tr></table></figure>
 <p>重启服务，登录<code>Django administration</code></p>
 <p><img src="/images/django-images/1529411176747.jpg" alt="model manage"></p>
-<p>就可以管理<code>Question</code>了，很棒！</p>
+<p>就可以管理<code>Question</code>了，很棒吧！</p>
 
       
     </div>
