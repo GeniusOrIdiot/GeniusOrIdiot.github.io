@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="俊のWEBSITE">
 <meta property="og:description" content="逻辑算法，对分类问题使用的回归算法。">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2018-06-21T12:24:35.299Z">
+<meta property="og:updated_time" content="2018-06-21T12:34:11.437Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-逻辑回归">
 <meta name="twitter:description" content="逻辑算法，对分类问题使用的回归算法。">
@@ -366,7 +366,7 @@
                 
               
 
-              <time title="創建時間：2018-06-21 20:22:38 / 修改時間：20:24:35" itemprop="dateCreated datePublished" datetime="2018-06-21T20:22:38+08:00">2018-06-21</time>
+              <time title="創建時間：2018-06-21 20:22:38 / 修改時間：20:34:11" itemprop="dateCreated datePublished" datetime="2018-06-21T20:22:38+08:00">2018-06-21</time>
             
 
             
@@ -470,7 +470,7 @@
 <p>分类问题<code>classification</code>一般会将问题的结果归纳为互不关联的几个类别<code>class</code></p>
 </blockquote>
 <p>如果用线性回归的思维处理分类问题，我们可以：<br>$$<br>h(x) \ge 0.5时，取1 \\<br>h(x) &lt; 0.5时，取0<br>$$<br>姑且我们只考虑只有两个分类的情况，当然，会有多个分类的情况。</p>
-<h4 id="假想函数表达式"><a href="#假想函数表达式" class="headerlink" title="假想函数表达式"></a>假想函数表达式</h4><p>我们并不希望我们的假想函数最终给出 $&gt;1$ 或是 $&lt;0$ 的结果，这没有任何意义。通过逻辑函数 $Sigmoid \ Function$ 可以将假想函数的值限制在 $0-1$范围内。<br>$$<br>h_θ(x) = g(θ^Tx) \\<br>z=θ^Tx \\<br>g(z) = \frac 1 {1+e^{-z}}<br>$$<br>解释一下这个函数：$g(z) = \frac 1 {1+e^z}$<br>$$<br>当z<0时,\ e^{-z}="">1,\ 0&lt;\frac 1 {1+e^{-z}}<0.5,\ y="0;\\\\" 当z="">0时,\ 0&lt;e^{-z}&lt;1, 0.5&lt;\frac 1 {1+e^{-z}}&lt;1,\ y=1<br>$$</0.5,\></0时,\></p>
+<h4 id="假想函数表达式"><a href="#假想函数表达式" class="headerlink" title="假想函数表达式"></a>假想函数表达式</h4><p>我们并不希望我们的假想函数最终给出 $&gt;1$ 或是 $&lt;0$ 的结果，这没有任何意义。通过逻辑函数 $Sigmoid \ Function$ 可以将假想函数的值限制在 $0-1$范围内。<br>$$<br>h_θ(x) = g(θ^Tx) \\<br>z=θ^Tx \\<br>g(z) = \frac 1 {1+e^{-z}}<br>$$<br>解释一下这个函数 $g(z) = \frac 1 {1+e^z}$ ：<br>$$<br>当z<0时,e^{-z}>1,0&lt;\frac 1 {1+e^{-z}}<0.5,y=0;\\当z>0时,0&lt;e^{-z}&lt;1,0.5&lt;\frac 1 {1+e^{-z}}&lt;1,y=1<br>$$</0.5,y=0;\\当z></0时,e^{-z}></p>
 
       
     </div>
