@@ -112,18 +112,18 @@
 
 
 
-  <meta name="description" content="Octave基本教程">
+  <meta name="description" content="Octave基本教程 &amp;gt; [1,2,3] * [3;2;1]ans =  10&amp;gt; [1,2,3] .* [3;2;1]ans =   3   6   9   2   4   6   1   2   3">
 <meta name="keywords" content="Machine Learning,Andrew Ng,Octave">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习-Octave简易教程(2)">
 <meta property="og:url" content="http://geniusoridiot.github.io/2018/06/10/ML-OctaveTutorial-2/index.html">
 <meta property="og:site_name" content="俊のWEBSITE">
-<meta property="og:description" content="Octave基本教程">
+<meta property="og:description" content="Octave基本教程 &amp;gt; [1,2,3] * [3;2;1]ans =  10&amp;gt; [1,2,3] .* [3;2;1]ans =   3   6   9   2   4   6   1   2   3">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2018-06-10T14:34:38.200Z">
+<meta property="og:updated_time" content="2018-06-24T14:14:02.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-Octave简易教程(2)">
-<meta name="twitter:description" content="Octave基本教程">
+<meta name="twitter:description" content="Octave基本教程 &amp;gt; [1,2,3] * [3;2;1]ans =  10&amp;gt; [1,2,3] .* [3;2;1]ans =   3   6   9   2   4   6   1   2   3">
 
 
 
@@ -366,12 +366,24 @@
                 
               
 
-              <time title="創建時間：2018-06-10 19:05:44 / 修改時間：22:34:38" itemprop="dateCreated datePublished" datetime="2018-06-10T19:05:44+08:00">2018-06-10</time>
+              <time title="創建時間：2018-06-10 19:05:44" itemprop="dateCreated datePublished" datetime="2018-06-10T19:05:44+08:00">2018-06-10</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新於</span>
+                
+                <time title="修改時間：2018-06-24 22:14:02" itemprop="dateModified" datetime="2018-06-24T22:14:02+08:00">2018-06-24</time>
               
             
           </span>
@@ -441,7 +453,7 @@
           
             <span class="post-letters-count">
              &nbsp; | &nbsp;
-            <span>字數：9 字</span>
+            <span>字數：190 字</span>
             </span>
           
 
@@ -465,9 +477,13 @@
 
       
         <p><code>Octave</code>基本教程</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">&gt; [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] * [<span class="number">3</span>;<span class="number">2</span>;<span class="number">1</span>]</span><br><span class="line"><span class="built_in">ans</span> =  <span class="number">10</span></span><br><span class="line">&gt; [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] .* [<span class="number">3</span>;<span class="number">2</span>;<span class="number">1</span>]</span><br><span class="line"><span class="built_in">ans</span> =</span><br><span class="line">   <span class="number">3</span>   <span class="number">6</span>   <span class="number">9</span></span><br><span class="line">   <span class="number">2</span>   <span class="number">4</span>   <span class="number">6</span></span><br><span class="line">   <span class="number">1</span>   <span class="number">2</span>   <span class="number">3</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h3>
+<h3 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h3><h4 id="从文件加载数据"><a href="#从文件加载数据" class="headerlink" title="从文件加载数据"></a>从文件加载数据</h4><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">&gt; cd xxx/xxx/xxx	# 到你存放数据文件的目录</span><br><span class="line">&gt; ls		# 查看当前目录下的文件</span><br><span class="line">ex1data1.txt	ex1data2.txt</span><br><span class="line">&gt; load ex1data1.txt	# 加载该文件数据，或者：</span><br><span class="line">&gt; load(<span class="string">'ex1data1.txt'</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="检查当前数据"><a href="#检查当前数据" class="headerlink" title="检查当前数据"></a>检查当前数据</h4><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">&gt; who</span><br><span class="line">Variables in the current scope:</span><br><span class="line"></span><br><span class="line">a         <span class="built_in">ans</span>       b         ex1data1</span><br><span class="line"></span><br><span class="line">&gt; whos</span><br><span class="line">Variables in the current scope:</span><br><span class="line"></span><br><span class="line">   Attr Name          Size                     Bytes  Class</span><br><span class="line">   ==== ====          ====                     =====  =====</span><br><span class="line">        a             <span class="number">3</span>x3                         <span class="number">72</span>  double</span><br><span class="line">        <span class="built_in">ans</span>           <span class="number">1</span>x73                        <span class="number">73</span>  char</span><br><span class="line">        b             <span class="number">3</span>x3                         <span class="number">72</span>  double</span><br><span class="line">        ex1data1     <span class="number">97</span>x2                       <span class="number">1552</span>  double</span><br><span class="line"></span><br><span class="line">Total is <span class="number">285</span> elements using <span class="number">1769</span> bytes</span><br></pre></td></tr></table></figure>
+<h4 id="清除数据"><a href="#清除数据" class="headerlink" title="清除数据"></a>清除数据</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">&gt; clear a	# 只清除a</span><br><span class="line">&gt; whos</span><br><span class="line">Variables in the current scope:</span><br><span class="line"></span><br><span class="line">   Attr Name          Size                     Bytes  Class</span><br><span class="line">   ==== ====          ====                     =====  =====</span><br><span class="line">        <span class="built_in">ans</span>           <span class="number">1</span>x73                        <span class="number">73</span>  char</span><br><span class="line">        b             <span class="number">3</span>x3                         <span class="number">72</span>  double</span><br><span class="line">        ex1data1     <span class="number">97</span>x2                       <span class="number">1552</span>  double</span><br><span class="line"></span><br><span class="line">Total is <span class="number">276</span> elements using <span class="number">1697</span> bytes</span><br><span class="line">&gt; clear		# 清除全部</span><br><span class="line">&gt; whos		# 什么都没有</span><br></pre></td></tr></table></figure>
+<h4 id="选取数据"><a href="#选取数据" class="headerlink" title="选取数据"></a>选取数据</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -716,7 +732,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据操作"><span class="nav-number">1.</span> <span class="nav-text">数据操作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据操作"><span class="nav-number">1.</span> <span class="nav-text">数据操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#从文件加载数据"><span class="nav-number">1.1.</span> <span class="nav-text">从文件加载数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#检查当前数据"><span class="nav-number">1.2.</span> <span class="nav-text">检查当前数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#清除数据"><span class="nav-number">1.3.</span> <span class="nav-text">清除数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选取数据"><span class="nav-number">1.4.</span> <span class="nav-text">选取数据</span></a></li></ol></li></ol></div>
             
 
           </div>

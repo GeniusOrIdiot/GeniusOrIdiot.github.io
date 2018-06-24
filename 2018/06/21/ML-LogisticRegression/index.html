@@ -120,10 +120,16 @@
 <meta property="og:site_name" content="俊のWEBSITE">
 <meta property="og:description" content="逻辑算法，对分类问题使用的回归算法。">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2018-06-21T12:34:11.437Z">
+<meta property="og:image" content="http://geniusoridiot.github.io/images/ML-logistic/sigmod.jpg">
+<meta property="og:image" content="http://geniusoridiot.github.io/images/ML-logistic/linear-boundary.jpg">
+<meta property="og:image" content="http://geniusoridiot.github.io/images/ML-logistic/linear-boundary-line.jpg">
+<meta property="og:image" content="http://geniusoridiot.github.io/images/ML-logistic/polynomial-boundary.jpg">
+<meta property="og:image" content="http://geniusoridiot.github.io/images/ML-logistic/polynomial-boundary-line.png">
+<meta property="og:updated_time" content="2018-06-24T11:55:57.387Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-逻辑回归">
 <meta name="twitter:description" content="逻辑算法，对分类问题使用的回归算法。">
+<meta name="twitter:image" content="http://geniusoridiot.github.io/images/ML-logistic/sigmod.jpg">
 
 
 
@@ -366,12 +372,24 @@
                 
               
 
-              <time title="創建時間：2018-06-21 20:22:38 / 修改時間：20:34:11" itemprop="dateCreated datePublished" datetime="2018-06-21T20:22:38+08:00">2018-06-21</time>
+              <time title="創建時間：2018-06-21 20:22:38" itemprop="dateCreated datePublished" datetime="2018-06-21T20:22:38+08:00">2018-06-21</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新於</span>
+                
+                <time title="修改時間：2018-06-24 19:55:57" itemprop="dateModified" datetime="2018-06-24T19:55:57+08:00">2018-06-24</time>
               
             
           </span>
@@ -441,7 +459,7 @@
           
             <span class="post-letters-count">
              &nbsp; | &nbsp;
-            <span>字數：229 字</span>
+            <span>字數：625 字</span>
             </span>
           
 
@@ -470,7 +488,22 @@
 <p>分类问题<code>classification</code>一般会将问题的结果归纳为互不关联的几个类别<code>class</code></p>
 </blockquote>
 <p>如果用线性回归的思维处理分类问题，我们可以：<br>$$<br>h(x) \ge 0.5时，取1 \\<br>h(x) &lt; 0.5时，取0<br>$$<br>姑且我们只考虑只有两个分类的情况，当然，会有多个分类的情况。</p>
-<h4 id="假想函数表达式"><a href="#假想函数表达式" class="headerlink" title="假想函数表达式"></a>假想函数表达式</h4><p>我们并不希望我们的假想函数最终给出 $&gt;1$ 或是 $&lt;0$ 的结果，这没有任何意义。通过逻辑函数 $Sigmoid \ Function$ 可以将假想函数的值限制在 $0-1$范围内。<br>$$<br>h_θ(x) = g(θ^Tx) \\<br>z=θ^Tx \\<br>g(z) = \frac 1 {1+e^{-z}}<br>$$<br>解释一下这个函数 $g(z) = \frac 1 {1+e^z}$ ：<br>$$<br>当z<0时,e^{-z}>1,0&lt;\frac 1 {1+e^{-z}}<0.5,y=0;\\当z>0时,0&lt;e^{-z}&lt;1,0.5&lt;\frac 1 {1+e^{-z}}&lt;1,y=1<br>$$</0.5,y=0;\\当z></0时,e^{-z}></p>
+<h4 id="假想函数表达式-Hypothesis-Representation"><a href="#假想函数表达式-Hypothesis-Representation" class="headerlink" title="假想函数表达式-$Hypothesis\ Representation$"></a>假想函数表达式-$Hypothesis\ Representation$</h4><p>我们并不希望我们的假想函数最终给出 $&gt;1$ 或是 $&lt;0$ 的结果，因为我们的训练数据 $y$ 在二元分类时只可能有 $0、1$ 两个值，这会导致我们的线拟合得不好。通过逻辑函数 $Sigmoid \ Function$ 可以将假想函数的值限制在 $0-1$范围内。<br>$$<br>h_θ(x) = g(θ^Tx) \\<br>z=θ^Tx \\<br>g(z) = \frac 1 {1+e^{-z}}<br>$$<br>解释一下这个函数 $g(z) = \frac 1 {1+e^z}$ ：<br>$$<br>当z<0时,e^{-z}>1,0&lt;\frac 1 {1+e^{-z}}<0.5,y=0;\\当z>0时,0&lt;e^{-z}&lt;1,0.5&lt;\frac 1 {1+e^{-z}}&lt;1,y=1<br>$$</0.5,y=0;\\当z></0时,e^{-z}></p>
+<p>这个函数的图像如图：</p>
+<p><img src="/images/ML-logistic/sigmod.jpg" alt="image-20180623134947052"></p>
+<p>对于任意给定的 $ z = θ^Tx $ 都能将 $h(x)$ 放缩到 $0 \sim1 $ 之间，使其在图形拟合时能更好得与实际 $y$ 值拟合。</p>
+<h4 id="决策边界-Decision-Boundary"><a href="#决策边界-Decision-Boundary" class="headerlink" title="决策边界-$Decision\ Boundary$"></a>决策边界-$Decision\ Boundary$</h4><p>考察假想函数的 $z$ 的取值范围，可以对 $z=θ^Tx$ 做特征值 $x$ 的取值分析：</p>
+<p>以两个特征为例：</p>
+<p><strong>情形一：</strong></p>
+<p><img src="/images/ML-logistic/linear-boundary.jpg" alt="image-20180623140535483"></p>
+<p>令 $x_1、x_2$ 满足 $z=θ_0+θ_1x_1+θ_2x_2$ 这样的线性关系，通过梯度下降拟合，最终得到一条下面的直线就很理想了，以直线为决策边界，直线一边 $z&gt;0$ 是 $y=1$，另一边就是 $y=0$</p>
+<p><img src="/images/ML-logistic/linear-boundary-line.jpg" alt="image-20180623140915787"></p>
+<p><strong>情形二：</strong></p>
+<p><img src="/images/ML-logistic/polynomial-boundary.jpg" alt="image-20180623141201582"></p>
+<p>这样的数据，$x_1、x_2$ 就无法构成线性关系，使用高次多项式 $z = θ_0+θ_1x_1+θ_2x_2 + θ_3x_1^2+θ_4x_2^2$ 来拟合出一个圆，以圆作为决策边界，圆内 $z<0$ 为="" $y="0$，圆外" $z="">0$ 为 $y=1$</0$></p>
+<p><img src="/images/ML-logistic/polynomial-boundary-line.png" alt="image-20180623141833420"></p>
+<p>决策边界让我们更好地选择合适的假想函数，正如我们在处理线性回归的时候：如果数据点集看起来像一条直线，我们就是用线性函数，而如果点集看起来更弯曲，我们就需要考虑使用多项式函数。</p>
+<h4 id="代价函数-Cost-Function"><a href="#代价函数-Cost-Function" class="headerlink" title="代价函数-$Cost\ Function$"></a>代价函数-$Cost\ Function$</h4><p>由于 $h(x)$ 经过了放缩，这就导致代价函数的“代价”也会被缩小，这就导致 $J(θ)$ 很容易达到一个局部最小值，为了避免这种情况，需要再次放缩，将“代价”放大：</p>
 
       
     </div>
@@ -716,7 +749,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑回归"><span class="nav-number">1.</span> <span class="nav-text">逻辑回归</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分类问题"><span class="nav-number">1.1.</span> <span class="nav-text">分类问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#假想函数表达式"><span class="nav-number">1.2.</span> <span class="nav-text">假想函数表达式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑回归"><span class="nav-number">1.</span> <span class="nav-text">逻辑回归</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分类问题"><span class="nav-number">1.1.</span> <span class="nav-text">分类问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#假想函数表达式-Hypothesis-Representation"><span class="nav-number">1.2.</span> <span class="nav-text">假想函数表达式-$Hypothesis\ Representation$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#决策边界-Decision-Boundary"><span class="nav-number">1.3.</span> <span class="nav-text">决策边界-$Decision\ Boundary$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代价函数-Cost-Function"><span class="nav-number">1.4.</span> <span class="nav-text">代价函数-$Cost\ Function$</span></a></li></ol></li></ol></div>
             
 
           </div>
