@@ -115,16 +115,16 @@
   <meta name="description" content="利用python+django+docker快速搭建一个项目">
 <meta name="keywords" content="python,dgango,docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python+django+docker:创建+部署，就是这么简单">
+<meta property="og:title" content="python+django+docker:创建+部署">
 <meta property="og:url" content="http://geniusoridiot.github.io/2018/06/19/python+django+docker/index.html">
 <meta property="og:site_name" content="俊のWEBSITE">
 <meta property="og:description" content="利用python+django+docker快速搭建一个项目">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="http://geniusoridiot.github.io/images/django-images/1529407652189.jpg">
 <meta property="og:image" content="http://geniusoridiot.github.io/images/django-images/1529411176747.jpg">
-<meta property="og:updated_time" content="2018-06-20T14:39:19.806Z">
+<meta property="og:updated_time" content="2018-06-28T11:44:05.296Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python+django+docker:创建+部署，就是这么简单">
+<meta name="twitter:title" content="python+django+docker:创建+部署">
 <meta name="twitter:description" content="利用python+django+docker快速搭建一个项目">
 <meta name="twitter:image" content="http://geniusoridiot.github.io/images/django-images/1529407652189.jpg">
 
@@ -143,7 +143,7 @@
   };
 </script>
 
-  <title>python+django+docker:创建+部署，就是这么简单 | 俊のWEBSITE</title>
+  <title>python+django+docker:创建+部署 | 俊のWEBSITE</title>
   
 
 
@@ -344,7 +344,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python+django+docker:创建+部署，就是这么简单
+          <h1 class="post-title" itemprop="name headline">python+django+docker:创建+部署
               
             
           </h1>
@@ -386,7 +386,7 @@
                 
                   <span class="post-meta-item-text">更新於</span>
                 
-                <time title="修改時間：2018-06-20 22:39:19" itemprop="dateModified" datetime="2018-06-20T22:39:19+08:00">2018-06-20</time>
+                <time title="修改時間：2018-06-28 19:44:05" itemprop="dateModified" datetime="2018-06-28T19:44:05+08:00">2018-06-28</time>
               
             
           </span>
@@ -427,7 +427,7 @@
 
           
           
-             <span id="/2018/06/19/python+django+docker/" class="leancloud_visitors" data-flag-title="python+django+docker:创建+部署，就是这么简单">
+             <span id="/2018/06/19/python+django+docker/" class="leancloud_visitors" data-flag-title="python+django+docker:创建+部署">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -442,7 +442,7 @@
           
             <span class="post-letters-count">
              &nbsp; | &nbsp;
-            <span>字數：1,903 字</span>
+            <span>字數：3,108 字</span>
             </span>
           
 
@@ -580,6 +580,50 @@
 <p>重启服务，登录<code>Django administration</code></p>
 <p><img src="/images/django-images/1529411176747.jpg" alt="model manage"></p>
 <p>就可以管理<code>Question</code>了，很棒吧！</p>
+<h3 id="Docker部署项目"><a href="#Docker部署项目" class="headerlink" title="Docker部署项目"></a><code>Docker</code>部署项目</h3><h4 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a><code>Dockerfile</code></h4><p>在项目根目录下新建一个<code>Dockerfile</code>：</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 以`python`为基础镜像</span></span><br><span class="line"><span class="keyword">FROM</span> python:<span class="number">3</span></span><br><span class="line"><span class="comment"># 暴露容器端口的声明</span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">8000</span></span><br><span class="line"><span class="comment"># 新建一个文件路径作为程序包工作路径</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> mkdir /app</span></span><br><span class="line"><span class="bash">WORKDIR /app</span></span><br><span class="line"><span class="bash"><span class="comment"># 复制项目内容到工作目录</span></span></span><br><span class="line"><span class="bash">COPY . /app</span></span><br><span class="line"><span class="bash"><span class="comment"># 执行启动程序</span></span></span><br><span class="line"><span class="bash">CMD python /app/manage.py runserver 0.0.0.0:8000</span></span><br></pre></td></tr></table></figure>
+<p>这时，你的项目结构应该是这样的：</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">mysite/</span><br><span class="line">	Dockerfile</span><br><span class="line">	manage.py</span><br><span class="line">	mysite/</span><br><span class="line">	polls/</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>以下内容参考： <a href="https://yeasy.gitbooks.io/docker_practice/content/image/dockerfile/" target="_blank" rel="noopener">Dockerfile 指令详解</a></p>
+</blockquote>
+<p>简单解释一下上面的命令：</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">FROM</span> python:<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p><code>FROM</code>用来指定基础镜像，也就是我们这个<code>docker image</code>运行的基础环境。</p>
+<p>在 <a href="https://store.docker.com/" target="_blank" rel="noopener">Docker Store</a> 上有非常多的高质量的官方镜像，有可以直接拿来使用的服务类的镜像，如 <a href="https://store.docker.com/images/nginx/" target="_blank" rel="noopener"><code>nginx</code></a>、<a href="https://store.docker.com/images/redis/" target="_blank" rel="noopener"><code>redis</code></a>、<a href="https://store.docker.com/images/mongo/" target="_blank" rel="noopener"><code>mongo</code></a>、<a href="https://store.docker.com/images/mysql/" target="_blank" rel="noopener"><code>mysql</code></a>、<a href="https://store.docker.com/images/httpd/" target="_blank" rel="noopener"><code>httpd</code></a>、<a href="https://store.docker.com/images/php/" target="_blank" rel="noopener"><code>php</code></a>、<a href="https://store.docker.com/images/tomcat/" target="_blank" rel="noopener"><code>tomcat</code></a> 等；也有一些方便开发、构建、运行各种语言应用的镜像，如 <a href="https://store.docker.com/images/node" target="_blank" rel="noopener"><code>node</code></a>、<a href="https://store.docker.com/images/openjdk/" target="_blank" rel="noopener"><code>openjdk</code></a>、<a href="https://store.docker.com/images/python/" target="_blank" rel="noopener"><code>python</code></a>、<a href="https://store.docker.com/images/ruby/" target="_blank" rel="noopener"><code>ruby</code></a>、<a href="https://store.docker.com/images/golang/" target="_blank" rel="noopener"><code>golang</code></a> 等。可以在其中寻找一个最符合我们最终目标的镜像为基础镜像进行定制。</p>
+<p>如果没有合适的，需要自己搭环境的，可以选择一些更为基础的基础镜像，如 <a href="https://store.docker.com/images/ubuntu/" target="_blank" rel="noopener"><code>ubuntu</code></a>、<a href="https://store.docker.com/images/debian/" target="_blank" rel="noopener"><code>debian</code></a>、<a href="https://store.docker.com/images/centos/" target="_blank" rel="noopener"><code>centos</code></a>、<a href="https://store.docker.com/images/fedora/" target="_blank" rel="noopener"><code>fedora</code></a>、<a href="https://store.docker.com/images/alpine/" target="_blank" rel="noopener"><code>alpine</code></a> 等，这些操作系统的软件库为我们提供了更广阔的扩展空间。</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">EXPOSE</span> <span class="number">8000</span></span><br></pre></td></tr></table></figure>
+<p><code>EXPOSE</code> 指令是声明运行时容器提供服务端口，这只是一个声明，在运行时并不会因为这个声明应用就会开启这个端口的服务。在 Dockerfile 中写入这样的声明有两个好处，一个是帮助镜像使用者理解这个镜像服务的守护端口，以方便配置映射；另一个用处则是在运行时使用随机端口映射时，也就是 <code>docker run -P</code>时，会自动随机映射 <code>EXPOSE</code> 的端口。</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">RUN</span><span class="bash"> mkdir /app</span></span><br><span class="line"><span class="bash">WORKDIR /app</span></span><br></pre></td></tr></table></figure>
+<p><code>RUN</code>指令会在镜像中执行后面的命令，这里是创建了一个目录</p>
+<p><code>WORKDIR</code> 指令指定工作目录，这很重要，在<code>Docker</code>镜像构建过程中，每一行<code>DOCKER</code>指令都会构建一层镜像，所以每个指令的工作目录之间是不同步的，如：</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">RUN</span><span class="bash"> <span class="built_in">cd</span> /app</span></span><br><span class="line"><span class="bash">RUN <span class="built_in">echo</span> <span class="string">"hello"</span> &gt; world.txt</span></span><br></pre></td></tr></table></figure>
+<p>这两行命令式是无法在<code>/app</code>下创建<code>world.txt</code>文件的。</p>
+<p>使用 <code>WORKDIR</code> 指令指定工作目录后各层的当前目录就被改为指定的目录，如该目录不存在，<code>WORKDIR</code> 会帮你建立目录。</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">COPY</span><span class="bash"> . /app</span></span><br></pre></td></tr></table></figure>
+<p><code>COPY</code>的目的就是单纯的复制文件，从宿主机<code>[源路径]</code>到镜像容器指定的<code>[目标路径]</code>。具体参见：<a href="https://yeasy.gitbooks.io/docker_practice/content/image/dockerfile/copy.html" target="_blank" rel="noopener">COPY 复制文件</a></p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CMD</span><span class="bash"> python /app/manage.py runserver 0.0.0.0:8000</span></span><br></pre></td></tr></table></figure>
+<p><code>CMD</code>是容器启动命令，相当于在执行<code>docker run</code>时容器内执行的命令，这和<code>RUN</code>不同，<code>RUN</code>是基于镜像执行的构建，对镜像本身有影响，而<code>CMD</code>是给容器留了个<strong>启动脚本</strong>，作为<code>docker run</code>命令的执行脚本。</p>
+<p>此外，<code>CMD</code>必须确保程序前台运行，不能以后台程序运行，具体参见：<a href="https://yeasy.gitbooks.io/docker_practice/content/image/dockerfile/cmd.html" target="_blank" rel="noopener">CMD 容器启动命令</a></p>
+<h4 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像<span id="build"></span></h4><p>首先，确保你的机器已经安装了<code>Docker</code>并已成功运行。</p>
+<p>在终端输入</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ docker --<span class="built_in">help</span></span><br><span class="line"></span><br><span class="line">Usage:	docker COMMAND</span><br><span class="line"></span><br><span class="line">A self-sufficient runtime <span class="keyword">for</span> containers</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">	......</span><br><span class="line">Commands:</span><br><span class="line">    attach      Attach <span class="built_in">local</span> standard input, output, and error streams to a running container</span><br><span class="line">&gt;   build       Build an image from a Dockerfile	<span class="comment"># 构建命令</span></span><br><span class="line">    ......</span><br></pre></td></tr></table></figure>
+<p>然后继续输入</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ docker build --<span class="built_in">help</span></span><br><span class="line"></span><br><span class="line">Usage:	docker build [OPTIONS] PATH | URL | -</span><br><span class="line"></span><br><span class="line">Build an image from a Dockerfile</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">	......</span><br></pre></td></tr></table></figure>
+<p>简单构建一个镜像</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ docker build -t mysite:v1 .	</span><br><span class="line"><span class="comment"># [OPTION]：`-t ...` 构建的镜像名和版本</span></span><br><span class="line"><span class="comment"># PATH：`.` 当前路径</span></span><br></pre></td></tr></table></figure>
+<p>这里一共是6行构建语句，所以一共需要构建6步：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Sending build context to Docker daemon  99.33kB</span><br><span class="line">Step 1/6 : FROM python:3</span><br><span class="line"> ---&gt; a5b7afcfdcc8</span><br><span class="line">Step 2/6 : EXPOSE 8000</span><br><span class="line"> ---&gt; Using cache</span><br><span class="line"> ---&gt; ef00ea9bf641</span><br><span class="line">Step 3/6 : RUN mkdir /app</span><br><span class="line"> ---&gt; Using cache</span><br><span class="line"> ---&gt; b4ddfbffe92d</span><br><span class="line">Step 4/6 : WORKDIR /app</span><br><span class="line"> ---&gt; Using cache</span><br><span class="line"> ---&gt; 9cddbea6f6d0</span><br><span class="line">Step 5/6 : COPY . /app</span><br><span class="line"> ---&gt; Using cache</span><br><span class="line"> ---&gt; b81058a01129</span><br><span class="line">Step 6/6 : CMD python /app/manage.py runserver 0.0.0.0:8000</span><br><span class="line"> ---&gt; Using cache</span><br><span class="line"> ---&gt; 59ce4e412e76</span><br><span class="line">Successfully built 59ce4e412e76</span><br><span class="line">Successfully tagged mysite:v1</span><br></pre></td></tr></table></figure>
+<p>注意，如果出现下面的提示，说明<code>Docker</code>未启动</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ERRO[0000] failed to dial gRPC: cannot connect to the Docker daemon. Is &apos;docker daemon&apos; running on this host?: dial unix /var/run/docker.sock: connect: no such file or directory</span><br><span class="line">context canceled</span><br></pre></td></tr></table></figure>
+<p>构建成功后，查看镜像</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ docker images</span><br><span class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">mysite              v1                  59ce4e412e76        5 minutes ago       912MB</span><br></pre></td></tr></table></figure>
+<h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><p>镜像的构建是很快的，所以比较便捷的一种部署方法是：将源码推到服务器上，直接在服务器上构建<code>Docker</code>镜像来启动。</p>
+<p>通过<code>git</code>将代码<code>clone</code>到服务器，执行上一步 <a href="#build">构建镜像</a> ，然后查看<code>docker run</code> 的文档</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ docker run --<span class="built_in">help</span></span><br><span class="line"></span><br><span class="line">Run a <span class="built_in">command</span> <span class="keyword">in</span> a new container</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">	......</span><br></pre></td></tr></table></figure>
+<p>现在用刚才构建的镜像来运行一个<code>docker</code>容器</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ docker run -it -d --name mysite --rm mysite:v1</span><br><span class="line">b4193156413493049eab55d71c88a379127c47577041c07ac22b553d40c66672	<span class="comment"># 每个容器的ID都不一样</span></span><br></pre></td></tr></table></figure>
+<p>稍等一会儿，试试服务有没有启动成功：<code>http://你的服务器ip:8000</code></p>
 
       
     </div>
@@ -829,7 +873,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境配置"><span class="nav-number">1.</span> <span class="nav-text">环境配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建一个项目"><span class="nav-number">2.</span> <span class="nav-text">构建一个项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#确认django版本"><span class="nav-number">2.1.</span> <span class="nav-text">确认django版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建一个项目"><span class="nav-number">2.2.</span> <span class="nav-text">新建一个项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建一个模块"><span class="nav-number">2.3.</span> <span class="nav-text">新建一个模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#django数据库-API"><span class="nav-number">2.4.</span> <span class="nav-text">django数据库 API</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#连接数据库"><span class="nav-number">2.4.1.</span> <span class="nav-text">连接数据库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建模型"><span class="nav-number">2.4.2.</span> <span class="nav-text">创建模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#激活模型"><span class="nav-number">2.4.3.</span> <span class="nav-text">激活模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#管理模型"><span class="nav-number">2.4.4.</span> <span class="nav-text">管理模型</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境配置"><span class="nav-number">1.</span> <span class="nav-text">环境配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建一个项目"><span class="nav-number">2.</span> <span class="nav-text">构建一个项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#确认django版本"><span class="nav-number">2.1.</span> <span class="nav-text">确认django版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建一个项目"><span class="nav-number">2.2.</span> <span class="nav-text">新建一个项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建一个模块"><span class="nav-number">2.3.</span> <span class="nav-text">新建一个模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#django数据库-API"><span class="nav-number">2.4.</span> <span class="nav-text">django数据库 API</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#连接数据库"><span class="nav-number">2.4.1.</span> <span class="nav-text">连接数据库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建模型"><span class="nav-number">2.4.2.</span> <span class="nav-text">创建模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#激活模型"><span class="nav-number">2.4.3.</span> <span class="nav-text">激活模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#管理模型"><span class="nav-number">2.4.4.</span> <span class="nav-text">管理模型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker部署项目"><span class="nav-number">3.</span> <span class="nav-text">Docker部署项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Dockerfile"><span class="nav-number">3.1.</span> <span class="nav-text">Dockerfile</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构建镜像"><span class="nav-number">3.2.</span> <span class="nav-text">构建镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署"><span class="nav-number">3.3.</span> <span class="nav-text">部署</span></a></li></ol></li></ol></div>
             
 
           </div>

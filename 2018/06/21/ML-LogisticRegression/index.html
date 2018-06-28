@@ -125,7 +125,7 @@
 <meta property="og:image" content="http://geniusoridiot.github.io/images/ML-logistic/linear-boundary-line.jpg">
 <meta property="og:image" content="http://geniusoridiot.github.io/images/ML-logistic/polynomial-boundary.jpg">
 <meta property="og:image" content="http://geniusoridiot.github.io/images/ML-logistic/polynomial-boundary-line.png">
-<meta property="og:updated_time" content="2018-06-24T11:55:57.387Z">
+<meta property="og:updated_time" content="2018-06-26T00:27:18.620Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-逻辑回归">
 <meta name="twitter:description" content="逻辑算法，对分类问题使用的回归算法。">
@@ -389,7 +389,7 @@
                 
                   <span class="post-meta-item-text">更新於</span>
                 
-                <time title="修改時間：2018-06-24 19:55:57" itemprop="dateModified" datetime="2018-06-24T19:55:57+08:00">2018-06-24</time>
+                <time title="修改時間：2018-06-26 08:27:18" itemprop="dateModified" datetime="2018-06-26T08:27:18+08:00">2018-06-26</time>
               
             
           </span>
@@ -459,7 +459,7 @@
           
             <span class="post-letters-count">
              &nbsp; | &nbsp;
-            <span>字數：625 字</span>
+            <span>字數：693 字</span>
             </span>
           
 
@@ -488,11 +488,15 @@
 <p>分类问题<code>classification</code>一般会将问题的结果归纳为互不关联的几个类别<code>class</code></p>
 </blockquote>
 <p>如果用线性回归的思维处理分类问题，我们可以：<br>$$<br>h(x) \ge 0.5时，取1 \\<br>h(x) &lt; 0.5时，取0<br>$$<br>姑且我们只考虑只有两个分类的情况，当然，会有多个分类的情况。</p>
-<h4 id="假想函数表达式-Hypothesis-Representation"><a href="#假想函数表达式-Hypothesis-Representation" class="headerlink" title="假想函数表达式-$Hypothesis\ Representation$"></a>假想函数表达式-$Hypothesis\ Representation$</h4><p>我们并不希望我们的假想函数最终给出 $&gt;1$ 或是 $&lt;0$ 的结果，因为我们的训练数据 $y$ 在二元分类时只可能有 $0、1$ 两个值，这会导致我们的线拟合得不好。通过逻辑函数 $Sigmoid \ Function$ 可以将假想函数的值限制在 $0-1$范围内。<br>$$<br>h_θ(x) = g(θ^Tx) \\<br>z=θ^Tx \\<br>g(z) = \frac 1 {1+e^{-z}}<br>$$<br>解释一下这个函数 $g(z) = \frac 1 {1+e^z}$ ：<br>$$<br>当z<0时,e^{-z}>1,0&lt;\frac 1 {1+e^{-z}}<0.5,y=0;\\当z>0时,0&lt;e^{-z}&lt;1,0.5&lt;\frac 1 {1+e^{-z}}&lt;1,y=1<br>$$</0.5,y=0;\\当z></0时,e^{-z}></p>
+<h4 id="假想函数表达式-Hypothesis-Representation"><a href="#假想函数表达式-Hypothesis-Representation" class="headerlink" title="假想函数表达式-$Hypothesis\ Representation$"></a>假想函数表达式-$Hypothesis\ Representation$</h4><p>我们并不希望我们的假想函数最终给出 $&gt;1$ 或是 $&lt;0$ 的结果，因为我们的训练数据 $y$ 在二元分类时只可能有 $0、1$ 两个值，这会导致我们的线拟合得不好。通过逻辑函数 $Sigmoid \ Function$ 可以将假想函数的值限制在 $0-1$范围内。<br>$$<br>h_θ(x) = g(θ^Tx) \\<br>z=θ^Tx \\<br>g(z) = \frac 1 {1+e^{-z}}<br>$$<br>解释一下这个函数 $g(z) = \frac 1 {1+e^{-z}}$ ：<br>$$<br>当z<0时,e^{-z}>1,0&lt;\frac 1 {1+e^{-z}}<0.5,y=0;\\当z>0时,0&lt;e^{-z}&lt;1,0.5&lt;\frac 1 {1+e^{-z}}&lt;1,y=1<br>$$</0.5,y=0;\\当z></0时,e^{-z}></p>
 <p>这个函数的图像如图：</p>
 <p><img src="/images/ML-logistic/sigmod.jpg" alt="image-20180623134947052"></p>
 <p>对于任意给定的 $ z = θ^Tx $ 都能将 $h(x)$ 放缩到 $0 \sim1 $ 之间，使其在图形拟合时能更好得与实际 $y$ 值拟合。</p>
-<h4 id="决策边界-Decision-Boundary"><a href="#决策边界-Decision-Boundary" class="headerlink" title="决策边界-$Decision\ Boundary$"></a>决策边界-$Decision\ Boundary$</h4><p>考察假想函数的 $z$ 的取值范围，可以对 $z=θ^Tx$ 做特征值 $x$ 的取值分析：</p>
+<blockquote>
+<p>这个函数有时候也会写成：$g(z) = \frac {e^z} {1+e^z}$，是一样的，只是简单转化了一下，消除了了 $z$ 的负号</p>
+</blockquote>
+<p>$$<br>g(z) =  \frac 1 {1+e^{-z}} =  \frac 1 {1+ \frac 1 {e^z}} = \frac 1 { \frac {1+e^z} {e^z}} =  \frac {e^z} {1+e^z}<br>$$</p>
+<h4 id="决策边界-Decision-Boundary"><a href="#决策边界-Decision-Boundary" class="headerlink" title="决策边界-$Decision\ Boundary$"></a>决策边界-$Decision\ Boundary$</h4><p>考察假想函数的 $z​$ 的取值范围，可以对 $z=θ^Tx​$ 做特征值 $x​$ 的取值分析：</p>
 <p>以两个特征为例：</p>
 <p><strong>情形一：</strong></p>
 <p><img src="/images/ML-logistic/linear-boundary.jpg" alt="image-20180623140535483"></p>
@@ -556,8 +560,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/19/python+django+docker/" rel="next" title="python+django+docker:创建+部署，就是这么简单">
-                <i class="fa fa-chevron-left"></i> python+django+docker:创建+部署，就是这么简单
+              <a href="/2018/06/19/python+django+docker/" rel="next" title="python+django+docker:创建+部署">
+                <i class="fa fa-chevron-left"></i> python+django+docker:创建+部署
               </a>
             
           </div>
