@@ -127,7 +127,7 @@
 <meta property="og:image" content="http://geniusoridiot.github.io/images/ML-logistic/polynomial-boundary-line.png">
 <meta property="og:image" content="http://geniusoridiot.github.io/images/ML-logistic/costF_1.png">
 <meta property="og:image" content="http://geniusoridiot.github.io/images/ML-logistic/costF_2.png">
-<meta property="og:updated_time" content="2018-07-01T06:03:01.880Z">
+<meta property="og:updated_time" content="2018-07-03T12:07:07.242Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-逻辑回归">
 <meta name="twitter:description" content="逻辑算法，对分类问题使用的回归算法。">
@@ -391,7 +391,7 @@
                 
                   <span class="post-meta-item-text">更新於</span>
                 
-                <time title="修改時間：2018-07-01 14:03:01" itemprop="dateModified" datetime="2018-07-01T14:03:01+08:00">2018-07-01</time>
+                <time title="修改時間：2018-07-03 20:07:07" itemprop="dateModified" datetime="2018-07-03T20:07:07+08:00">2018-07-03</time>
               
             
           </span>
@@ -461,7 +461,7 @@
           
             <span class="post-letters-count">
              &nbsp; | &nbsp;
-            <span>字數：2,009 字</span>
+            <span>字數：2,013 字</span>
             </span>
           
 
@@ -541,18 +541,18 @@
 <p> 之前提到： $h(x)$ 经过了放缩，所以计算 $cost$ 的时候，$cost$ 也会被缩小——两个 $0\sim1$ 之间的数，作差再平方，基本就没了。</p>
 </blockquote>
 <p>这就导致 $J(\theta)$ 很容易达到一个局部最小值，为了避免这种情况，需要再次放缩，将 $cost$ 放大：</p>
-<p>指数和对数永远都是一对好基友，用指数缩小的，那就用对数来放大吧！<br>$$<br>当y=1时，h(x)越接近1，cost 应该越小，反之越偏离y，产生的cost就应该越大；\\<br>当y=0时，h(x)越接近1，cost 应该越大，反之越偏离y，产生的cost就应该越小；<br>$$<br>所以需要分类讨论：</p>
+<p>指数和对数永远都是一对好基友，用指数缩小的，那就用对数来放大吧！<br>$$<br>\begin{matrix}<br>当y=1时，h(x)越接近1，cost 应该越小，反之越偏离y，产生的cost就应该越大\\<br>当y=0时，h(x)越接近1，cost 应该越大，反之越偏离y，产生的cost就应该越小<br>\end{matrix}<br>$$<br>所以需要分类讨论：</p>
 <ul>
-<li><p>$y=1$ 时，$Cost(x)$ 应该是个递减的函数；<br>$$<br>Cost(x) = -log(h(x))……log:以10为底的对数<br>$$<br>图形直观：</p>
+<li><p>$y=1$ 时，$Cost(h)$ 应该是个递减的函数；<br>$$<br>Cost(h) = -log(h(x))……log:以10为底的对数<br>$$<br>图形直观：</p>
 <p><img src="/images/ML-logistic/costF_1.png" alt="cost_1"></p>
 <p>偏离 $1$ 越远，代价越大。</p>
 </li>
-<li><p>$y=0$ 时，$Cost(x)$ 应该是个递增的函数；<br>$$<br>Cost(x) = -log(1-h(x))<br>$$<br>图形直观：</p>
+<li><p>$y=0$ 时，$Cost(h)$ 应该是个递增的函数；<br>$$<br>Cost(h) = -log(1-h(x))<br>$$<br>图形直观：</p>
 <p><img src="/images/ML-logistic/costF_2.png" alt="cost_2"></p>
 <p>偏离 $0$ 越远，代价越大。</p>
 </li>
 </ul>
-<p>对每一个代价求和就可以得到代价函数 $J(\theta)$ ，但是分段函数求和、求导都很麻烦，我们用一种特殊的技巧，将上述两种讨论合而为一， 这样，就得到了我们的总代价函数：<span id="J"></span><br>$$<br>J(\theta) =\frac 1 m \sum_{i=1}^mCost(\theta,x)= \frac 1 m \sum_{i=1}^m(y·log(h(x)) +(1-y)·log(1-h(x)))<br>$$<br>读者可以将 $y=0$ 和 $y=1$ 分别代入，验证是否符合上述两种分类中的讨论。</p>
+<p>对每一个代价求和就可以得到代价函数 $J(\theta)​$ ，但是分段函数求和、求导都很麻烦，我们用一种特殊的技巧，将上述两种讨论合而为一， 这样，就得到了我们的总代价函数：<span id="J"></span><br>$$<br>J(\theta) =\frac 1 m \sum_{i=1}^mCost(\theta,x)= \frac 1 m \sum_{i=1}^m(y·log(h(x)) +(1-y)·log(1-h(x)))<br>$$<br>读者可以将 $y=0$ 和 $y=1$ 分别代入，验证是否符合上述两种分类中的讨论。</p>
 <h3 id="梯度下降-Gradient-Descent"><a href="#梯度下降-Gradient-Descent" class="headerlink" title="梯度下降-$Gradient\ Descent$"></a>梯度下降-$Gradient\ Descent$</h3><blockquote>
 <p>按照传统的步骤，要对代价函数进行求导。</p>
 </blockquote>
