@@ -129,7 +129,7 @@
 <meta property="og:image" content="http://geniusoridiot.github.io/images/SVM/6.png">
 <meta property="og:image" content="http://geniusoridiot.github.io/images/SVM/8.png">
 <meta property="og:image" content="http://geniusoridiot.github.io/images/SVM/9.png">
-<meta property="og:updated_time" content="2018-08-20T03:12:23.063Z">
+<meta property="og:updated_time" content="2018-08-20T09:26:17.814Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-支持向量机（SVM）">
 <meta name="twitter:description" content="花点时间，探索一下SVM背后的数学。">
@@ -393,7 +393,7 @@
                 
                   <span class="post-meta-item-text">更新於</span>
                 
-                <time title="修改時間：2018-08-20 11:12:23" itemprop="dateModified" datetime="2018-08-20T11:12:23+08:00">2018-08-20</time>
+                <time title="修改時間：2018-08-20 17:26:17" itemprop="dateModified" datetime="2018-08-20T17:26:17+08:00">2018-08-20</time>
               
             
           </span>
@@ -456,7 +456,7 @@
           
             <span class="post-letters-count">
              &nbsp; | &nbsp;
-            <span>字數：1,432 字</span>
+            <span>字數：1,486 字</span>
             </span>
           
 
@@ -482,7 +482,7 @@
         <p>花点时间，探索一下<code>SVM</code>背后的数学。</p>
 <a id="more"></a>
 <blockquote>
-<p>从一个简单的例子开始：<span id="sample"></span></p>
+<p><span id="sample"></span>从一个简单的例子开始：</p>
 </blockquote>
 <p><img src="/images/SVM/7.png" alt="图7"></p>
 <p>直观上 $x=3$ 的线就可以很好的划分，也就是说，对于所有 $x_1=3,\ x_2 \in R$ 的点，应该有：<br>$$<br>\theta_0 + \theta_1x_1+\theta_2x_2=0<br>$$<br>典型的“恒成立”问题，则有 $\theta_2=0,\ \theta_0 = -3 \theta_1$</p>
@@ -515,16 +515,16 @@
 <p>对这个线性回归问题，$h(x) = wx+b$ 在：</p>
 </blockquote>
 <p>$$<br>h(x) \ge 1时决策值y=1 \\<br>h(x) \le -1时决策值y=-1<br>$$</p>
-<p>这里的 1 的取值并无特别意味，只要能确保正样本和负样本在 $h(x)$ 结果上有一定的区分度即可。</p>
-<p><strong>支持向量</strong>所在的点满足：$|wx_i+b|=1$ 。</p>
+<p>这里的 1 的取值只是因为二分类问题的正样本和负样本这样取值合理而且便于计算，对后面的优化并没有什么影响。</p>
+<p><strong>支持向量</strong>所在的点满足：$|wx_i+b|=1​$ 。</p>
 <p><img src="/images/SVM/4.png" alt="图4"></p>
 <center><code>图5</code></center>
 
 <p><img src="/images/SVM/6.png" alt="图6"></p>
 <center><code>图6</code></center>
 
-<p>图中的 $M$ 就是边距，我们要计算 $M$ 的最大值，即最大边距（$Maximum\ Marginal$），这里先给出 $M$ 的式子：<br>$$<br>M = \frac 2 {\sqrt {w.w}} = \frac 2 {||w||}<br>$$<br><strong>注：$||w||$是$w$的二范数</strong>。</p>
-<p>要理解这个式子，可以先从简单的入手，假定$w$和$x$都是一维的，图5的距离，用简单的数学推导就可以得出：<br>$$<br>\begin{align}<br>&amp;wx_1+b=1 \to x_1=\frac{1-b}w \<br>&amp;wx_2+b=-1 \to x_2 = \frac{-1-b}w \<br>&amp;d = |x_1-x_2| = \frac2 {|w|}<br>\end{align}<br>$$<br>所以，矩阵的二范数的概念，或许和绝对值的概念很相近也说不定。</p>
+<p>图中的 $M$ 就是边距，我们要计算 $M$ 的最大值，即最大边距（$Maximum\ Marginal$），这里先给出 $M$ 的式子：<br>$$<br>M = \frac 2 {\sqrt {w.w}} = \frac 2 {||w||}<br>$$<br><strong>注：$||w||$ 是 $w$ 的二范数</strong>。</p>
+<p>要理解这个式子，可以先从简单的入手，假定 $w$ 和 $x$ 都是一维的，图5的距离，用简单的数学推导就可以得出：<br>$$<br>\begin{align}<br>&amp;wx_1+b=1 \to x_1=\frac{1-b}w \\<br>&amp;wx_2+b=-1 \to x_2 = \frac{-1-b}w \\<br>&amp;d = |x_1-x_2| = \frac2 {|w|}<br>\end{align}<br>$$<br>所以，矩阵的二范数的概念，或许和绝对值的概念很相近也说不定。</p>
 <p>言归正传，先说明一下<strong>二范数</strong>：</p>
 <blockquote>
 <p>$Euclid$范数（欧几里得范数，常用计算向量长度），即向量元素绝对值的平方和的平方根。</p>
@@ -557,7 +557,7 @@
 </blockquote>
 <p><img src="/images/SVM/8.png" alt="图8"></p>
 <p>之前讨论过，决策边界是 $wx+b=0$ 的超平面（这里的 $w$ 相当于吴恩达课程中的 $\theta$），如果消除 $b$ 这一项（在吴恩达的课程中，这一项就是 $\theta_0$），则有 $wx=0$，两个向量的内积为 $0$ ，所以两个向量垂直（如图中所示）。</p>
-<p>所以对于支持向量，$\theta ^Tx^i = p^i||\theta||$ ，要得到其距离决策边界的最大值，就需要求 $||w||$ 的最小值。</p>
+<p>所以对于支持向量，$\theta ^Tx^i = p^i||\theta||$ ，要得到其距离决策边界的最大值，就需要求 $||\theta||$ 的最小值。</p>
 <hr>
 <h3 id="小结：SVM问题原型"><a href="#小结：SVM问题原型" class="headerlink" title="小结：SVM问题原型"></a>小结：SVM问题原型</h3><p>实际上，这是一个带有约束条件的优化问题，原型的描述是：<br>$$<br>\min \frac 1 2 ||w||^2\ \ \ s.t.\ \ \ if\ \ y^{(i)}=1,w^Tx^{(i)} \ge1;if\ \ y^{(i)}=0,w^Tx^{(i)} \le-1<br>$$</p>
 <p>即：在满足 $s.\ t.$ 的条件的同时，得到我们的最优解。</p>
@@ -565,11 +565,12 @@
 <h3 id="超平面"><a href="#超平面" class="headerlink" title="超平面"></a>超平面</h3><p>直接理解“超平面”这样一个数学性很强的概念并不容易，有时候，简化、延伸、归纳可以帮助我们更好地理解。</p>
 <p>我们知道，超平面是为了分类我们的数据集的，而数据集一般都是多维的，什么样的东西能一刀划分一个多维的概念呢？我们先从低维开始理解。</p>
 <p>比如说有一堆数字：$-38,-25,-8,-4,-3,2,3,5,7,23,16$</p>
-<p>怎么划分比较合适呢？对，以 0 为界分为正数和负数。</p>
+<p>怎么划分比较合适呢？最简单的场景，直接以 0 为界分为正数和负数就可以了。</p>
 <p><img src="/images/SVM/9.png" alt="图9"></p>
-<p>再比如说有一堆点：<a href="#sample"><strong>例子</strong></a></p>
+<p>再比如说有一堆点：我们来看开头的<a href="#sample"><strong>例子</strong></a></p>
 <p>再到三维，划分的条件就是一个平面了。</p>
-<p>如果再到更高的维度，那就只好叫它“超平面”吧！直观理解的难度就比较大了，需要归纳，感知。</p>
+<p>如果再到更高的维度，划分条件就是一个超平面。</p>
+<p>$n$ 维空间中的超平面由下面的方程确定：<br>$$<br>wx+b=0<br>$$<br>消除偏置项 $b$ ，超平面就是 $n$ 维空间的一个子空间（过原点）。</p>
 
       
     </div>

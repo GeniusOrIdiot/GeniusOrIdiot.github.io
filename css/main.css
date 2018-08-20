@@ -445,11 +445,11 @@ body {
 .header-inner {
   margin: 0 auto;
   padding: 100px 0 70px;
-  width: 700px;
+  width: 800px;
 }
 @media (min-width: 1600px) {
   .container .header-inner {
-    width: 900px;
+    width: 1000px;
   }
 }
 .main {
@@ -457,11 +457,11 @@ body {
 }
 .main-inner {
   margin: 0 auto;
-  width: 700px;
+  width: 800px;
 }
 @media (min-width: 1600px) {
   .container .main-inner {
-    width: 900px;
+    width: 1000px;
   }
 }
 .footer {
@@ -474,11 +474,11 @@ body {
 .footer-inner {
   box-sizing: border-box;
   margin: 20px auto;
-  width: 700px;
+  width: 800px;
 }
 @media (min-width: 1600px) {
   .container .footer-inner {
-    width: 900px;
+    width: 1000px;
   }
 }
 pre,
@@ -1980,7 +1980,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9865ff;
+  background: #c62b2b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2689,7 +2689,7 @@ ul.breadcrumb li+li:last-child {
 .header {
   position: relative;
   margin: 0 auto;
-  width: 960px;
+  width: 1060px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .header {
@@ -2749,7 +2749,7 @@ ul.breadcrumb li+li:last-child {
   }
 }
 .container .main-inner {
-  width: 960px;
+  width: 1060px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .container .main-inner {
@@ -2764,8 +2764,8 @@ ul.breadcrumb li+li:last-child {
 .content-wrap {
   float: right;
   box-sizing: border-box;
-  padding: 40px;
-  width: 700px;
+  padding: 80px;
+  width: 800px;
   background: #fff;
   min-height: 900px;
   box-shadow: initial;
@@ -2808,7 +2808,7 @@ ul.breadcrumb li+li:last-child {
   display: none;
 }
 .footer-inner {
-  width: 960px;
+  width: 1060px;
   padding-left: 260px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
